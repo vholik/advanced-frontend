@@ -1,0 +1,10 @@
+.Sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  border-right: 1px solid var(--stroke-light-color);
+  transition: width 0.2s ease;
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
