@@ -1,4 +1,6 @@
-interface Mods { [key: string]: boolean | string }
+interface Mods {
+    [key: string]: boolean | string
+}
 
 export function classNames(
     cls: string,
@@ -9,7 +11,9 @@ export function classNames(
         cls,
         ...additional.filter(Boolean),
         Object.entries(mods)
-            .filter(([className, value]) => Boolean(value))
+            .filter(([_, value]) => Boolean(value))
             .map(([className]) => className),
-    ].join(" ");
+    ]
+        .join(' ')
+        .trim()
 }
