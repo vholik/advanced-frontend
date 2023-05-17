@@ -14,6 +14,7 @@ interface ThemeSwitcherProps {
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
     const { theme, toggleTheme } = useTheme();
 
+
     return (
         <Button
             theme={ThemeButton.CLEAR}
@@ -27,7 +28,6 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
             >
                 <DarkIcon />
             </div>
-
             <div
                 className={classNames(cls.iconWrapper, {
                     [cls.active]: theme === Theme.LIGHT,

@@ -1,28 +1,28 @@
 .ThemeSwitcher {
-  background-color: var(--secondary-bg-color) !important;
-  border-radius: var(--border-radius-l);
-  display: flex;
-  align-items: center;
+    background-color: var(--secondary-bg-color) !important;
+    border-radius: var(--border-radius-l);
+    display: flex;
+    align-items: center;
 }
 
 .iconWrapper {
-  height: 2rem;
-  width: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 
-  path {
-    fill: var(--secondary-color);
-  }
+    path {
+        fill: var(--secondary-color);
+    }
 }
 
 .active {
-  background-color: var(--bg-color);
-  border: 1px solid var(--stroke-light-color);
+    background-color: var(--bg-color);
+    border: 1px solid var(--stroke-light-color);
 
-  path {
-    fill: var(--primary-color);
-  }
+    path {
+        fill: var(--primary-color);
+    }
 }

@@ -9,6 +9,8 @@ module.exports = {
         "plugin:@shopify/typescript",
         "plugin:@shopify/react",
         "plugin:@shopify/prettier",
+        "plugin:i18next/recommended",
+        "prettier",
     ],
     overrides: [],
     parserOptions: {
@@ -16,7 +18,7 @@ module.exports = {
         sourceType: "module",
         project: ["./tsconfig.json"],
     },
-    plugins: ["react"],
+    plugins: ["react", "i18next", "prettier"],
     rules: {
         "import/no-extraneous-dependencies": [0],
         "@typescript-eslint/prefer-nullish-coalescing": [0],
@@ -25,12 +27,13 @@ module.exports = {
         "no-tabs": 0,
         "@shopify/jsx-no-hardcoded-content": "off",
         "no-unused-vars": "warn",
-        "react/jsx-indent": [2,4],
+        "react/jsx-indent": [2, 4],
         indent: [2, 4],
         "prettier/prettier": "off",
         "@shopify/typescript/prefer-singular-enums": "off",
         "@typescript-eslint/naming-convention": "off",
         "import/no-anonymous-default-export": "off",
-        "@shopify/prefer-module-scope-constants": "off"
+        "@shopify/prefer-module-scope-constants": "off",
+        "i18next/no-literal-string": ["error", { markupOnly: true }],
     },
 };

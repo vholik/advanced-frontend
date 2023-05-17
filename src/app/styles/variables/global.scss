@@ -1,27 +1,23 @@
 :root {
-  --font-family-main: "Inter", sans-serif;
-  --font-family-serif: serif;
+    --font-family-main: "Inter", sans-serif;
+    --font-family-serif: serif;
+    --letter-spacing: -0.03em;
+    --font-size-sm: 14px;
+    --font-line-sm: 21px;
+    --font-sm: var(--font-size-sm) / var(--font-line-sm) var(--font-family-main);
+    --font-size-m: 16px;
+    --font-line-m: 24px;
+    --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+    --font-size-l: 24px;
+    --font-line-l: 32px;
+    --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
 
-  --letter-spacing: -0.03em;
+    // Sizes
+    --nav-height: 50px;
+    --sidebar-width: 4rem;
+    --sidebar-width-collapsed: 15rem;
 
-  --font-size-sm: 14px;
-  --font-line-sm: 21px;
-  --font-sm: var(--font-size-sm) / var(--font-line-sm) var(--font-family-main);
-
-  --font-size-m: 16px;
-  --font-line-m: 24px;
-  --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
-
-  --font-size-l: 24px;
-  --font-line-l: 32px;
-  --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
-
-  // Sizes
-  --nav-height: 50px;
-  --sidebar-width: 4rem;
-  --sidebar-width-collapsed: 15rem;
-
-  // Other
-  --border-radius-m: 6px;
-  --border-radius-l: 2em;
+    // Other
+    --border-radius-m: 6px;
+    --border-radius-l: 2em;
 }
