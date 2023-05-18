@@ -39,5 +39,8 @@ module.exports = {
         '@typescript-eslint/member-ordering': 'off',
         'react/state-in-constructor': 'off',
         'react/self-closing-comp': 'off',
+        '@shopify/strict-component-boundaries': 'off',
+        'react/display-name': 'off',
+        '@typescript-eslint/ban-ts-comment': 'warn',
     },
 }

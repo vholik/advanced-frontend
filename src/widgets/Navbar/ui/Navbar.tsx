@@ -1,5 +1,3 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
@@ -12,7 +10,7 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
-    const { t, i18n } = useTranslation()
+    const { t } = useTranslation()
 
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>

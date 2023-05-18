@@ -1,5 +1,13 @@
 .Button {
     cursor: pointer;
+    font: var(--font-m);
+    height: fit-content;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 0.75em 1em;
+    border-radius: 2em;
+    font-weight: 500;
 }
 
 .clear {
@@ -7,4 +15,11 @@
     border: none;
     background: none;
     outline: none;
+    color: var(--primary-color);
+}
+
+.outline {
+    border: 1px solid var(--stroke-color);
+    background-color: transparent;
+    color: var(--primary-color);
 }
