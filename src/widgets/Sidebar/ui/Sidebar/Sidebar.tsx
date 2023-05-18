@@ -1,6 +1,7 @@
 import { type FC, useState } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher'
+import React from 'react'
 
 import cls from './Sidebar.module.scss'
 
@@ -17,6 +18,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
 
     return (
         <div
+            data-testid="sidebar"
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
                 className,
             ])}
