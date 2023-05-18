@@ -2,8 +2,6 @@ import { type FC, useState, useEffect } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Button } from 'shared/ui/Button/Button'
 
-import cls from './BugButton.module.scss'
-
 interface BugButtonProps {
     className?: string
 }
@@ -24,7 +22,7 @@ export const BugButton: FC<BugButtonProps> = ({ className }) => {
 
     return (
         <Button
-            className={classNames(cls.BugButton, {}, [className])}
+            className={classNames('', {}, [className])}
             onClick={throwError}
             // eslint-disable-next-line i18next/no-literal-string
         >
