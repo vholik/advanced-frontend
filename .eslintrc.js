@@ -35,5 +35,9 @@ module.exports = {
         'import/no-anonymous-default-export': 'off',
         '@shopify/prefer-module-scope-constants': 'off',
         'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'no-console': 'warn',
+        '@typescript-eslint/member-ordering': 'off',
+        'react/state-in-constructor': 'off',
+        'react/self-closing-comp': 'off',
     },
 }
