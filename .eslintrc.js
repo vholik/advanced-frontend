@@ -14,9 +14,11 @@ module.exports = {
     ],
     overrides: [],
     parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
+        },
         ecmaVersion: 'latest',
         sourceType: 'module',
-        project: ['./tsconfig.json'],
     },
     plugins: ['react', 'i18next', 'prettier'],
     rules: {
