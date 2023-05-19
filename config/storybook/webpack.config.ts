@@ -15,7 +15,6 @@ export default ({ config }: { config: Configuration }) => {
     config.resolve?.modules?.push(paths.src)
     config.resolve?.extensions?.push('.ts', '.tsx')
 
-    // @ts-expect-error: Overwrite type "rule"
     config.module!.rules = config?.module?.rules?.map((rule: RuleSetRule) => {
         if (/svg/.test(rule.test as string)) {
             return { ...rule, exclude: /\.svg$/i }
