@@ -45,5 +45,6 @@ module.exports = {
         '@shopify/strict-component-boundaries': 'off',
         'react/display-name': 'off',
         '@typescript-eslint/ban-ts-comment': 'warn',
+        '@shopify/jsx-no-complex-expressions': 'off',
     },
 }

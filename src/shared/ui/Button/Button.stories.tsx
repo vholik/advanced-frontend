@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 
-import { Button, ThemeButton } from './Button'
+import { Button, ButtonSize, ThemeButton } from './Button'
 
 const meta = {
     title: 'shared/Button',
@@ -15,28 +15,54 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
     args: {
-        children: 'Text in button',
+        children: 'Button',
     },
 }
 
 export const Clear: Story = {
     args: {
-        children: 'text in button',
+        children: 'Button',
         theme: ThemeButton.CLEAR,
     },
 }
 
 export const Outline: Story = {
     args: {
-        children: 'text in button',
+        children: 'Button',
         theme: ThemeButton.OUTLINE,
     },
 }
 
 export const OutlineDark: Story = {
     args: {
-        children: 'text in button',
+        children: 'Button',
         theme: ThemeButton.OUTLINE,
     },
     decorators: [ThemeDecorator(Theme.DARK)],
+}
+
+export const Square: Story = {
+    args: {
+        children: '>',
+        theme: ThemeButton.OUTLINE,
+        square: true,
+    },
+}
+
+export const SquareL: Story = {
+    args: {
+        children: '>',
+        theme: ThemeButton.OUTLINE,
+        size: ButtonSize.L,
+        square: true,
+    },
+}
+
+export const SquareXL: Story = {
+    args: {
+        children: '>',
+        theme: ThemeButton.OUTLINE,
+        size: ButtonSize.XL,
+        square: true,
+    },
 }

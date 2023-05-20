@@ -3,8 +3,65 @@
     height: 100vh;
     border-right: 1px solid var(--stroke-light-color);
     transition: width 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+}
+
+.linkInner {
+    width: 0;
+    opacity: 0;
+    color: var(--secondary-color);
+    transition: width var(--transition), opacity var(--transition);
+}
+
+.mainLink {
+    width: min-content;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 0.75rem;
+    margin-left: 1rem;
+    border-radius: var(--border-radius-m);
+    transition: background-color var(--transition), gap var(--transition);
+
+    svg {
+        min-width: 30px;
+    }
+
+    path {
+        stroke: var(--secondary-color);
+    }
+
+    &:hover {
+        background-color: var(--bg-color-hover);
+    }
+}
+
+.collapsedBtn {
+    position: absolute;
+    right: -60px;
+    bottom: 40px;
 }
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
+    align-items: flex-start;
+
+    .linkInner {
+        width: 100%;
+        opacity: 1;
+    }
+
+    .mainLink {
+        gap: 0.5rem;
+        width: 100%;
+    }
 }

@@ -11,13 +11,19 @@
     --font-size-l: 24px;
     --font-line-l: 32px;
     --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+    --font-size-xl: 35px;
+    --font-line-xl: 41px;
+    --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
 
     // Size
     --nav-height: 50px;
-    --sidebar-width: 4rem;
+    --sidebar-width: 6rem;
     --sidebar-width-collapsed: 15rem;
 
     // Other
-    --border-radius-m: 6px;
+    --border-radius-m: 0.5rem;
     --border-radius-l: 2em;
+
+    // Transition
+    --transition: 0.2s linear;
 }

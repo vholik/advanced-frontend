@@ -1,3 +1,21 @@
 .LangSwitcher {
-    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--secondary-color);
+    min-width: 100%;
+
+    svg {
+        fill: none;
+
+        path {
+            stroke: var(--secondary-color);
+        }
+    }
+}
+
+.collapsed {
+    flex-direction: row;
 }
