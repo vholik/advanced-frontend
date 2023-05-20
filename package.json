@@ -16,7 +16,8 @@
         "test:ui:ci": "npx chromatic --project-token=chpt_c4ccf9a37bf13ce",
         "test:ui:ok": "npx loki approve",
         "storybook": "storybook dev -p 6006 -c ./config/storybook",
-        "build-storybook": "storybook build -c ./config/storybook"
+        "build-storybook": "storybook build -c ./config/storybook",
+        "chromatic": "chromatic --project-token CHROMATIC_PROJECT_TOKEN"
     },
     "keywords": [],
     "author": "",
