@@ -24,3 +24,5 @@ jobs:
             - name: unit testing
               if: always()
               run: npm run test:unit
+            - name: screenshot & storybook tests
+              run: npm run test:ui:ci

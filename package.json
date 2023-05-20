@@ -13,14 +13,13 @@
         "lint:sccs:fix": "npx stylelint \"**/*.scss\" --fix",
         "test:unit": "jest --config ./config/jest/jest.config.ts",
         "test:ui": "npx loki test",
-        "test:ui:ci": "npx chromatic --project-token=chpt_c4ccf9a37bf13ce",
+        "test:ui:ci": "concurrently --kill-others --raw --success first \"npm run storybook\" \"npm run test:ui\" \"deelay\"",
         "test:ui:ok": "npx loki approve",
         "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
         "test:ui:json": "node scripts/generate-visual-json-report.js",
         "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
         "storybook": "storybook dev -p 6006 -c ./config/storybook",
-        "build-storybook": "storybook build -c ./config/storybook",
-        "chromatic": "chromatic --project-token CHROMATIC_PROJECT_TOKEN"
+        "storybook: build": "storybook build -c ./config/storybook"
     },
     "keywords": [],
     "author": "",
@@ -52,7 +51,6 @@
         "@typescript-eslint/eslint-plugin": "^5.59.6",
         "@typescript-eslint/parser": "^5.59.6",
         "babel-jest": "^29.5.0",
-        "chromatic": "^6.17.4",
         "concurrently": "^8.0.1",
         "css-loader": "^6.6.0",
         "eslint": "^8.40.0",
@@ -87,6 +85,7 @@
         "webpack-dev-server": "^4.7.4"
     },
     "dependencies": {
+        "deelay": "^2.0.0",
         "i18next": "^21.6.11",
         "i18next-browser-languagedetector": "^7.0.1",
         "i18next-http-backend": "^2.2.0",
@@ -112,7 +111,5 @@
         "looks-same": {
             "ignoreCaret": true
         }
-    },
-    "readme": "ERROR: No README data found!",
-    "_id": "advanced-ulbitv-course@1.0.0"
+    }
 }
