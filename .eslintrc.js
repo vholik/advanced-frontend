@@ -21,7 +21,7 @@ module.exports = {
         },
         project: ['./tsconfig.json'],
     },
-    plugins: ['react', 'i18next', 'prettier'],
+    plugins: ['react', 'i18next', 'prettier', 'react-hooks'],
     rules: {
         'import/no-extraneous-dependencies': [0],
         '@typescript-eslint/prefer-nullish-coalescing': [0],
@@ -46,5 +46,9 @@ module.exports = {
         'react/display-name': 'off',
         '@typescript-eslint/ban-ts-comment': 'warn',
         '@shopify/jsx-no-complex-expressions': 'off',
+        '@typescript-eslint/consistent-indexed-object-style': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
     },
 }
