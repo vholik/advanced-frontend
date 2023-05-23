@@ -50,5 +50,7 @@ module.exports = {
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
+        '@shopify/react-require-autocomplete': 'off',
+        'jsx-a11y/label-has-for': 'off',
     },
 }
