@@ -23,7 +23,7 @@
     border-radius: var(--border-radius-l);
     background-color: var(--bg-color);
     transition: transform 0.3s ease, opacity 0.3s ease;
-    transform: translateY(50%);
+    transform: translateY(10%);
     max-width: 60%;
     opacity: 0;
 }
@@ -41,7 +41,7 @@
 
 .isClosing {
     .content {
-        transform: translateY(-50%);
+        transform: translateY(-10%);
         opacity: 0;
     }
 }

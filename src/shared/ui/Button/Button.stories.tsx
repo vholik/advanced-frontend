@@ -33,6 +33,13 @@ export const Outline: Story = {
     },
 }
 
+export const Stretch: Story = {
+    args: {
+        children: 'Button',
+        theme: ThemeButton.STRETCH,
+    },
+}
+
 export const OutlineDark: Story = {
     args: {
         children: 'Button',
