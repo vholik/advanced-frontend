@@ -13,7 +13,7 @@ export default {
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-        // '^.+\\.svg$': 'jest-svg-transformer',
+        axios: 'axios/dist/node/axios.cjs',
     },
 
     globals: {
