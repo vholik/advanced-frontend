@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
 
-import { AppLink } from './AppLink'
+import { AppLink, AppLinkTheme } from './AppLink'
 
 const meta = {
     title: 'shared/AppLink',
@@ -16,5 +14,7 @@ type Story = StoryObj<typeof meta>
 export const Primary: Story = {
     args: {
         to: '/',
+        children: 'Mordo',
+        theme: AppLinkTheme.PRIMARY,
     },
 }

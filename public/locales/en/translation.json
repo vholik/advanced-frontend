@@ -10,6 +10,8 @@
     "Refresh page": "Refresh page",
     "Toggle": "Toggle",
     "Log in": "Log in",
+    "Log out": "Log out",
     "Login to your account": "Login to your account",
-    "Enter your credentials to access your account": "Enter your credentials to access your account"
+    "Enter your credentials to access your account": "Enter your credentials to access your account",
+    "You entered an incorrect username or password": "You entered an incorrect username or password"
 }

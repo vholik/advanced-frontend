@@ -73,3 +73,10 @@ export const SquareXL: Story = {
         square: true,
     },
 }
+
+export const Disabled: Story = {
+    args: {
+        children: 'Button',
+        disabled: true,
+    },
+}
