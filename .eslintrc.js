@@ -52,5 +52,8 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         '@shopify/react-require-autocomplete': 'off',
         'jsx-a11y/label-has-for': 'off',
+        'no-param-reassign': 'off',
+        '@typescript-eslint/no-dynamic-delete': 'off',
+        'eslint-comments/no-unlimited-disable': 'off',
     },
 }
