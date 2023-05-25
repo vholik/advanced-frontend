@@ -29,7 +29,6 @@ module.exports = {
         'react/react-in-jsx-scope': [0],
         'no-tabs': 0,
         '@shopify/jsx-no-hardcoded-content': 'off',
-        'no-unused-vars': 'warn',
         'react/jsx-indent': [2, 4],
         indent: [2, 4],
         'prettier/prettier': 'off',
