@@ -1,5 +1,5 @@
 import { memo, type ButtonHTMLAttributes, type FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { type Mods, classNames } from 'shared/lib/classNames/classNames'
 
 import cls from './Button.module.scss'
 
@@ -34,8 +34,7 @@ export const Button: FC<ButtonProps> = memo((props) => {
         ...other
     } = props
 
-    const mods = {
-        [cls[theme]]: true,
+    const mods: Mods = {
         [cls.square]: square,
         [cls[size]]: true,
         [cls.disabled]: disabled,
@@ -46,7 +45,10 @@ export const Button: FC<ButtonProps> = memo((props) => {
             type="button"
             {...other}
             disabled={disabled}
-            className={classNames(cls.Button, mods, [className])}
+            className={classNames(cls.Button, mods, [
+                className,
+                theme ? cls[theme] : undefined,
+            ])}
         >
             {children}
         </button>

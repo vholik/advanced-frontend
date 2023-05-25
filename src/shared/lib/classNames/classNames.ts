@@ -1,11 +1,11 @@
-interface Mods {
-    [key: string]: boolean | string
+export interface Mods {
+    [key: string]: boolean | string | undefined
 }
 
 export function classNames(
     cls: string,
     mods: Mods = {},
-    additional: string[] = []
+    additional: (string | undefined)[] = []
 ): string {
     return [
         cls,

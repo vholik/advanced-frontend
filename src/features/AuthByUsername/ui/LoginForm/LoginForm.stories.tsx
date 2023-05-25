@@ -42,8 +42,6 @@ export const loading: Story = {
     decorators: [
         StoreDecorator({
             loginForm: {
-                username: 'username123',
-                password: '1234',
                 isLoading: true,
             },
         }),

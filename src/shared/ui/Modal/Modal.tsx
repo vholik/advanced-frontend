@@ -6,7 +6,7 @@ import {
     useEffect,
     useCallback,
 } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { type Mods, classNames } from 'shared/lib/classNames/classNames'
 import { Portal } from 'shared/ui/Portal/Portal'
 
 import cls from './Modal.module.scss'
@@ -26,7 +26,7 @@ export const Modal: FC<ModalProps> = (props) => {
 
     const [isClosing, setIsClosing] = useState(false)
     const [isMounted, setIsMounted] = useState(false)
-    const timerRef = useRef<ReturnType<typeof setTimeout>>()
+    const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
     const closeHandler = useCallback(() => {
         if (onClose) {
@@ -53,7 +53,7 @@ export const Modal: FC<ModalProps> = (props) => {
         }
 
         return () => {
-            clearTimeout(timerRef.current)
+            clearTimeout(timerRef.current!)
             window.removeEventListener('keydown', onKeyDown)
         }
     }, [isOpen, onKeyDown])
@@ -62,7 +62,7 @@ export const Modal: FC<ModalProps> = (props) => {
         event.stopPropagation()
     }
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     }

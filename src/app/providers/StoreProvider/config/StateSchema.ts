@@ -4,10 +4,16 @@ import {
     type Reducer,
     type CombinedState,
 } from '@reduxjs/toolkit'
+import { type AxiosInstance } from 'axios'
 import { type CounterSchema } from 'entities/Counter'
 import { type ProfileSchema } from 'entities/Profile'
 import { type UserSchema } from 'entities/User'
 import { type LoginSchema } from 'features/AuthByUsername'
+import {
+    type To,
+    type NavigateFunction,
+    type NavigateOptions,
+} from 'react-router-dom'
 
 export interface StateSchema {
     counter: CounterSchema
@@ -27,4 +33,14 @@ export interface ReducerManager {
     reduce: (state: StateSchema, action: any) => CombinedState<StateSchema>
     add: (key: StateSchemaKey, reducer: Reducer) => void
     remove: (key: StateSchemaKey) => void
+}
+
+export interface ThunkExtraArg {
+    api: AxiosInstance
+    navigate?: (to: To, options?: NavigateOptions) => void
+}
+
+export interface ThunkConfig<RejectValueType> {
+    rejectValue: RejectValueType
+    extra: ThunkExtraArg
 }

@@ -54,5 +54,6 @@ module.exports = {
         'no-param-reassign': 'off',
         '@typescript-eslint/no-dynamic-delete': 'off',
         'eslint-comments/no-unlimited-disable': 'off',
+        '@typescript-eslint/no-invalid-void-type': 'off',
     },
 }
