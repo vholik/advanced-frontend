@@ -8,11 +8,7 @@
     min-width: 100%;
 
     svg {
-        fill: none;
-
-        path {
-            stroke: var(--tertiary-color);
-        }
+        fill: var(--tertiary-color);
     }
 }
 

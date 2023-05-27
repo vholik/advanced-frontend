@@ -19,6 +19,13 @@ export const Primary: Story = {
     },
 }
 
+export const PrimarySmall: Story = {
+    args: {
+        size: ButtonSize.SM,
+        children: 'Button',
+    },
+}
+
 export const Clear: Story = {
     args: {
         children: 'Button',

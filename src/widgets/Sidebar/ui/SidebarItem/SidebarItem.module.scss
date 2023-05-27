@@ -2,25 +2,31 @@
     width: 0;
     opacity: 0;
     color: var(--quatinary-color);
-    transition: width var(--transition), opacity var(--transition);
+    transition: width var(--transition), opacity var(--transition),
+        margin var(--transition);
+    max-height: var(--font-line-m);
+    margin-left: 0rem;
 }
 
 .mainLink {
-    width: min-content;
     display: flex;
     align-items: center;
-    gap: 0;
     padding: 0.75rem;
     margin-left: 1rem;
+    font: var(--font-m);
+    font-weight: 500;
+    width: min-content;
     border-radius: var(--border-radius-m);
     transition: background-color var(--transition), gap var(--transition);
 
     svg {
         min-width: 30px;
-    }
+        min-height: 30px;
 
-    path {
-        stroke: var(--tertiary-color);
+        path {
+            stroke: var(--tertiary-color);
+            stroke-width: 2.5px;
+        }
     }
 
     &:hover {
@@ -29,13 +35,15 @@
 }
 
 .collapsed {
+    width: 100%;
+
     .linkInner {
         width: 100%;
         opacity: 1;
+        margin-left: 0.5rem;
     }
 
     .mainLink {
-        gap: 0.5rem;
         width: 100%;
     }
 }

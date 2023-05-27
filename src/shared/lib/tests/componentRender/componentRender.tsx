@@ -10,6 +10,16 @@ export interface componentRenderOptions {
     initialState?: DeepPartial<StateSchema>
 }
 
+const promise = new Promise<string>((res, rej) => {
+    setTimeout(() => {
+        res('dffdf')
+    }, 1000)
+})
+
+async function name() {
+    const res = await promise
+}
+
 export function componentRender(
     component: ReactNode,
     options: componentRenderOptions = {}

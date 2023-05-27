@@ -24,8 +24,8 @@
     background-color: var(--bg-color);
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform: translateY(10%);
-    max-width: 60%;
     opacity: 0;
+    max-width: 60%;
 }
 
 .opened {

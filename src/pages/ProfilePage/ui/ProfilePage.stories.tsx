@@ -2,6 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
+import { Country } from 'entities/Country'
+import { Currency } from 'entities/Currency'
+import { avatarLink } from 'shared/const/tests'
 
 import ProfilePage from './ProfilePage'
 
@@ -21,5 +24,21 @@ export const Ligth: Story = {
 
 export const Dark: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({})],
+    decorators: [
+        ThemeDecorator(Theme.DARK),
+        StoreDecorator({
+            profile: {
+                data: {
+                    username: 'admin',
+                    age: 17,
+                    city: 'Wrocław',
+                    country: Country.Germany,
+                    currency: Currency.USD,
+                    first: 'admin 2',
+                    lastname: 'admin name',
+                    avatar: avatarLink,
+                },
+            },
+        }),
+    ],
 }

@@ -1,3 +1,10 @@
 {
-    "Profile": "Profile"
+    "Profile": "Profile",
+    "Error occured while loading profile. Try to refresh your page.": "Error occured while loading profile. Try to refresh your page.",
+    "Your firstname": "Your firstname",
+    "Your lastname": "Your lastname",
+    "Your age": "Your age",
+    "Your city": "Your city",
+    "Username": "Username",
+    "Avatar link": "Avatar link"
 }

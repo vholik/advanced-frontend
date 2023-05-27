@@ -1,0 +1,106 @@
+.dropdownList {
+    list-style: none;
+    background-color: var(--bg-color);
+    border: 1px solid var(--stroke-color);
+    padding: 0.75em;
+    border-radius: var(--border-radius-m);
+    box-shadow: var(--box-shadow);
+    pointer-events: none;
+    z-index: -1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(10%);
+    opacity: 0;
+    min-width: 200px;
+    position: absolute;
+    bottom: 3rem;
+}
+
+.select {
+    position: relative;
+}
+
+.chevron {
+    margin-left: 1rem;
+    path {
+        fill: var(--primary-color);
+    }
+}
+
+.check {
+    margin-left: 1rem;
+    path {
+        fill: var(--primary-color);
+    }
+}
+
+.dropdownItem {
+    background-color: var(--bg-color);
+    padding: 0.375em 1em;
+    border-radius: var(--border-radius-m);
+    font: var(--font-m);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+        background-color: var(--secondary-bg-color);
+    }
+}
+
+.selectBtn {
+    justify-content: space-between;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: none;
+    outline: none;
+    color: var(--primary-color);
+    padding: 0.625em 1.75em;
+    font: var(--font-m);
+    border: 1px solid var(--stroke-color);
+    border-radius: var(--border-radius-m);
+    transition: box-shadow var(--transition), border var(--transition);
+    min-width: 200px;
+    pointer-events: all;
+
+    &::placeholder {
+        color: var(--secondary-color);
+    }
+
+    &:focus {
+        box-shadow: var(--focused-accent-shadow);
+        border: var(--focused-accent-border);
+    }
+
+    &:hover {
+        box-shadow: var(--focused-accent-shadow);
+    }
+}
+
+.opened {
+    opacity: 1;
+    pointer-events: all;
+    z-index: var(--modal-z-index);
+    transform: translateY(0);
+}
+
+.closing {
+    transform: translateY(-10%);
+    opacity: 0;
+}
+
+.readonly {
+    background-color: var(--secondary-bg-color);
+    color: var(--quatinary-color);
+    pointer-events: none;
+
+    &:focus {
+        box-shadow: unset;
+        border: 1px solid var(--stroke-color);
+    }
+
+    &:hover {
+        box-shadow: unset;
+    }
+}

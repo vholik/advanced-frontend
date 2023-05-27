@@ -21,3 +21,17 @@
         box-shadow: var(--focused-accent-shadow);
     }
 }
+
+.readonly {
+    background-color: var(--secondary-bg-color);
+    color: var(--quatinary-color);
+
+    &:focus {
+        box-shadow: unset;
+        border: 1px solid var(--stroke-color);
+    }
+
+    &:hover {
+        box-shadow: unset;
+    }
+}

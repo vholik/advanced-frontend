@@ -1,0 +1,61 @@
+.ProfilePageHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    padding-bottom: 1.5rem;
+    position: relative;
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        border-bottom: 1px solid var(--stroke-color);
+        right: 1.5rem;
+        left: 1.5rem;
+    }
+}
+
+.avatar {
+    border: 4px solid var(--bg-color);
+    box-shadow: var(--box-shadow);
+    z-index: 2;
+}
+
+.editBtn,
+.cancelBtn {
+    margin-left: auto;
+}
+
+.saveBtn {
+    margin-left: 0.6rem;
+}
+
+.bg {
+    position: relative;
+    width: 100%;
+    min-height: 220px;
+    border-radius: var(--border-radius-m) var(--border-radius-m) 0 0;
+    background: var(--profile-gradient);
+    z-index: 0;
+
+    &::after {
+        position: absolute;
+        content: '';
+        left: 0;
+        right: 0;
+        bottom: -20px;
+        height: 20px;
+        background: var(--profile-gradient);
+        border-radius: 0 0 var(--border-radius-m) var(--border-radius-m);
+    }
+}
+
+.heading {
+    margin-left: 1.5rem;
+}
+
+.subtitle {
+    margin-top: 0.25rem;
+}

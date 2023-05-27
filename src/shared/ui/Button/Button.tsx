@@ -10,6 +10,7 @@ export enum ThemeButton {
 }
 
 export enum ButtonSize {
+    SM = 'size_sm',
     M = 'size_m',
     L = 'size_l',
     XL = 'size_xl',
@@ -23,7 +24,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     disabled?: boolean
 }
 
-export const Button: FC<ButtonProps> = memo((props) => {
+export const Button: FC<ButtonProps> = (props) => {
     const {
         className,
         children,
@@ -53,4 +54,4 @@ export const Button: FC<ButtonProps> = memo((props) => {
             {children}
         </button>
     )
-})
+}

@@ -53,6 +53,8 @@ export function createReduxStore(
     return store
 }
 
-export type RootState = ReturnType<typeof createReduxStore>
+export type RootState = ReturnType<
+    ReturnType<typeof createReduxStore>['getState']
+>
 
 export type AppThunkDispatch = ThunkDispatch<RootState, any, AnyAction>

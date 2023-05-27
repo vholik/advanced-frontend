@@ -3,6 +3,8 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { type SidebarItemType } from 'widgets/Sidebar/model/items'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { getUserAuthData } from 'entities/User'
 
 import cls from './SidebarItem.module.scss'
 
@@ -13,6 +15,12 @@ interface SidebarItemProps {
 
 export const SidebarItem: FC<SidebarItemProps> = memo(({ collapsed, item }) => {
     const { t } = useTranslation()
+
+    const isAuth = useSelector(getUserAuthData)
+
+    if (item.authOnly && !isAuth) {
+        return null
+    }
 
     return (
         <div className={classNames(cls.SidebarItem, {}, [])}>

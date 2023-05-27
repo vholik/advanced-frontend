@@ -1,3 +1,10 @@
 {
-    "Profile": "Profil"
+    "Profile": "Profil",
+    "Error occured while loading profile. Try to refresh your page.": "Wystąpił bląd. Spróbuj odświeżyć stronę.",
+    "Your firstname": "Imię",
+    "Your lastname": "Nazwisko",
+    "Your age": "Twój wiek",
+    "Your city": "Twoje miasto",
+    "Username": "Username",
+    "Avatar link": "Link do avataru"
 }
