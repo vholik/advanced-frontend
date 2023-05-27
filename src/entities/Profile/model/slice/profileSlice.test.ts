@@ -13,12 +13,12 @@ describe('profileSlice.test', () => {
         ).toEqual({ readonly: true })
     })
     test('test set data', () => {
-        const state: DeepPartial<ProfileSchema> = { data: { first: '123' } }
+        const state: DeepPartial<ProfileSchema> = { form: { first: '123' } }
         expect(
             profileReducer(
                 state as ProfileSchema,
                 profileActions.updateProfile({ first: '1234' })
             )
-        ).toEqual({ first: '1234' })
+        ).toEqual({ form: { first: '1234' } })
     })
 })
