@@ -15,7 +15,7 @@
         "lint:sccs:fix": "npx stylelint \"**/*.scss\" --fix",
         "test:unit": "jest --config ./config/jest/jest.config.ts",
         "test:ui": "npx loki test",
-        "test:ui:ci": "form \"npm run test:ui\" \"deelay\"",
+        "test:ui:ci": "concurrently --kill-others --raw --success first \"npm run storybook\" \"npm run test:ui\" \"deelay\"",
         "test:ui:ok": "npx loki approve",
         "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
         "test:ui:json": "node scripts/generate-visual-json-report.js",
