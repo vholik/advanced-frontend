@@ -152,7 +152,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
         <DynamicModuleLoader reducers={reducers}>
             <div className={cls.ProfilePage}>
                 <ProfilePageHeader avatar={formData?.avatar} />
-                {validateErrors?.length &&
+                {Boolean(validateErrors?.length) &&
                     validateErrors?.map((err) => (
                         <Note key={err}>{validateErrorTranslates[err]}</Note>
                     ))}

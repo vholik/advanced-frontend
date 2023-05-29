@@ -20,12 +20,9 @@
     transition: background-color var(--transition), gap var(--transition);
 
     svg {
-        min-width: 30px;
-        min-height: 30px;
-
+        min-width: 24px;
         path {
-            stroke: var(--tertiary-color);
-            stroke-width: 2.5px;
+            fill: var(--secondary-color);
         }
     }
 

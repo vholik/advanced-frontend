@@ -12,7 +12,7 @@
     opacity: 0;
     min-width: 200px;
     position: absolute;
-    bottom: 3rem;
+    top: 45px;
 }
 
 .select {
@@ -56,8 +56,8 @@
     background: none;
     outline: none;
     color: var(--primary-color);
-    padding: 0.625em 1.75em;
-    font: var(--font-m);
+    padding: 0.5em 1em;
+    font: var(--font-sm);
     border: 1px solid var(--stroke-color);
     border-radius: var(--border-radius-m);
     transition: box-shadow var(--transition), border var(--transition);

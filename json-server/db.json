@@ -1,37 +1,37 @@
 {
-    "posts": [
-        {
-            "id": "1",
-            "title": "json-server",
-            "userId": 1
-        },
-        {
-            "id": "2",
-            "title": "json-server",
-            "userId": 2
-        }
-    ],
-    "comments": [
-        {
-            "id": "1",
-            "body": "some comment",
-            "postId": 1
-        }
-    ],
-    "users": [
-        {
-            "id": "1",
-            "username": "admin",
-            "password": "123"
-        }
-    ],
-    "profile": {
-        "first": "Viktor",
-        "lastname": "Holik",
-        "age": 22,
-        "currency": "RUB",
-        "country": "Poland",
-        "city": "Moscow",
-        "avatar": "https://powerpackelements.com/wp-content/uploads/2017/11/Team-memeber-01.png"
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "userId": 1
+    },
+    {
+      "id": "2",
+      "title": "json-server",
+      "userId": 2
     }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": {
+    "first": "Viktor",
+    "lastname": "Holik",
+    "age": 22,
+    "currency": "RUB",
+    "country": "Germany",
+    "city": "Moscow",
+    "avatar": "https://powerpackelements.com/wp-content/uploads/2017/11/Team-memeber-01.png"
+  }
 }
