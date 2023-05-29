@@ -8,15 +8,6 @@ import { ValidateProfileError, type Profile } from '../../types/profile'
 import { getProfileForm } from '../../selector/getProfileForm/getProfileForm'
 import { validateProfileData } from '../validateProfileData/validateProfileData'
 
-interface LoginByUsernameProps {
-    username: string
-    password: string
-}
-
-export enum LoginErrors {
-    INCORRECT_DATA = '',
-}
-
 export const updateProfileData = createAsyncThunk<
     Profile,
     void,

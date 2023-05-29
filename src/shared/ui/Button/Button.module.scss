@@ -9,6 +9,11 @@
     border-radius: 2em;
     font-weight: 600;
     box-shadow: var(--box-shadow);
+    transition: opacity var(--transition);
+
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 .size_sm {

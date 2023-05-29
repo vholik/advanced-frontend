@@ -1,12 +1,46 @@
 .title {
-    font: var(--font-l);
-    color: var(--primary-color);
     font-weight: 600;
 }
 
-.text {
-    font: var(--font-m);
+.size_sm {
+    .title {
+        font: var(--font-m);
+    }
+
+    .text {
+        font: var(--font-sm);
+    }
+}
+
+.size_m {
+    .title {
+        font: var(--font-l);
+        font-weight: 700;
+    }
+
+    .text {
+        font: var(--font-m);
+    }
+}
+
+.secondary_color {
     color: var(--secondary-color);
+}
+
+.primary-color {
+    color: var(--primary-color);
+}
+
+.size_xl {
+    .title {
+        font: var(--font-xl);
+        font-weight: 700;
+    }
+
+    .text {
+        font-size: 1.25rem;
+        line-height: 1.75em;
+    }
 }
 
 .left {

@@ -1,0 +1,27 @@
+.Code {
+    background-color: var(--secondary-bg-color);
+    padding: 1.5rem;
+    position: relative;
+    font-family: monospace;
+    overflow: auto;
+}
+
+.icon {
+    path {
+        stroke: var(--secondary-color);
+        stroke-width: 1.5px;
+        transition: stroke var(--transition);
+    }
+}
+
+.copyBtn {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+
+    &:hover {
+        path {
+            stroke: var(--primary-color);
+        }
+    }
+}

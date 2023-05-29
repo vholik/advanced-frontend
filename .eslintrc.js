@@ -30,7 +30,7 @@ module.exports = {
         'no-tabs': 0,
         '@shopify/jsx-no-hardcoded-content': 'off',
         'react/jsx-indent': [2, 4],
-        indent: [2, 4],
+        indent: [2, 4, { SwitchCase: 1 }],
         'prettier/prettier': 'off',
         '@shopify/typescript/prefer-singular-enums': 'off',
         '@typescript-eslint/naming-convention': 'off',
