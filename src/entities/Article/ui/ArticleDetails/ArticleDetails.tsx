@@ -9,7 +9,13 @@ import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch'
 import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById'
 import { useSelector } from 'react-redux'
 import { Note } from 'shared/ui/Note/Note'
-import { Text, TextAlign, TextColor, TextSize } from 'shared/ui/Text/Text'
+import {
+    Text,
+    TextAlign,
+    TextColor,
+    TextSize,
+    TextWeight,
+} from 'shared/ui/Text/Text'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
 import EyeIcon from 'shared/assets/icons/eye.svg'
 import DateIcon from 'shared/assets/icons/date.svg'
@@ -17,7 +23,7 @@ import {
     type ArticleBlock,
     ArticleBlockType,
 } from 'entities/Article/model/types/article'
-import { Icon } from 'shared/ui/Icon/Icon'
+import { Icon, IconColor } from 'shared/ui/Icon/Icon'
 
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import {
@@ -85,15 +91,15 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
     if (isLoading) {
         content = (
             <>
-                <Skeleton height={50} width={500} className={cls.skeleton} />
+                <Skeleton height={50} width={680} className={cls.skeleton} />
                 <div className={cls.avatar}>
                     <Skeleton height={50} width={50} circle />
-                    <Skeleton height={15} width={50} count={2} />
+                    <Skeleton height={15} width={100} count={2} />
                 </div>
                 <div className={cls.box}>
                     <Skeleton
                         count={6}
-                        width={400}
+                        width={550}
                         height={32}
                         className={cls.skeleton}
                     />
@@ -101,7 +107,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
                 <div className={cls.box}>
                     <Skeleton
                         count={6}
-                        width={400}
+                        width={550}
                         height={32}
                         className={cls.skeleton}
                     />
@@ -119,28 +125,31 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
             <>
                 <Text
                     title={data?.title}
-                    size={TextSize.XL}
+                    size={TextSize.L}
                     className={cls.title}
+                    weight={TextWeight.BOLD}
                 />
                 <Text
                     text={data?.subtitle}
                     className={cls.subtitle}
-                    size={TextSize.XL}
+                    size={TextSize.L}
                     color={TextColor.SECONDARY}
                 />
                 <div className={cls.row}>
                     <div className={cls.stats}>
-                        <Icon Icon={EyeIcon} />
+                        <Icon Icon={EyeIcon} color={IconColor.TERTIARY} />
                         <Text
                             text={String(data?.views)}
                             size={TextSize.SMALL}
+                            color={TextColor.SECONDARY}
                         />
                     </div>
                     <div className={cls.stats}>
-                        <Icon Icon={DateIcon} />
+                        <Icon Icon={DateIcon} color={IconColor.TERTIARY} />
                         <Text
                             text={String(data?.createdAt)}
                             size={TextSize.SMALL}
+                            color={TextColor.SECONDARY}
                         />
                     </div>
                 </div>

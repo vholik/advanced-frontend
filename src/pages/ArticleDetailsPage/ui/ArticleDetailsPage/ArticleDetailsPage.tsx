@@ -5,6 +5,7 @@ import { ArticleDetails } from 'entities/Article'
 import { useParams } from 'react-router-dom'
 import { Note } from 'shared/ui/Note/Note'
 import { Text, TextAlign } from 'shared/ui/Text/Text'
+import { CommentList } from 'entities/Comment'
 
 import cls from './ArticleDetailsPage.module.scss'
 
@@ -28,6 +29,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     return (
         <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
             <ArticleDetails id={id} />
+            <CommentList comments={[]} />
         </div>
     )
 }

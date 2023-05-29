@@ -1,6 +1,10 @@
-.title {
-    font-weight: 600;
+// DEFAULT
+
+.text {
+    color: var(--secondary-color);
 }
+
+// SIZE
 
 .size_sm {
     .title {
@@ -14,8 +18,7 @@
 
 .size_m {
     .title {
-        font: var(--font-l);
-        font-weight: 700;
+        font: var(--font-xl);
     }
 
     .text {
@@ -23,25 +26,28 @@
     }
 }
 
-.secondary_color {
-    color: var(--secondary-color);
-}
-
-.primary-color {
-    color: var(--primary-color);
-}
-
-.size_xl {
+.size_l {
     .title {
-        font: var(--font-xl);
+        font: var(--font-xxl);
         font-weight: 700;
     }
 
     .text {
-        font-size: 1.25rem;
-        line-height: 1.75em;
+        font: var(--font-l);
     }
 }
+
+//COLORS
+
+.secondary_color {
+    color: var(--secondary-color);
+}
+
+.primary_color {
+    color: var(--primary-color);
+}
+
+//ALIGNMENT
 
 .left {
     text-align: left;
@@ -55,6 +61,46 @@
     text-align: center;
 }
 
+.weight_default {
+    .title {
+        font-weight: 600;
+    }
+}
+
+// WEIGHT
+
+.weight_medium {
+    .title {
+        font-weight: 500;
+    }
+
+    .text {
+        font-weight: 500;
+    }
+}
+
+.weight_semibold {
+    .title {
+        font-weight: 600;
+    }
+
+    .text {
+        font-weight: 600;
+    }
+}
+
+.weight_bold {
+    .title {
+        font-weight: 700;
+    }
+
+    .text {
+        font-weight: 700;
+    }
+}
+
+// STATES
+
 .error {
     .title {
         color: var(--error-color-dark);
@@ -62,5 +108,14 @@
 
     .text {
         color: var(--error-color-dark);
+    }
+}
+
+// FONT
+
+.serif {
+    .text {
+        font-family: var(--font-family-serif);
+        letter-spacing: -0.003em;
     }
 }

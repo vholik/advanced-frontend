@@ -6,12 +6,13 @@ import cls from './Text.module.scss'
 export enum TextTheme {
     PRIMARY = 'primary',
     ERROR = 'error',
+    SERIF = 'serif',
 }
 
 export enum TextSize {
     SMALL = 'size_sm',
     M = 'size_m',
-    XL = 'size_xl',
+    L = 'size_l',
 }
 
 export enum TextAlign {
@@ -20,9 +21,18 @@ export enum TextAlign {
     CENTER = 'center',
 }
 
+export enum TextWeight {
+    REGULAR = 'weight_regular',
+    MEDIUM = 'weight_medium',
+    SEMIBOLD = 'weight_semibold',
+    BOLD = 'weight_bold',
+    DEFAULT = 'weight_default',
+}
+
 export enum TextColor {
     PRIMARY = 'primary_color',
     SECONDARY = 'secondary_color',
+    UNSET = 'unset',
 }
 
 interface TextProps {
@@ -33,6 +43,7 @@ interface TextProps {
     align?: TextAlign
     size?: TextSize
     color?: TextColor
+    weight?: TextWeight
 }
 
 export const Text: FC<TextProps> = memo((props) => {
@@ -43,13 +54,15 @@ export const Text: FC<TextProps> = memo((props) => {
         theme = TextTheme.PRIMARY,
         align = TextAlign.LEFT,
         size = TextSize.M,
-        color = TextColor.PRIMARY,
+        color = TextColor.UNSET,
+        weight = TextWeight.DEFAULT,
     } = props
 
     const mods: Mods = {
         [cls[theme]]: true,
         [cls[align]]: true,
         [cls[size]]: true,
+        [cls[weight]]: true,
     }
 
     return (

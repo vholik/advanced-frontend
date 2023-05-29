@@ -9,7 +9,11 @@
     border-radius: 2em;
     font-weight: 600;
     box-shadow: var(--box-shadow);
-    transition: opacity var(--transition);
+    transition: opacity var(--transition), transform var(--transition);
+
+    &:active {
+        transform: scale(0.95);
+    }
 
     &:hover {
         opacity: 0.8;
@@ -35,6 +39,11 @@
     border: 1px solid var(--stroke-color);
     background-color: transparent;
     color: var(--primary-color);
+    transition: background 0.2s linear;
+
+    &:hover {
+        background-color: var(--secondary-bg-color);
+    }
 }
 
 .stretch {
@@ -59,19 +68,19 @@
 }
 
 .square.size_m {
-    width: var(--font-line-m);
-    height: var(--font-line-m);
+    width: var(--font-xxline-m);
+    height: var(--font-xxline-m);
     border-radius: 0.5rem;
 }
 
 .square.size_l {
-    width: var(--font-line-l);
-    height: var(--font-line-l);
+    width: var(--font-xxline-l);
+    height: var(--font-xxline-l);
     border-radius: 0.5rem;
 }
 
 .square.size_xl {
-    width: var(--font-line-xl);
-    height: var(--font-line-xl);
+    width: var(--font-xxline-xl);
+    height: var(--font-xxline-xl);
     border-radius: 0.5rem;
 }

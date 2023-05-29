@@ -33,11 +33,11 @@ export const SizeSM: Story = {
         size: TextSize.M,
     },
 }
-export const SizeXL: Story = {
+export const SizeL: Story = {
     args: {
         title: 'Title lorem ipsum',
         text: 'Title lorem ipsum',
-        size: TextSize.XL,
+        size: TextSize.L,
     },
 }
 

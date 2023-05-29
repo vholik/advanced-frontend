@@ -13,6 +13,7 @@
 body {
     color: var(--primary-color);
     font: var(--font-m);
+    overflow: hidden;
 }
 
 .content-page {
@@ -20,9 +21,9 @@ body {
 }
 
 .page-wrapper {
-    height: calc(100vh - var(--navbar-height));
-    overflow-y: auto;
+    height: calc(100vh - var(--nav-height));
     padding: 2rem;
+    overflow-y: scroll;
     display: flex;
     justify-content: center;
 }

@@ -25,6 +25,7 @@ export const Code: FC<CodeProps> = memo(({ className, text }) => {
                 square
                 size={ButtonSize.XL}
                 theme={ThemeButton.OUTLINE}
+                onClick={onCopy}
             >
                 <CopyIcon className={cls.icon} />
             </Button>
