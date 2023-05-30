@@ -68,19 +68,19 @@
 }
 
 .square.size_m {
-    width: var(--font-xxline-m);
-    height: var(--font-xxline-m);
+    width: var(--font-line-l);
+    height: var(--font-line-l);
     border-radius: 0.5rem;
 }
 
 .square.size_l {
-    width: var(--font-xxline-l);
-    height: var(--font-xxline-l);
+    width: var(--font-line-xl);
+    height: var(--font-line-xl);
     border-radius: 0.5rem;
 }
 
 .square.size_xl {
-    width: var(--font-xxline-xl);
-    height: var(--font-xxline-xl);
+    width: var(--font-line-xxl);
+    height: var(--font-line-xxl);
     border-radius: 0.5rem;
 }

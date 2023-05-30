@@ -1,4 +1,4 @@
-import { memo, type FC } from 'react'
+import { memo, type FC, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { ArticleDetails } from 'entities/Article'
@@ -6,6 +6,22 @@ import { useParams } from 'react-router-dom'
 import { Note } from 'shared/ui/Note/Note'
 import { Text, TextAlign } from 'shared/ui/Text/Text'
 import { CommentList } from 'entities/Comment'
+import {
+    DynamicModuleLoader,
+    type ReducersList,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import {
+    ArticleDetailsCommentsReducer,
+    getArticleComments,
+} from 'pages/ArticleDetailsPage/model/slice/ArticleDetailsCommentsSlice'
+import { useSelector } from 'react-redux'
+import {
+    getArticleCommentsIsLoading,
+    getArticleCommentsError,
+} from 'pages/ArticleDetailsPage/model/selectors/comments'
+import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect'
+import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId'
+import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch'
 
 import cls from './ArticleDetailsPage.module.scss'
 
@@ -13,10 +29,22 @@ interface ArticleDetailsPageProps {
     className?: string
 }
 
+const reducers: ReducersList = {
+    articleDetailsComments: ArticleDetailsCommentsReducer,
+}
+
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { className } = props
+    const dispatch = useAppDispatch()
     const { t } = useTranslation()
     const { id } = useParams<{ id: string }>()
+    const comments = useSelector(getArticleComments.selectAll)
+    const isLoading = useSelector(getArticleCommentsIsLoading)
+    const error = useSelector(getArticleCommentsError)
+
+    useInitialEffect(() => {
+        dispatch(fetchCommentsByArticleId(id))
+    })
 
     if (!id) {
         return (
@@ -27,10 +55,14 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     }
 
     return (
-        <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-            <ArticleDetails id={id} />
-            <CommentList comments={[]} />
-        </div>
+        <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
+            <div
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
+                <ArticleDetails id={id} />
+                <CommentList comments={comments} isLoading={isLoading} />
+            </div>
+        </DynamicModuleLoader>
     )
 }
 

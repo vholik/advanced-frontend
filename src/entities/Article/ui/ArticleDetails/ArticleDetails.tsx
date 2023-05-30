@@ -24,6 +24,7 @@ import {
     ArticleBlockType,
 } from 'entities/Article/model/types/article'
 import { Icon, IconColor } from 'shared/ui/Icon/Icon'
+import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect'
 
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import {
@@ -159,11 +160,9 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
         )
     }
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchArticleById(id))
-        }
-    }, [dispatch, id])
+    useInitialEffect(() => {
+        dispatch(fetchArticleById(id))
+    })
 
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={reducers}>

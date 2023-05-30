@@ -22,9 +22,9 @@ export const CommentList: FC<CommentListProps> = memo((props) => {
         <div className={classNames(cls.CommentList, {}, [className])}>
             <Text
                 text={`${t('Comments')}:`}
-                weight={TextWeight.SEMIBOLD}
+                weight={TextWeight.MEDIUM}
                 color={TextColor.PRIMARY}
-                size={TextSize.L}
+                size={TextSize.M}
                 className={cls.title}
             />
             {comments?.length ? (
