@@ -25,6 +25,8 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { Loader } from 'shared/ui/Loader/Loader'
 import { Note } from 'shared/ui/Note/Note'
 import { ValidateProfileError } from 'entities/Profile/model/types/profile'
+import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect'
+import { useParams } from 'react-router-dom'
 
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 import cls from './ProfilePage.module.scss'
@@ -41,6 +43,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
     const dispatch = useAppDispatch()
     const { t } = useTranslation()
 
+    const { id } = useParams<{ id: string }>()
     const formData = useSelector(getProfileForm)
     const isLoading = useSelector(getProfileIsLoading)
     const error = useSelector(getProfileError)
@@ -54,11 +57,11 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
         [ValidateProfileError.NO_DATA]: t('Please provide data'),
     }
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData())
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id))
         }
-    }, [dispatch])
+    })
 
     const onChangeFirstname = useCallback(
         (value: string) => {

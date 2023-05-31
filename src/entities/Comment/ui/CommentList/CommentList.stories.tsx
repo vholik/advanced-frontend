@@ -14,6 +14,9 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
     args: {
-        comments: [],
+        comments: [
+            { id: '1', text: 'text', user: { id: '1', username: 'user' } },
+        ],
+        isLoading: true,
     },
 }

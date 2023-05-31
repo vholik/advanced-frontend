@@ -10,7 +10,8 @@ import { type ReducersList } from 'shared/lib/components/DynamicModuleLoader/Dyn
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
     profile: profileReducer,
-    articleDetails: articleDetailsReducer
+    articleDetails: articleDetailsReducer,
+    articleDetailsComments: articleDetailsReducer
 }
 
 export const StoreDecorator =

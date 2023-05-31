@@ -5,12 +5,14 @@ import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import {
+    getProfileData,
     getProfileReadonly,
     profileActions,
     updateProfileData,
 } from 'entities/Profile'
 import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
+import { getUserAuthData } from 'entities/User'
 
 import cls from './ProfilePageHeader.module.scss'
 
@@ -26,6 +28,9 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
     const { t } = useTranslation()
     const readonly = useSelector(getProfileReadonly)
     const dispatch = useAppDispatch()
+    const authData = useSelector(getUserAuthData)
+    const profileData = useSelector(getProfileData)
+    const canEdit = authData?.id === profileData?.id
 
     const onEdit = useCallback(() => {
         dispatch(profileActions.setReadonly(false))
@@ -52,33 +57,36 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
                         text={t('Update your photo and personal details.')}
                     />
                 </div>
-
-                {readonly ? (
-                    <Button
-                        className={cls.editBtn}
-                        onClick={onEdit}
-                        size={ButtonSize.SM}
-                    >
-                        {t('Edit')}
-                    </Button>
-                ) : (
-                    <>
-                        <Button
-                            onClick={onCancelEdit}
-                            className={cls.cancelBtn}
-                            theme={ThemeButton.OUTLINE}
-                            size={ButtonSize.SM}
-                        >
-                            {t('Cancel')}
-                        </Button>
-                        <Button
-                            onClick={onSave}
-                            className={cls.saveBtn}
-                            size={ButtonSize.SM}
-                        >
-                            {t('Save')}
-                        </Button>
-                    </>
+                {canEdit && (
+                    <div className={cls.btnsWrapper}>
+                        {readonly ? (
+                            <Button
+                                className={cls.editBtn}
+                                onClick={onEdit}
+                                size={ButtonSize.SM}
+                            >
+                                {t('Edit')}
+                            </Button>
+                        ) : (
+                            <>
+                                <Button
+                                    onClick={onCancelEdit}
+                                    className={cls.cancelBtn}
+                                    theme={ThemeButton.OUTLINE}
+                                    size={ButtonSize.SM}
+                                >
+                                    {t('Cancel')}
+                                </Button>
+                                <Button
+                                    onClick={onSave}
+                                    className={cls.saveBtn}
+                                    size={ButtonSize.SM}
+                                >
+                                    {t('Save')}
+                                </Button>
+                            </>
+                        )}
+                    </div>
                 )}
             </div>
         </div>

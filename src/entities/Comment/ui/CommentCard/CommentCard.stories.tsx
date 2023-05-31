@@ -26,3 +26,18 @@ export const Primary: Story = {
         },
     },
 }
+
+export const Loading: Story = {
+    args: {
+        comment: {
+            id: '1',
+            text: 'Text',
+            user: {
+                id: '1',
+                username: 'username',
+                avatar: avatarLink,
+            },
+        },
+        isLoading: true,
+    },
+}

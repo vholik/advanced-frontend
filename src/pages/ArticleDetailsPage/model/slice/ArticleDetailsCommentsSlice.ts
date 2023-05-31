@@ -8,7 +8,7 @@ import { type StateSchema } from 'app/providers/StoreProvider'
 import { type Comment } from 'entities/Comment'
 
 import { type ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema'
-import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId'
+import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 
 interface Book {
     bookId: string

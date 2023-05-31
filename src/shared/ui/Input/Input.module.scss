@@ -1,15 +1,14 @@
 .Input {
     font: var(--font-sm);
-    border: 1px solid var(--stroke-color);
     border-radius: var(--border-radius-m);
     padding: 0.5em 0.75em;
-    background-color: transparent;
     color: var(--color-primary);
     outline: none;
     transition: box-shadow var(--transition), border var(--transition);
+    border: 1px solid transparent;
 
     &::placeholder {
-        color: var(--secondary-color);
+        color: var(--tertiary-color);
     }
 
     &:focus {
@@ -20,6 +19,15 @@
     &:hover {
         box-shadow: var(--focused-accent-shadow);
     }
+}
+
+.primary_theme {
+    border: 1px solid var(--stroke-color);
+    background-color: transparent;
+}
+
+.base_theme {
+    background-color: var(--secondary-bg-color);
 }
 
 .readonly {

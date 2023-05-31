@@ -13,6 +13,12 @@ interface InputProps extends HTMLInputProps {
     value?: string
     onChange?: (value: string) => void
     readonly?: boolean
+    theme?: InputTheme
+}
+
+export enum InputTheme {
+    PRIMARY = 'primary_theme',
+    BASE = 'base_theme',
 }
 
 export const Input: FC<InputProps> = memo((props) => {
@@ -22,6 +28,7 @@ export const Input: FC<InputProps> = memo((props) => {
         onChange,
         type = 'text',
         readonly,
+        theme = InputTheme.PRIMARY,
         ...other
     } = props
 
@@ -33,6 +40,7 @@ export const Input: FC<InputProps> = memo((props) => {
 
     const mods: Mods = {
         [cls.readonly]: readonly,
+        [cls[theme]]: true,
     }
 
     return (
