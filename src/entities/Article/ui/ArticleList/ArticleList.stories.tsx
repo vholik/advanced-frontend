@@ -1,15 +1,18 @@
-import { memo, type FC } from 'react'
-import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList'
-import { type Article } from 'entities/Article'
+import type { Meta, StoryObj } from '@storybook/react'
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { avatarLink } from 'shared/const/tests'
+import { ArticleView, type Article } from 'entities/Article/model/types/article'
 
-import cls from './ArticlesPage.module.scss'
+import { ArticleList } from './ArticleList'
 
-interface ArticlesPageProps {
-    className?: string
-}
+const meta = {
+    title: 'shared/ArticleList',
+    component: ArticleList,
+    tags: ['autodocs'],
+} satisfies Meta<typeof ArticleList>
+
+export default meta
+type Story = StoryObj<typeof meta>
 
 const article = {
     id: '1',
@@ -56,19 +59,29 @@ const article = {
     ],
 } as Article
 
-const ArticlesPage: FC<ArticlesPageProps> = (props) => {
-    const { className } = props
-    const { t } = useTranslation()
-
-    return (
-        <div className={classNames(cls.ArticlesPage, {}, [className])}>
-            <ArticleList
-                articles={new Array(16)
-                    .fill(0)
-                    .map((item, index) => ({ ...article, id: String(index) }))}
-            />
-        </div>
-    )
+export const Primary: Story = {
+    args: {
+        articles: [article],
+    },
 }
 
-export default memo(ArticlesPage)
+export const List: Story = {
+    args: {
+        articles: [article],
+        view: ArticleView.LIST,
+    },
+}
+
+export const Grid: Story = {
+    args: {
+        articles: [article],
+        view: ArticleView.GRID,
+    },
+}
+
+export const Loading: Story = {
+    args: {
+        articles: [article],
+        isLoading: true,
+    },
+}

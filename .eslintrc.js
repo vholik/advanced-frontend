@@ -55,6 +55,7 @@ module.exports = {
         '@typescript-eslint/no-dynamic-delete': 'off',
         'eslint-comments/no-unlimited-disable': 'off',
         '@typescript-eslint/no-invalid-void-type': 'off',
-        'typescript-eslint/restrict-template-expressions': 'off',
+        '@typescript-eslint/restrict-template-expressions': 'off',
+        'react/no-array-index-key': 'off',
     },
 }

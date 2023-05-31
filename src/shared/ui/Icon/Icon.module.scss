@@ -1,3 +1,8 @@
+.Icon {
+    display: flex;
+    align-items: center;
+}
+
 .primary_color {
     svg {
         fill: var(--primary-color);

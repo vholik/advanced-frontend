@@ -9,6 +9,7 @@ import {
     TextAlign,
     TextColor,
     TextSize,
+    TextTheme,
     TextWeight,
 } from 'shared/ui/Text/Text'
 import { CommentList } from 'entities/Comment'
@@ -64,7 +65,11 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     if (!id) {
         return (
             <Note>
-                <Text align={TextAlign.CENTER} text={t('Article not found')} />
+                <Text
+                    align={TextAlign.CENTER}
+                    theme={TextTheme.ERROR}
+                    text={t('Article not found')}
+                />
             </Note>
         )
     }

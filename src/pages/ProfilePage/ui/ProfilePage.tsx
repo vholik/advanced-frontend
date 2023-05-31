@@ -133,6 +133,8 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
         )
     }
 
+    console.log(isLoading)
+
     if (error) {
         return (
             <div

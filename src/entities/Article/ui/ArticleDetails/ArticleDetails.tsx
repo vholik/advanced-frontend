@@ -14,6 +14,7 @@ import {
     TextAlign,
     TextColor,
     TextSize,
+    TextTheme,
     TextWeight,
 } from 'shared/ui/Text/Text'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
@@ -118,7 +119,11 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
     } else if (error) {
         content = (
             <Note>
-                <Text align={TextAlign.CENTER} text={t('Error occured')} />
+                <Text
+                    align={TextAlign.CENTER}
+                    theme={TextTheme.ERROR}
+                    text={t('Error occured')}
+                />
             </Note>
         )
     } else {

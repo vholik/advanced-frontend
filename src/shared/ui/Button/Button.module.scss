@@ -5,18 +5,19 @@
     background-color: var(--primary-color);
     color: var(--bg-color);
     border: none;
-    padding: 0.75em 1.3em;
+    padding: 0.5em 1em;
     border-radius: 2em;
     font-weight: 600;
-    box-shadow: var(--box-shadow);
-    transition: opacity var(--transition), transform var(--transition);
+    transition: background var(--transition), transform var(--transition),
+        box-shadow var(--transition);
 
     &:active {
         transform: scale(0.95);
     }
 
     &:hover {
-        opacity: 0.8;
+        box-shadow: var(--box-shadow);
+        background-color: var(--secondary-color);
     }
 }
 
@@ -33,13 +34,17 @@
     background: none;
     outline: none;
     color: var(--primary-color);
+
+    &:hover {
+        background-color: transparent;
+        box-shadow: none;
+    }
 }
 
 .outline {
     border: 1px solid var(--stroke-color);
     background-color: transparent;
     color: var(--primary-color);
-    transition: background 0.2s linear;
 
     &:hover {
         background-color: var(--secondary-bg-color);

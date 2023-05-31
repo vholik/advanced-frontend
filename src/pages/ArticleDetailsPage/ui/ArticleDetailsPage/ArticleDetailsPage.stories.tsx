@@ -7,6 +7,7 @@ import {
     ArticleBlockType,
 } from 'entities/Article/model/types/article'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
+import { avatarLink } from 'shared/const/tests'
 
 import ArticleDetailsPage from './ArticleDetailsPage'
 
@@ -18,6 +19,11 @@ const data: Article = {
     views: 1022,
     createdAt: '26.02.2022',
     type: [ArticleType.IT],
+    user: {
+        id: '1',
+        username: 'username',
+        avatar: avatarLink,
+    },
     blocks: [
         {
             id: '1',
