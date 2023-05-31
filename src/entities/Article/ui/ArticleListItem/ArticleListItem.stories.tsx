@@ -69,6 +69,7 @@ export const Primary: Story = {
 
 export const List: Story = {
     args: {
+        article,
         view: ArticleView.LIST,
     },
 }
