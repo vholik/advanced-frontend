@@ -6,6 +6,6 @@ export const ProfilePageAsync = lazy(
             setTimeout(() => {
                 // @ts-expect-error: test
                 resolve(import('./ProfilePage'))
-            }, 1500)
+            }, 500)
         })
 )

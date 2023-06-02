@@ -15,7 +15,7 @@ export const ArticleListItemSkeleton: FC<ArticleListItemSkeletonProps> = memo(
     ({ className, view }) => {
         if (view === ArticleView.GRID) {
             return (
-                <div
+                <Card
                     className={classNames(cls.ArticleListItem, {}, [
                         className,
                         cls[view],
@@ -29,12 +29,12 @@ export const ArticleListItemSkeleton: FC<ArticleListItemSkeletonProps> = memo(
                             <Skeleton height={10} width={40} />
                         </div>
                     </div>
-                </div>
+                </Card>
             )
         }
 
         return (
-            <div
+            <Card
                 className={classNames(cls.ArticleListItem, {}, [
                     className,
                     cls[view],
@@ -49,7 +49,7 @@ export const ArticleListItemSkeleton: FC<ArticleListItemSkeletonProps> = memo(
                         <Skeleton height={10} width={40} />
                     </div>
                 </div>
-            </div>
+            </Card>
         )
     }
 )

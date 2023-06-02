@@ -50,6 +50,84 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": "2",
+            "title": "No One Really Tells You The Hardest Part Of Getting Older",
+            "subtitle": "The older I get, the more I realize how much I don’t know. But there’s one thing I know for sure.",
+            "img": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*aQntDB_l9ldKvKnkkBtfSg.jpeg",
+            "views": 1022,
+            "createdAt": "26.02.2022",
+            "type": ["IT"],
+            "userId": "1",
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "⚡ Tl;dr",
+                    "paragraphs": [
+                        "No one ever died wishing they’d worked more, she said, rightness written all over her pretty face.",
+                        "In this article, we focus on what and how we should review. It’s part two of an article series explaining why, what and how to review code.Modelling and diagrams as code tools are better suited for long-term documentation, while diagramming tools are better for quick one-off sketches.",
+                        "Modelling and diagrams as code have more structure and require more setup, while diagramming tools are more generic but require less thinking."
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "TEXT",
+                    "title": "🚀 Let’s kick-off",
+                    "paragraphs": [
+                        "Diagramming software architecture provides several benefits to how we communicate complexity. Well-thought-out diagrams give engineering teams an enhanced understanding of the design and plan for future development whilst identifying potential issues.",
+                        "Modelling and diagrams as code tools are better suited for long-term documentation, while diagramming tools are better for quick one-off sketches."
+                    ]
+                },
+                {
+                    "id": "3",
+                    "type": "TEXT",
+                    "title": "📦 Visual modelling tools",
+                    "paragraphs": [
+                        "Modelling is best for long-term system design docs and requires some setup work. Reusable objects and relationships are stored in the model, which keeps all your diagrams up to date."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "title": "Here’s how I made 500$+ in passive income",
+            "subtitle": "I can just tell you what I did and how I did. ",
+            "img": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*4lVlLM0pGrQ_7epgC40tQQ.jpeg",
+            "views": 1022,
+            "createdAt": "26.02.2022",
+            "type": ["IT"],
+            "userId": "1",
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "⚡ Tl;dr",
+                    "paragraphs": [
+                        "I can just tell you what I did and how I did. But for the ones who are a little lost, and need motivation I want to take you on the exact mental journey that helped me explore paths of passive income.",
+                        "In this article, we focus on what and how we should review. It’s part two of an article series explaining why, what and how to review code.Modelling and diagrams as code tools are better suited for long-term documentation, while diagramming tools are better for quick one-off sketches.",
+                        "Modelling and diagrams as code have more structure and require more setup, while diagramming tools are more generic but require less thinking."
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "TEXT",
+                    "title": "🚀 Let’s kick-off",
+                    "paragraphs": [
+                        "Diagramming software architecture provides several benefits to how we communicate complexity. Well-thought-out diagrams give engineering teams an enhanced understanding of the design and plan for future development whilst identifying potential issues.",
+                        "Modelling and diagrams as code tools are better suited for long-term documentation, while diagramming tools are better for quick one-off sketches."
+                    ]
+                },
+                {
+                    "id": "3",
+                    "type": "TEXT",
+                    "title": "📦 Visual modelling tools",
+                    "paragraphs": [
+                        "Modelling is best for long-term system design docs and requires some setup work. Reusable objects and relationships are stored in the model, which keeps all your diagrams up to date."
+                    ]
+                }
+            ]
         }
     ],
     "comments": [

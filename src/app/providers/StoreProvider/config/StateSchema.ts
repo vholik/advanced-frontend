@@ -12,6 +12,7 @@ import { type UserSchema } from 'entities/User'
 import { type AddCommentFormSchema } from 'features/AddCommentForm'
 import { type LoginSchema } from 'features/AuthByUsername'
 import { type ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
+import { type ArticlesPagesSchema } from 'pages/ArticlesPage'
 import {
     type To,
     type NavigateFunction,
@@ -26,6 +27,7 @@ export interface StateSchema {
     articleDetails?: ArticleDetailsSchema
     articleDetailsComments?: ArticleDetailsCommentsSchema
     addCommentForm?: AddCommentFormSchema
+    articlesPage?: ArticlesPagesSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

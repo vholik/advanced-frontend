@@ -6,6 +6,6 @@ export const AboutPageAsync = lazy(
             setTimeout(() => {
                 // @ts-expect-error: test
                 resolve(import('./AboutPage'))
-            }, 1500)
+            }, 500)
         })
 )
