@@ -1,5 +1,5 @@
 .Input {
-    font: var(--font-sm);
+    font: var(--font-m);
     border-radius: var(--border-radius-m);
     padding: 0.5em 0.75em;
     color: var(--color-primary);
@@ -42,4 +42,8 @@
     &:hover {
         box-shadow: unset;
     }
+}
+
+.round {
+    border-radius: var(--border-radius-xl);
 }

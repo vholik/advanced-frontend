@@ -40,7 +40,6 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(
         const dispatch = useAppDispatch()
         const order = useSelector(getArticlesPageOrder)
         const sort = useSelector(getArticlesPageSort)
-        const search = useSelector(getArticlesPageSearch)
         const tab = useSelector(getArticlesPageType)
 
         const fetchData = useCallback(() => {
@@ -76,15 +75,6 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(
             [dispatch, debounceFetchData]
         )
 
-        const onChangeSearch = useCallback(
-            (value: string) => {
-                dispatch(articlePageActions.setPage(1))
-                dispatch(articlePageActions.setSearch(value))
-                debounceFetchData()
-            },
-            [dispatch, debounceFetchData]
-        )
-
         const onChangeType = useCallback(
             (tab: ArticleType) => {
                 dispatch(articlePageActions.setType(tab))
@@ -99,18 +89,19 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(
                 className={classNames(cls.ArticlesPageFilters, {}, [className])}
             >
                 <ArticleTypeTabs value={tab} onChangeType={onChangeType} />
-                <ArticleSortSelect
-                    order={order}
-                    sort={sort}
-                    onChangeOrder={onChangeOrder}
-                    onChangeSort={onChangeSort}
-                />
-                <Input
-                    onChange={onChangeSearch}
-                    value={search}
-                    placeholder={t('Search')}
-                />
-                <ArticleViewSelector onViewClick={onChangeView} view={view} />
+                <div className={cls.row}>
+                    <ArticleSortSelect
+                        order={order}
+                        sort={sort}
+                        onChangeOrder={onChangeOrder}
+                        onChangeSort={onChangeSort}
+                    />
+
+                    <ArticleViewSelector
+                        onViewClick={onChangeView}
+                        view={view}
+                    />
+                </div>
             </div>
         )
     }

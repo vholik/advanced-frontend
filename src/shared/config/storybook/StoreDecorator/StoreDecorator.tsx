@@ -6,6 +6,8 @@ import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetai
 import { profileReducer } from 'entities/Profile'
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice'
 import { restoreScrollReducer } from 'features/RestoreScroll'
+import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage'
+import ArticleDetailsPage from 'pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage'
 import { type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
 const defaultAsyncReducers: ReducersList = {
@@ -13,7 +15,7 @@ const defaultAsyncReducers: ReducersList = {
     restoreScroll: restoreScrollReducer,
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
-    articleDetailsComments: articleDetailsReducer
+    articleDetailsPage: articleDetailsPageReducer
 }
 
 export const StoreDecorator =

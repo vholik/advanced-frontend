@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-
 import {
     useMemo,
     type FC,
@@ -22,6 +20,11 @@ export interface SelectOption<T> {
     content: string
 }
 
+export enum SelectTheme {
+    PRIMARY = 'primary_theme',
+    SECONDARY = 'secondary_theme',
+}
+
 interface CustomSelectProps<T extends string> {
     className?: string
     value?: T
@@ -29,6 +32,7 @@ interface CustomSelectProps<T extends string> {
     onChange?: (value: T) => void
     readonly?: boolean
     label?: string
+    theme?: SelectTheme
 }
 
 const ANIMATION_DELAY = 300
@@ -40,11 +44,11 @@ export const CustomSelect = <T extends string>({
     value,
     readonly,
     label,
+    theme = SelectTheme.SECONDARY,
 }: CustomSelectProps<T>) => {
     const [isOpened, setIsOpened] = useState(false)
     const [isClosing, setIsClosing] = useState(false)
     const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-    const [currentValue, setCurrentValue] = useState(value)
 
     const onClose = useCallback(() => {
         setIsOpened(false)
@@ -85,7 +89,7 @@ export const CustomSelect = <T extends string>({
             window.removeEventListener('keydown', onKeyDown)
             window.removeEventListener('click', closeHandler)
         }
-    }, [closeHandler, isOpened, onKeyDown])
+    }, [closeHandler, isOpened, onKeyDown, value])
 
     const onContentClick = (event: React.MouseEvent) => {
         event.stopPropagation()
@@ -106,7 +110,6 @@ export const CustomSelect = <T extends string>({
     const onValueChange = useCallback(
         (value: string) => {
             onChange?.(value as T)
-            setCurrentValue(value as T)
         },
         [onChange]
     )
@@ -122,21 +125,22 @@ export const CustomSelect = <T extends string>({
                 key={opt.value}
             >
                 {opt.content}
-                {opt.value === currentValue && <Check className={cls.check} />}
+                {opt.value === value && <Check className={cls.check} />}
             </li>
         ))
-    }, [currentValue, onClick, onValueChange, options])
+    }, [onClick, onValueChange, options, value])
 
     return (
         <div className={cls.select}>
             <button
                 className={classNames(cls.selectBtn, {
                     [cls.readonly]: readonly,
+                    [cls[theme]]: true,
                 })}
                 type="button"
                 onClick={onClick}
             >
-                {currentValue || label || '-'}
+                {label}
                 <ChevronDown className={cls.chevron} />
             </button>
             <ul

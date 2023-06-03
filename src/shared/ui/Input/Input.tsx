@@ -1,5 +1,8 @@
 import { memo, type FC, type InputHTMLAttributes } from 'react'
 import { type Mods, classNames } from 'shared/lib/classNames/classNames'
+import SearchIcon from 'shared/assets/icons/search.svg'
+
+import { Icon, IconColor } from '../Icon/Icon'
 
 import cls from './Input.module.scss'
 
@@ -14,6 +17,7 @@ interface InputProps extends HTMLInputProps {
     onChange?: (value: string) => void
     readonly?: boolean
     theme?: InputTheme
+    round?: boolean
 }
 
 export enum InputTheme {
@@ -29,6 +33,7 @@ export const Input: FC<InputProps> = memo((props) => {
         type = 'text',
         readonly,
         theme = InputTheme.PRIMARY,
+        round = false,
         ...other
     } = props
 
@@ -41,6 +46,7 @@ export const Input: FC<InputProps> = memo((props) => {
     const mods: Mods = {
         [cls.readonly]: readonly,
         [cls[theme]]: true,
+        [cls.round]: round,
     }
 
     return (

@@ -7,6 +7,8 @@ import {
 } from 'shared/ui/CustomSelect/CustomSelect'
 import { ArticlesSortField } from 'entities/Article'
 import { type SortOrder } from 'shared/types'
+import FilterIcon from 'shared/assets/icons/filter.svg'
+import { Icon, IconColor } from 'shared/ui/Icon/Icon'
 
 import cls from './ArticleSortSelect.module.scss'
 
@@ -58,6 +60,11 @@ export const ArticleSortSelect: FC<ArticleSortSelectProps> = memo((props) => {
 
     return (
         <div className={classNames(cls.ArticleSortSelect, {}, [className])}>
+            <Icon
+                Icon={FilterIcon}
+                color={IconColor.SECONDARY}
+                className={cls.icon}
+            />
             <CustomSelect
                 options={sortFieldOptions}
                 label={t('Sort by parameter')}

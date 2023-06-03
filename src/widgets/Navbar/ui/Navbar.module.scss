@@ -5,10 +5,13 @@
     display: flex;
     align-items: center;
     padding: 20px;
-    justify-content: flex-end;
     gap: 0.75rem;
 }
 
 .mainLink {
     margin-right: 15px;
+}
+
+.langSwitcher {
+    margin-left: auto;
 }

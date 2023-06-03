@@ -75,12 +75,15 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlesPage, {}, [className])}
             >
-                <ArticlesPageFilters />
-                <ArticleList
-                    isLoading={isLoading}
-                    view={view}
-                    articles={articles}
-                />
+                <div className={cls.inner}>
+                    <ArticlesPageFilters />
+                    <ArticleList
+                        target="_blank"
+                        isLoading={isLoading}
+                        view={view}
+                        articles={articles}
+                    />
+                </div>
             </Page>
         </DynamicModuleLoader>
     )

@@ -12,7 +12,11 @@ import { type UserSchema } from 'entities/User'
 import { type AddCommentFormSchema } from 'features/AddCommentForm'
 import { type LoginSchema } from 'features/AuthByUsername'
 import { type RestoreScrollSchema } from 'features/RestoreScroll'
-import { type ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
+import {
+    type ArticleDetailsPageRecommendationsSchema,
+    type ArticleDetailsCommentsSchema,
+    type ArticleDetailsPageSchema,
+} from 'pages/ArticleDetailsPage'
 import { type ArticlesPagesSchema } from 'pages/ArticlesPage'
 import {
     type To,
@@ -26,10 +30,10 @@ export interface StateSchema {
     loginForm?: LoginSchema
     profile?: ProfileSchema
     articleDetails?: ArticleDetailsSchema
-    articleDetailsComments?: ArticleDetailsCommentsSchema
     addCommentForm?: AddCommentFormSchema
     articlesPage?: ArticlesPagesSchema
     restoreScroll: RestoreScrollSchema
+    articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

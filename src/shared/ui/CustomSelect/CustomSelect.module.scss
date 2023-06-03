@@ -58,11 +58,9 @@
     color: var(--primary-color);
     padding: 0.5em 1em;
     font: var(--font-sm);
-    border: 1px solid var(--stroke-color);
-    border-radius: var(--border-radius-m);
     transition: box-shadow var(--transition), border var(--transition);
-    min-width: 200px;
     pointer-events: all;
+    border: 1px solid transparent;
 
     &::placeholder {
         color: var(--secondary-color);
@@ -103,4 +101,17 @@
     &:hover {
         box-shadow: unset;
     }
+}
+
+// Themes
+
+.primary_theme {
+    border: 1px solid var(--stroke-color);
+    border-radius: var(--border-radius-m);
+}
+
+.secondary_theme {
+    border-radius: var(--border-radius-xl);
+    background-color: var(--secondary-bg-color);
+    color: var(--quatinary-color);
 }

@@ -20,7 +20,7 @@ export const ArticleTypeTabs: FC<ArticleTypeTabsProps> = memo((props) => {
         () => [
             {
                 value: ArticleType.ALL,
-                content: t('All'),
+                content: t('All articles'),
             },
             {
                 value: ArticleType.ECONOMICS,
