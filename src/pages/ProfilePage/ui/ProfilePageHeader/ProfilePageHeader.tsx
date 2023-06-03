@@ -10,7 +10,7 @@ import {
     profileActions,
     updateProfileData,
 } from 'entities/Profile'
-import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { getUserAuthData } from 'entities/User'
 

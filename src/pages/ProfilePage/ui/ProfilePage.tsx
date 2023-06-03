@@ -16,7 +16,7 @@ import {
     profileReducer,
     ProfileCard,
 } from 'entities/Profile'
-import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useSelector } from 'react-redux'
 import { isNumeric } from 'shared/lib/isNumeric/isNumeric'
 import { type Currency } from 'entities/Currency'
@@ -25,8 +25,10 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { Loader } from 'shared/ui/Loader/Loader'
 import { Note } from 'shared/ui/Note/Note'
 import { ValidateProfileError } from 'entities/Profile/model/types/profile'
-import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect'
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useParams } from 'react-router-dom'
+import { Page } from 'widgets/Page/Page'
+import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
 
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 import cls from './ProfilePage.module.scss'
@@ -133,8 +135,6 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
         )
     }
 
-    console.log(isLoading)
-
     if (error) {
         return (
             <div
@@ -155,25 +155,29 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={cls.ProfilePage}>
-                <ProfilePageHeader avatar={formData?.avatar} />
-                {Boolean(validateErrors?.length) &&
-                    validateErrors?.map((err) => (
-                        <Note key={err}>{validateErrorTranslates[err]}</Note>
-                    ))}
-                <ProfileCard
-                    data={formData}
-                    onChangeLastname={onChangeLastname}
-                    onChangeFirstname={onChangeFirstname}
-                    readonly={readonly}
-                    onChangeAge={onChangeAge}
-                    onChangeCity={onChangeCity}
-                    onChangeAvatar={onChangeAvatar}
-                    onChangeUsername={onChangeUsername}
-                    onChangeCurrency={onChangeCurrency}
-                    onChangeCountry={onChangeCountry}
-                />
-            </div>
+            <Page className={cls.ProfilePage}>
+                <div className={cls.inner}>
+                    <ProfilePageHeader avatar={formData?.avatar} />
+                    {Boolean(validateErrors?.length) &&
+                        validateErrors?.map((err) => (
+                            <Note key={err}>
+                                {validateErrorTranslates[err]}
+                            </Note>
+                        ))}
+                    <ProfileCard
+                        data={formData}
+                        onChangeLastname={onChangeLastname}
+                        onChangeFirstname={onChangeFirstname}
+                        readonly={readonly}
+                        onChangeAge={onChangeAge}
+                        onChangeCity={onChangeCity}
+                        onChangeAvatar={onChangeAvatar}
+                        onChangeUsername={onChangeUsername}
+                        onChangeCurrency={onChangeCurrency}
+                        onChangeCountry={onChangeCountry}
+                    />
+                </div>
+            </Page>
         </DynamicModuleLoader>
     )
 }

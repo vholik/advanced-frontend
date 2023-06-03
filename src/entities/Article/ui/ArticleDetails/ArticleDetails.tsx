@@ -5,7 +5,7 @@ import {
     DynamicModuleLoader,
     type ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById'
 import { useSelector } from 'react-redux'
 import { Note } from 'shared/ui/Note/Note'
@@ -25,7 +25,7 @@ import {
     ArticleBlockType,
 } from 'entities/Article/model/types/article'
 import { Icon, IconColor } from 'shared/ui/Icon/Icon'
-import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect'
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import {

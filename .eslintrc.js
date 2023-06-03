@@ -57,5 +57,6 @@ module.exports = {
         '@typescript-eslint/no-invalid-void-type': 'off',
         '@typescript-eslint/restrict-template-expressions': 'off',
         'react/no-array-index-key': 'off',
+        'jsx-a11y/no-noninteractive-element-interactions': 'off',
     },
 }

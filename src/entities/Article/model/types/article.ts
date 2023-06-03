@@ -37,6 +37,7 @@ export enum ArticleType {
     IT = 'IT',
     SCIENCE = 'SCIENCE',
     ECONOMICS = 'ECONOMICS',
+    ALL = 'ALL',
 }
 
 export interface Article {
@@ -54,4 +55,9 @@ export interface Article {
 export enum ArticleView {
     LIST = 'LIST',
     GRID = 'GRID',
+}
+export enum ArticlesSortField {
+    TITLE = 'title',
+    VIEWS = 'views',
+    CREATED = 'createdAt',
 }

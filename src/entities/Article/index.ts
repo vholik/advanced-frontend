@@ -1,2 +1,7 @@
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails'
-export { ArticleView, type Article } from './model/types/article'
+export {
+    ArticleView,
+    type Article,
+    ArticlesSortField,
+    ArticleType,
+} from './model/types/article'

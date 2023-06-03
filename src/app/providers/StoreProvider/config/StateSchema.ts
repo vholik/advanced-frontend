@@ -11,6 +11,7 @@ import { type ProfileSchema } from 'entities/Profile'
 import { type UserSchema } from 'entities/User'
 import { type AddCommentFormSchema } from 'features/AddCommentForm'
 import { type LoginSchema } from 'features/AuthByUsername'
+import { type RestoreScrollSchema } from 'features/RestoreScroll'
 import { type ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
 import { type ArticlesPagesSchema } from 'pages/ArticlesPage'
 import {
@@ -28,6 +29,7 @@ export interface StateSchema {
     articleDetailsComments?: ArticleDetailsCommentsSchema
     addCommentForm?: AddCommentFormSchema
     articlesPage?: ArticlesPagesSchema
+    restoreScroll: RestoreScrollSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
@@ -45,7 +47,6 @@ export interface ReducerManager {
 
 export interface ThunkExtraArg {
     api: AxiosInstance
-    navigate?: (to: To, options?: NavigateOptions) => void
 }
 
 export interface ThunkConfig<RejectValueType> {

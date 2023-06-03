@@ -12,6 +12,7 @@ import { userReducer } from 'entities/User'
 import { TypedUseSelectorHook, useDispatch } from 'react-redux'
 import { $api } from 'shared/api/api'
 import { type NavigateFunction } from 'react-router-dom'
+import { restoreScrollReducer } from 'features/RestoreScroll'
 
 import { type ThunkExtraArg, type StateSchema } from './StateSchema'
 import { createReducerManager } from './reducerManager'
@@ -24,6 +25,7 @@ export function createReduxStore(
     const rootReducer: ReducersMapObject<StateSchema> = {
         counter: counterReducer,
         user: userReducer,
+        restoreScroll: restoreScrollReducer,
         ...asyncReducers,
     }
 
@@ -31,7 +33,6 @@ export function createReduxStore(
 
     const extraArg: ThunkExtraArg = {
         api: $api,
-        navigate,
     }
 
     const store = configureStore({

@@ -26,11 +26,12 @@ import {
     getArticleCommentsIsLoading,
     getArticleCommentsError,
 } from 'pages/ArticleDetailsPage/model/selectors/comments'
-import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect'
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
-import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { AddCommentForm } from 'features/AddCommentForm'
 import { addCommmentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle'
+import { Page } from 'widgets/Page/Page'
 
 import cls from './ArticleDetailsPage.module.scss'
 
@@ -76,20 +77,22 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-            <div
+            <Page
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
-                <ArticleDetails id={id} />
-                <Text
-                    text={`${t('Comments')}:`}
-                    weight={TextWeight.MEDIUM}
-                    color={TextColor.PRIMARY}
-                    size={TextSize.M}
-                    className={cls.title}
-                />
-                <AddCommentForm onSendComment={onSendComment} />
-                <CommentList comments={comments} isLoading={isLoading} />
-            </div>
+                <div className={cls.inner}>
+                    <ArticleDetails id={id} />
+                    <Text
+                        text={`${t('Comments')}:`}
+                        weight={TextWeight.MEDIUM}
+                        color={TextColor.PRIMARY}
+                        size={TextSize.M}
+                        className={cls.title}
+                    />
+                    <AddCommentForm onSendComment={onSendComment} />
+                    <CommentList comments={comments} isLoading={isLoading} />
+                </div>
+            </Page>
         </DynamicModuleLoader>
     )
 }

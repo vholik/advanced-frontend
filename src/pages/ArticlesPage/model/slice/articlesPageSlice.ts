@@ -5,9 +5,14 @@ import {
     type PayloadAction,
 } from '@reduxjs/toolkit'
 import { type StateSchema } from 'app/providers/StoreProvider'
-import { type Comment } from 'entities/Comment'
-import { ArticleView, type Article } from 'entities/Article'
+import {
+    ArticleView,
+    type Article,
+    ArticlesSortField,
+    ArticleType,
+} from 'entities/Article'
 import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localStorage'
+import { type SortOrder } from 'shared/types'
 
 import { type ArticlesPagesSchema } from '../types/articlesPageSchema'
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList'
@@ -33,6 +38,14 @@ const articlePageSlice = createSlice({
         ids: [],
         entities: {},
         view: ArticleView.LIST,
+        page: 1,
+        hasMore: true,
+        _inited: false,
+        sort: ArticlesSortField.CREATED,
+        search: '',
+        order: 'asc',
+        limit: 4,
+        type: ArticleType.ALL,
     }),
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
@@ -43,20 +56,46 @@ const articlePageSlice = createSlice({
             state.view = localStorage.getItem(
                 ARTICLE_VIEW_LOCALSTORAGE_KEY
             ) as ArticleView
+
+            state.limit = state.view === ArticleView.LIST ? 4 : 9
+            state._inited = true
+        },
+        setPage: (state, action: PayloadAction<number>) => {
+            state.page = action.payload
+        },
+        setSort: (state, action: PayloadAction<ArticlesSortField>) => {
+            state.sort = action.payload
+        },
+        setSearch: (state, action: PayloadAction<string>) => {
+            state.search = action.payload
+        },
+        setOrder: (state, action: PayloadAction<SortOrder>) => {
+            state.order = action.payload
+        },
+        setType: (state, action: PayloadAction<ArticleType>) => {
+            state.type = action.payload
         },
     },
     extraReducers: (builder) => {
         builder.addCase(fetchArticlesList.pending, (state, action) => {
             state.error = undefined
             state.isLoading = true
-        })
-        builder.addCase(
-            fetchArticlesList.fulfilled,
-            (state, action: PayloadAction<Article[]>) => {
-                state.isLoading = false
-                articlesAdapter.setAll(state, action.payload)
+
+            if (action.meta.arg.replace) {
+                articlesAdapter.removeAll(state)
             }
-        )
+        })
+        builder.addCase(fetchArticlesList.fulfilled, (state, action) => {
+            state.isLoading = false
+            articlesAdapter.addMany(state, action.payload)
+            state.hasMore = action.payload.length >= state.limit
+
+            if (action.meta.arg.replace) {
+                articlesAdapter.setAll(state, action.payload)
+            } else {
+                articlesAdapter.addMany(state, action.payload)
+            }
+        })
         builder.addCase(fetchArticlesList.rejected, (state, action) => {
             state.isLoading = false
             state.error = action.payload

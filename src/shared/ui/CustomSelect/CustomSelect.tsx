@@ -17,28 +17,30 @@ import { Portal } from '../Portal/Portal'
 
 import cls from './CustomSelect.module.scss'
 
-export interface SelectOption {
-    value: string
+export interface SelectOption<T> {
+    value: T
     content: string
 }
 
-interface CustomSelectProps {
+interface CustomSelectProps<T extends string> {
     className?: string
-    value?: string
-    options?: SelectOption[]
-    onChange?: (value: string) => void
+    value?: T
+    options?: SelectOption<T>[]
+    onChange?: (value: T) => void
     readonly?: boolean
+    label?: string
 }
 
 const ANIMATION_DELAY = 300
 
-export const CustomSelect: FC<CustomSelectProps> = ({
+export const CustomSelect = <T extends string>({
     className,
     options,
     onChange,
     value,
     readonly,
-}) => {
+    label,
+}: CustomSelectProps<T>) => {
     const [isOpened, setIsOpened] = useState(false)
     const [isClosing, setIsClosing] = useState(false)
     const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -103,8 +105,8 @@ export const CustomSelect: FC<CustomSelectProps> = ({
 
     const onValueChange = useCallback(
         (value: string) => {
-            onChange?.(value)
-            setCurrentValue(value)
+            onChange?.(value as T)
+            setCurrentValue(value as T)
         },
         [onChange]
     )
@@ -134,7 +136,7 @@ export const CustomSelect: FC<CustomSelectProps> = ({
                 type="button"
                 onClick={onClick}
             >
-                {currentValue || '-'}
+                {currentValue || label || '-'}
                 <ChevronDown className={cls.chevron} />
             </button>
             <ul

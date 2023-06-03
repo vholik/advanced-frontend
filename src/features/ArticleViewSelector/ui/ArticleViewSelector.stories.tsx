@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
+import { ArticleView } from 'entities/Article'
 
 import { ArticleViewSelector } from './ArticleViewSelector'
 
 const meta = {
-    title: 'shared/ArticleViewSelector',
+    title: 'features/ArticleViewSelector',
     component: ArticleViewSelector,
     tags: ['autodocs'],
 } satisfies Meta<typeof ArticleViewSelector>
@@ -12,6 +13,15 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Primary: Story = {
-    args: {},
+export const List: Story = {
+    args: {
+        view: ArticleView.LIST,
+    },
+    decorators: [],
+}
+export const Grid: Story = {
+    args: {
+        view: ArticleView.GRID,
+    },
+    decorators: [],
 }

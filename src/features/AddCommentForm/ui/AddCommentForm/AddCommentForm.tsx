@@ -12,7 +12,7 @@ import {
     addCommentFormActions,
     addCommentFormReducer,
 } from 'features/AddCommentForm/model/slice/addCommentFormSlice'
-import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import {
     DynamicModuleLoader,
     type ReducersList,

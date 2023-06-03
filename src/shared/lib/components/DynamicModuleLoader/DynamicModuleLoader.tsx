@@ -24,6 +24,7 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = ({
 }) => {
     const store = useStore() as ReduxStoreWithManager
     const dispatch = useDispatch()
+
     useEffect(() => {
         Object.entries(reducers).forEach(([name, reducer]) => {
             store.reducerManager.add(name as StateSchemaKey, reducer)

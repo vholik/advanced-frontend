@@ -20,5 +20,11 @@
   "Incorrect country": "Incorrect country",
   "Incorrect age": "Incorrect age",
   "Server error": "Server error",
-  "Read more": "Read more"
+  "Read more": "Read more",
+  "Sort down": "Sort down",
+  "Sort up": "Sort up",
+  "Economics": "Economics",
+  "All": "All",
+  "Science": "Science",
+  "IT": "IT"
 }

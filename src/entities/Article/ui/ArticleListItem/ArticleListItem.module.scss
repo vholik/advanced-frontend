@@ -12,7 +12,7 @@
 
     .infoWrapper {
         margin-left: 1.5rem;
-        width: 600px;
+        width: 576px;
     }
 
     .heading {
@@ -50,11 +50,12 @@
 }
 
 .GRID {
-    max-width: 250px;
+    max-width: 240px;
+    width: 240px;
 
     .coverImg {
-        height: 250px;
-        width: 250px;
+        height: 270px;
+        width: 240px;
         object-fit: cover;
         border-radius: var(--border-radius-m);
     }

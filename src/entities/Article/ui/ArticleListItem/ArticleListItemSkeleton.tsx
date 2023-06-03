@@ -21,7 +21,7 @@ export const ArticleListItemSkeleton: FC<ArticleListItemSkeletonProps> = memo(
                         cls[view],
                     ])}
                 >
-                    <Skeleton height={250} width={250} />
+                    <Skeleton height={270} width={240} />
                     <div className={cls.infoWrapper}>
                         <Skeleton height={15} width={200} />
                         <Skeleton height={15} width={150} />

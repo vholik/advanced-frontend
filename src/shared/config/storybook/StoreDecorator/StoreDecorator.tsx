@@ -5,10 +5,12 @@ import 'app/styles/index.scss'
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice'
 import { profileReducer } from 'entities/Profile'
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice'
+import { restoreScrollReducer } from 'features/RestoreScroll'
 import { type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
+    restoreScroll: restoreScrollReducer,
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
     articleDetailsComments: articleDetailsReducer
