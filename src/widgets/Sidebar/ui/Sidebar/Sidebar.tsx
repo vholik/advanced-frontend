@@ -4,6 +4,10 @@ import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher'
 import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button'
 import { useSelector } from 'react-redux'
 import { getSidebarItems } from 'widgets/Sidebar/model/selectors/getSidebarItems'
+import Logo from 'shared/assets/icons/logo.svg'
+import { Icon, IconColor } from 'shared/ui/Icon/Icon'
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
+import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 
@@ -34,6 +38,9 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
                 className,
             ])}
         >
+            <AppLink to={RoutePath.main} className={cls.logo}>
+                <Icon Icon={Logo} color={IconColor.PRIMARY} />
+            </AppLink>
             <Button
                 theme={ThemeButton.OUTLINE}
                 type="button"
@@ -46,7 +53,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
                 {collapsed ? '<' : '>'}
             </Button>
             <div className={cls.links}>{itemsList}</div>
-            <LangSwitcher collapsed={collapsed} />
+            <LangSwitcher collapsed={collapsed} className={cls.langSwitcher} />
         </aside>
     )
 })

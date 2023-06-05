@@ -41,6 +41,7 @@ import {
     ArticleDetailsPageRecommendationsReducer,
     getArticleReccomendations,
 } from '../../model/slices/articleDetailsPageRecommendationsSlice'
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 
 import cls from './ArticleDetailsPage.module.scss'
 
@@ -94,6 +95,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
                 <div className={cls.inner}>
+                    <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
                     <Text
                         text={`${t('Comments')}:`}

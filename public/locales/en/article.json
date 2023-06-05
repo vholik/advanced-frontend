@@ -1,4 +1,8 @@
 {
   "Article not found": "Article not found",
-  "No comments yet": "No comments yet"
+  "No comments yet": "No comments yet",
+  "Edit": "Edit",
+  "article": {
+    "Edit": "Edit"
+  }
 }

@@ -12,7 +12,11 @@ import { getArticlesPageSearch } from 'pages/ArticlesPage/model/selectors/articl
 import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce'
 import { useNavigate } from 'react-router-dom'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig'
+import EditIcon from 'shared/assets/icons/edit.svg'
+import { AppLink } from 'shared/ui/AppLink/AppLink'
+import { Icon, IconColor } from 'shared/ui/Icon/Icon'
+import { Text } from 'shared/ui/Text/Text'
 
 import cls from './Navbar.module.scss'
 
@@ -66,7 +70,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     placeholder={t('Search')}
                     theme={InputTheme.BASE}
                 />
-                <ThemeSwitcher className={cls.langSwitcher} />
+                <AppLink to={RoutePath.article_create} className={cls.writeBtn}>
+                    <Icon Icon={EditIcon} color={IconColor.SECONDARY} />
+                    <Text text={t('Write')} />
+                </AppLink>
+                <ThemeSwitcher />
                 <Button onClick={onLogout}>{t('Log out')}</Button>
             </header>
         )

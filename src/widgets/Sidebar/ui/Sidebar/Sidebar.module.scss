@@ -5,7 +5,6 @@
     transition: width 0.2s ease;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     padding: 2rem 0;
     position: relative;
 }
@@ -13,6 +12,7 @@
 .links {
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
 }
 
 .collapsedBtn {
@@ -21,7 +21,20 @@
     bottom: 40px;
 }
 
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
 .collapsed {
     width: var(--sidebar-width-collapsed);
     align-items: flex-start;
+
+    .logo {
+        margin-left: 2rem;
+    }
+}
+
+.langSwitcher {
+    margin-top: auto;
 }

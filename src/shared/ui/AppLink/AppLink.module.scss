@@ -10,6 +10,10 @@
 }
 
 .primary {
+    color: var(--primary-color);
+}
+
+.primary_variant {
     color: var(--primary-variant-color);
     font: var(--font-sm);
     font-weight: 500;
