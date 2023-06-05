@@ -27,11 +27,9 @@ export function buildPlugins({
             __API__: JSON.stringify(apiUrl),
             __PROJECT__: JSON.stringify(project),
         }),
+
         new CopyPlugin({
-            patterns: [
-                { from: 'source', to: 'dest' },
-                { from: 'other', to: 'public' },
-            ],
+            patterns: [{ from: paths.locales, to: paths.buildLocales }],
         }),
     ]
 
