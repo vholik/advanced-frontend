@@ -5,6 +5,7 @@
     padding: 0 1.5rem;
     padding-bottom: 1.5rem;
     position: relative;
+    justify-content: space-between;
 
     &:after {
         content: '';
@@ -21,15 +22,6 @@
     border: 4px solid var(--bg-color);
     box-shadow: var(--box-shadow);
     z-index: 2;
-}
-
-.editBtn,
-.cancelBtn {
-    margin-left: auto;
-}
-
-.saveBtn {
-    margin-left: 0.6rem;
 }
 
 .bg {
@@ -50,16 +42,4 @@
         background: var(--profile-gradient);
         border-radius: 0 0 var(--border-radius-m) var(--border-radius-m);
     }
-}
-
-.heading {
-    margin-left: 1.5rem;
-}
-
-.subtitle {
-    margin-top: 0.25rem;
-}
-
-.btnsWrapper {
-    margin-left: auto;
 }

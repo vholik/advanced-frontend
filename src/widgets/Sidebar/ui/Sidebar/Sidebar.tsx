@@ -6,7 +6,8 @@ import { useSelector } from 'react-redux'
 import Logo from 'shared/assets/icons/logo.svg'
 import { Icon, IconColor } from 'shared/ui/Icon/Icon'
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
-import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { VStack } from 'shared/ui/Stack'
 
 import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
@@ -38,9 +39,6 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
                 className,
             ])}
         >
-            <AppLink to={RoutePath.main} className={cls.logo}>
-                <Icon Icon={Logo} color={IconColor.PRIMARY} />
-            </AppLink>
             <Button
                 theme={ThemeButton.OUTLINE}
                 type="button"
@@ -52,7 +50,16 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
             >
                 {collapsed ? '<' : '>'}
             </Button>
-            <div className={cls.links}>{itemsList}</div>
+
+            <VStack gap="32">
+                <AppLink to={RoutePath.main} className={cls.logo}>
+                    <Icon Icon={Logo} color={IconColor.PRIMARY} />
+                </AppLink>
+                <VStack gap="32">
+                    <VStack>{itemsList}</VStack>
+                </VStack>
+            </VStack>
+
             <LangSwitcher collapsed={collapsed} className={cls.langSwitcher} />
         </aside>
     )

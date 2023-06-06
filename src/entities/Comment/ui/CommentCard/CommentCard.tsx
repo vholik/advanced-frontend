@@ -6,6 +6,7 @@ import { Text, TextColor, TextWeight } from 'shared/ui/Text/Text'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { HStack, VStack } from 'shared/ui/Stack'
 
 import { type Comment } from '../../model/types/comment'
 
@@ -24,16 +25,22 @@ export const CommentCard: FC<CommentCardProps> = memo((props) => {
     if (isLoading) {
         return (
             <div className={classNames(cls.CommentCard, {}, [className])}>
-                <div className={cls.header}>
-                    <Skeleton height={32} width={32} circle />
-                    <Skeleton height={21} width={100} className={cls.user} />
-                </div>
-                <Skeleton
-                    count={2}
-                    width={550}
-                    height={15}
-                    className={cls.skeleton}
-                />
+                <VStack gap="4">
+                    <HStack align="center">
+                        <Skeleton height={32} width={32} circle />
+                        <Skeleton
+                            height={21}
+                            width={100}
+                            className={cls.user}
+                        />
+                    </HStack>
+                    <Skeleton
+                        count={2}
+                        width={550}
+                        height={15}
+                        className={cls.skeleton}
+                    />
+                </VStack>
             </div>
         )
     }

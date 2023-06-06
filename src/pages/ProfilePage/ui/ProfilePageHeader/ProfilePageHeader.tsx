@@ -13,6 +13,7 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { getUserAuthData } from 'entities/User'
+import { HStack, VStack } from 'shared/ui/Stack'
 
 import cls from './ProfilePageHeader.module.scss'
 
@@ -49,42 +50,35 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
         <div className={classNames('', {}, [className])}>
             <div className={cls.bg}></div>
             <div className={cls.ProfilePageHeader}>
-                {avatar && <Avatar src={avatar} className={cls.avatar} />}
-                <div className={cls.heading}>
-                    <Text title={t('Profile')} />
-                    <Text
-                        className={cls.subtitle}
-                        text={t('Update your photo and personal details.')}
-                    />
-                </div>
+                <HStack gap="16" align="center">
+                    {avatar && <Avatar src={avatar} className={cls.avatar} />}
+                    <VStack gap="4" className={cls.heading}>
+                        <Text title={t('Profile')} />
+                        <Text
+                            className={cls.subtitle}
+                            text={t('Update your photo and personal details.')}
+                        />
+                    </VStack>
+                </HStack>
                 {canEdit && (
                     <div className={cls.btnsWrapper}>
                         {readonly ? (
-                            <Button
-                                className={cls.editBtn}
-                                onClick={onEdit}
-                                size={ButtonSize.SM}
-                            >
+                            <Button onClick={onEdit} size={ButtonSize.SM}>
                                 {t('Edit')}
                             </Button>
                         ) : (
-                            <>
+                            <HStack gap="8">
                                 <Button
                                     onClick={onCancelEdit}
-                                    className={cls.cancelBtn}
                                     theme={ThemeButton.OUTLINE}
                                     size={ButtonSize.SM}
                                 >
                                     {t('Cancel')}
                                 </Button>
-                                <Button
-                                    onClick={onSave}
-                                    className={cls.saveBtn}
-                                    size={ButtonSize.SM}
-                                >
+                                <Button onClick={onSave} size={ButtonSize.SM}>
                                     {t('Save')}
                                 </Button>
-                            </>
+                            </HStack>
                         )}
                     </div>
                 )}
