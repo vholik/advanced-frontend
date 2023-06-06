@@ -102,16 +102,3 @@
         box-shadow: unset;
     }
 }
-
-// Themes
-
-.primary_theme {
-    border: 1px solid var(--stroke-color);
-    border-radius: var(--border-radius-m);
-}
-
-.secondary_theme {
-    border-radius: var(--border-radius-xl);
-    background-color: var(--secondary-bg-color);
-    color: var(--quatinary-color);
-}

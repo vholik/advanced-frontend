@@ -1,6 +1,7 @@
-import { memo, type FC } from 'react'
+import { memo, type FC, useCallback } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { CustomSelect } from 'shared/ui/CustomSelect/CustomSelect'
+import { ListBox, type ListBoxItem } from 'shared/ui/ListBox/ListBox'
 
 import { Currency } from '../../model/types/currency'
 
@@ -20,12 +21,20 @@ interface CurrencySelectProps {
 
 export const CurrencySelect: FC<CurrencySelectProps> = memo(
     ({ onChange, value, readonly }) => {
+        const onChangeHandler = useCallback(
+            (value: string) => {
+                onChange?.(value as Currency)
+            },
+            [onChange]
+        )
+
         return (
-            <CustomSelect
-                options={currencyArray}
-                onChange={onChange as (value: string) => void}
+            <ListBox
+                items={currencyArray as ListBoxItem[]}
+                onChange={onChangeHandler}
                 readonly={readonly}
                 value={value}
+                direction="top"
             />
         )
     }
