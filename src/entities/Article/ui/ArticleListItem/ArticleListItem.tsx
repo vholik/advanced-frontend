@@ -76,7 +76,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
                         <Text
                             className={cls.createdAt}
                             text={article?.createdAt}
-                            size={TextSize.SMALL}
+                            size={TextSize.S}
                         />
                     </div>
                     {view === ArticleView.LIST && (
@@ -94,7 +94,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
                                 text={article?.user.username}
                                 color={TextColor.PRIMARY}
                                 weight={TextWeight.MEDIUM}
-                                size={TextSize.SMALL}
+                                size={TextSize.S}
                             />
                         </div>
                     )}
@@ -110,7 +110,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
                             <Icon Icon={EyeIcon} color={IconColor.TERTIARY} />
                             <Text
                                 text={String(article?.views)}
-                                size={TextSize.SMALL}
+                                size={TextSize.S}
                             />
                         </div>
                     </div>

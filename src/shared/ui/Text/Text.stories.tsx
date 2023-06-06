@@ -26,7 +26,7 @@ export const SizeM: Story = {
         text: 'Title lorem ipsum',
     },
 }
-export const SizeSM: Story = {
+export const SizeS: Story = {
     args: {
         title: 'Title lorem ipsum',
         text: 'Title lorem ipsum',

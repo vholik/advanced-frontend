@@ -42,7 +42,7 @@ export const CommentList: FC<CommentListProps> = memo((props) => {
                 <Text
                     text={t('No comments yet')}
                     className={cls.sectionEmpty}
-                    size={TextSize.SMALL}
+                    size={TextSize.S}
                 />
             )}
         </div>

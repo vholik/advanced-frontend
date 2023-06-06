@@ -1,11 +1,11 @@
 .Label {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--font-line-sm) / 2);
+    gap: calc(var(--font-line-s) / 2);
 }
 
 .value {
     color: var(--quatinary-color);
-    font: var(--font-sm);
+    font: var(--font-s);
     font-weight: 500;
 }

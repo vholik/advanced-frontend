@@ -22,10 +22,7 @@ import DateIcon from 'shared/assets/icons/date.svg'
 import { Icon, IconColor } from 'shared/ui/Icon/Icon'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 
-import {
-    type ArticleBlock,
-    ArticleBlockType,
-} from '../../model/types/article'
+import { type ArticleBlock, ArticleBlockType } from '../../model/types/article'
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import {
@@ -146,7 +143,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
                         <Icon Icon={EyeIcon} color={IconColor.TERTIARY} />
                         <Text
                             text={String(data?.views)}
-                            size={TextSize.SMALL}
+                            size={TextSize.S}
                             color={TextColor.SECONDARY}
                         />
                     </div>
@@ -154,7 +151,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
                         <Icon Icon={DateIcon} color={IconColor.TERTIARY} />
                         <Text
                             text={String(data?.createdAt)}
-                            size={TextSize.SMALL}
+                            size={TextSize.S}
                             color={TextColor.SECONDARY}
                         />
                     </div>

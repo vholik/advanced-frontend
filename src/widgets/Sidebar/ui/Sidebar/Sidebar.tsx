@@ -51,7 +51,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
                 {collapsed ? '<' : '>'}
             </Button>
 
-            <VStack gap="32">
+            <VStack gap="32" role="navigation">
                 <AppLink to={RoutePath.main} className={cls.logo}>
                     <Icon Icon={Logo} color={IconColor.PRIMARY} />
                 </AppLink>

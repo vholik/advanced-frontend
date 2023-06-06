@@ -10,7 +10,7 @@ export enum TextTheme {
 }
 
 export enum TextSize {
-    SMALL = 'size_sm',
+    S = 'size_sm',
     M = 'size_m',
     L = 'size_l',
 }
@@ -46,6 +46,14 @@ interface TextProps {
     weight?: TextWeight
 }
 
+type HeaderTag = 'h1' | 'h2' | 'h3'
+
+const mapSizeToHeaderTag: Record<TextSize, HeaderTag> = {
+    [TextSize.S]: 'h3',
+    [TextSize.M]: 'h2',
+    [TextSize.L]: 'h1',
+}
+
 export const Text: FC<TextProps> = memo((props) => {
     const {
         className,
@@ -58,6 +66,8 @@ export const Text: FC<TextProps> = memo((props) => {
         weight = TextWeight.DEFAULT,
     } = props
 
+    const HeaderTag = mapSizeToHeaderTag[size]
+
     const mods: Mods = {
         [cls[theme]]: true,
         [cls[align]]: true,
@@ -68,9 +78,9 @@ export const Text: FC<TextProps> = memo((props) => {
     return (
         <div className={classNames(cls.Text, mods, [className])}>
             {title && (
-                <h2 className={classNames(cls.title, {}, [cls[color]])}>
+                <HeaderTag className={classNames(cls.title, {}, [cls[color]])}>
                     {title}
-                </h2>
+                </HeaderTag>
             )}
             {text && (
                 <p className={classNames(cls.text, {}, [cls[color]])}>{text}</p>
