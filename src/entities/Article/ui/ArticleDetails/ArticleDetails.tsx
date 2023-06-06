@@ -6,7 +6,6 @@ import {
     type ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById'
 import { useSelector } from 'react-redux'
 import { Note } from 'shared/ui/Note/Note'
 import {
@@ -20,13 +19,14 @@ import {
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
 import EyeIcon from 'shared/assets/icons/eye.svg'
 import DateIcon from 'shared/assets/icons/date.svg'
-import {
-    type ArticleBlock,
-    ArticleBlockType,
-} from 'entities/Article/model/types/article'
 import { Icon, IconColor } from 'shared/ui/Icon/Icon'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 
+import {
+    type ArticleBlock,
+    ArticleBlockType,
+} from '../../model/types/article'
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import {
     getArticleDetailsData,

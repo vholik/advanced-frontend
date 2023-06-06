@@ -4,20 +4,21 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { Input, InputTheme } from 'shared/ui/Input/Input'
 import { Button, ButtonSize } from 'shared/ui/Button/Button'
 import { useSelector } from 'react-redux'
-import {
-    getAddCommentFormError,
-    getAddCommentFormText,
-} from 'features/AddCommentForm/model/selectors/addCommentFormSelectors'
-import {
-    addCommentFormActions,
-    addCommentFormReducer,
-} from 'features/AddCommentForm/model/slice/addCommentFormSlice'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import {
     DynamicModuleLoader,
     type ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { sendComment } from 'features/AddCommentForm/model/services/sendComment/sendComment'
+
+import {
+    getAddCommentFormError,
+    getAddCommentFormText,
+} from '../../model/selectors/addCommentFormSelectors'
+import {
+    addCommentFormActions,
+    addCommentFormReducer,
+} from '../../model/slice/addCommentFormSlice'
+import { sendComment } from '../../model/services/sendComment/sendComment'
 
 import cls from './AddCommentForm.module.scss'
 

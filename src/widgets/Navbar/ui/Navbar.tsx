@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames'
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
+import { ThemeSwitcher } from 'features/ThemeSwitcher'
 import { memo, useCallback, useState } from 'react'
 import { Button } from 'shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next'

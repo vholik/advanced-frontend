@@ -18,21 +18,21 @@ import {
     type ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useSelector } from 'react-redux'
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { AddCommentForm } from 'features/AddCommentForm'
+import { Page } from 'widgets/Page/Page'
+import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList'
+
+import { addCommmentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
+import { getArticleReccomendationsIsLoading } from '../../model/selectors/recommendations'
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import {
     getArticleCommentsIsLoading,
     getArticleCommentsError,
-} from 'pages/ArticleDetailsPage/model/selectors/comments'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { AddCommentForm } from 'features/AddCommentForm'
-import { addCommmentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle'
-import { Page } from 'widgets/Page/Page'
-import { getArticleReccomendationsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/recommendations'
-import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList'
-import { fetchArticleRecommendations } from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendation'
-import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices'
-
+} from '../../model/selectors/comments'
+import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendation'
+import { articleDetailsPageReducer } from '../../model/slices'
 import {
     ArticleDetailsCommentsReducer,
     getArticleComments,

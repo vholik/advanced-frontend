@@ -3,12 +3,12 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher'
 import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button'
 import { useSelector } from 'react-redux'
-import { getSidebarItems } from 'widgets/Sidebar/model/selectors/getSidebarItems'
 import Logo from 'shared/assets/icons/logo.svg'
 import { Icon, IconColor } from 'shared/ui/Icon/Icon'
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig'
 
+import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 
 import cls from './Sidebar.module.scss'

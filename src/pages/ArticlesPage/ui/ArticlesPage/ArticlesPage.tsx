@@ -1,7 +1,7 @@
 import { memo, type FC, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList'
+import { ArticleList } from 'entities/Article'
 import { type ArticleView, type Article } from 'entities/Article'
 import {
     DynamicModuleLoader,

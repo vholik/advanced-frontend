@@ -12,11 +12,11 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { ArticleSortSelect } from 'features/ArticleSortSelect'
 import { type SortOrder } from 'shared/types'
 import { Input } from 'shared/ui/Input/Input'
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce'
 import { type TabItem, Tabs } from 'shared/ui/Tabs/Tabs'
 import { ArticleTypeTabs } from 'features/ArticleTypeTabs'
 
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
 import {
     getArticlesPageOrder,
     getArticlesPageSearch,
