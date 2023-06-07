@@ -17,6 +17,8 @@ import EditIcon from 'shared/assets/icons/edit.svg'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
 import { Icon, IconColor } from 'shared/ui/Icon/Icon'
 import { Text } from 'shared/ui/Text/Text'
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown'
+import { Avatar } from 'shared/ui/Avatar/Avatar'
 
 import cls from './Navbar.module.scss'
 
@@ -75,7 +77,18 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     <Text text={t('Write')} />
                 </AppLink>
                 <ThemeSwitcher />
-                <Button onClick={onLogout}>{t('Log out')}</Button>
+                <Dropdown
+                    direction="bottom right"
+                    className={cls.dropdown}
+                    items={[
+                        { content: t('Log out'), onClick: onLogout },
+                        {
+                            content: t('Profile'),
+                            href: RoutePath.profile + authData.id,
+                        },
+                    ]}
+                    trigger={<Avatar src={authData.avatar} size={32} />}
+                />
             </header>
         )
     }

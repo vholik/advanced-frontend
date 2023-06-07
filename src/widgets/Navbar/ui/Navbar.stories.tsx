@@ -3,6 +3,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider'
 import { StoreProvider } from 'app/providers/StoreProvider'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
+import { avatarLink } from 'shared/const/tests'
 
 import { Navbar } from './Navbar'
 
@@ -23,4 +24,19 @@ export const Ligth: Story = {
 export const Dark: Story = {
     args: {},
     decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({})],
+}
+
+export const Authenticated: Story = {
+    args: {},
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: {
+                    avatar: avatarLink,
+                    id: '1',
+                    username: 'helloworld',
+                },
+            },
+        }),
+    ],
 }

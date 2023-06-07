@@ -4,13 +4,13 @@ import { Mods, classNames } from 'shared/lib/classNames/classNames'
 import { useState } from 'react'
 import { Listbox } from '@headlessui/react'
 import CheckIcon from 'shared/assets/icons/check.svg'
+import { type DropdownDirection } from 'shared/types/ui'
 
 import { Icon, IconColor } from '../Icon/Icon'
 
 import cls from './ListBox.module.scss'
 
 type ListBoxTheme = 'primary_theme' | 'secondary_theme'
-type DropdownDirection = 'top' | 'bottom'
 
 export interface ListBoxItem {
     value: string
@@ -29,8 +29,10 @@ interface ListBoxProps {
 }
 
 const mapDirectionClass: Record<DropdownDirection, string> = {
-    bottom: cls.directionBottom,
-    top: cls.directionTop
+    'top left': cls.directionBottomLeft,
+    'bottom left': cls.directionTopLeft,
+    'bottom right': cls.directionBottomRight,
+    'top right': cls.directionTopRight,
 }
 
 export const ListBox: FC<ListBoxProps> = (props) => {
@@ -42,7 +44,7 @@ export const ListBox: FC<ListBoxProps> = (props) => {
         items,
         value,
         readonly,
-        direction = 'bottom'
+        direction = 'bottom right',
     } = props
 
     const { t } = useTranslation()
@@ -65,7 +67,9 @@ export const ListBox: FC<ListBoxProps> = (props) => {
                     >
                         {value || defaultValue}
                     </Listbox.Button>
-                    <Listbox.Options className={classNames('', {}, optionsMods)}>
+                    <Listbox.Options
+                        className={classNames('', {}, optionsMods)}
+                    >
                         {items
                             ? items.map((item) => (
                                 <Listbox.Option

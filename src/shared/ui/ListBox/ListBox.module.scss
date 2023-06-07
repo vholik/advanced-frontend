@@ -32,8 +32,22 @@
     outline-color: transparent;
 }
 
-.directionTop {
-    bottom: 100%;
+.directionTopLeft {
+    left: 0;
+}
+
+.directionTopRight {
+    right: 0;
+}
+
+.directionBottomLeft {
+    top: 100%;
+    left: 0;
+}
+
+.directionBottomRight {
+    top: 100%;
+    right: 0;
 }
 
 .item {
