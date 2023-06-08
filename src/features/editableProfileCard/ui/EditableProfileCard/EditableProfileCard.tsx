@@ -23,8 +23,6 @@ import { getProfileValidateErrors } from '../../model/selector/getProfileValidat
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
 import { profileActions, profileReducer } from '../../model/slice/profileSlice'
 
-import cls from './EditableProfileCard.module.scss'
-
 interface EditableProfileCardProps {
     className?: string
     id?: string
@@ -120,9 +118,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <div
-                className={classNames(cls.ProfilePage, { [cls.loading]: true })}
-            >
+            <div className={classNames('', {})}>
                 <Loader />
             </div>
         )
@@ -130,27 +126,19 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     if (error) {
         return (
-            <div
-                className={classNames(
-                    cls.ProfileCard,
-                    { [cls.loading]: true },
-                    [className]
-                )}
-            >
+            <>
                 <Note>
                     {t(
                         'Error occured while loading profile. Try to refresh your page.'
                     )}
                 </Note>
-            </div>
+            </>
         )
     }
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div
-                className={classNames(cls.EditableProfileCard, {}, [className])}
-            >
+            <div className={classNames('', {}, [className])}>
                 {Boolean(validateErrors?.length) &&
                     validateErrors?.map((err) => (
                         <Note key={err}>{validateErrorTranslates[err]}</Note>

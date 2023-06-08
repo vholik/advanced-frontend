@@ -4,8 +4,6 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { Tabs, type TabItem } from 'shared/ui/Tabs/Tabs'
 import { ArticleType } from 'entities/Article'
 
-import cls from './ArticleTypeTabs.module.scss'
-
 interface ArticleTypeTabsProps {
     className?: string
     value: ArticleType
@@ -50,7 +48,7 @@ export const ArticleTypeTabs: FC<ArticleTypeTabsProps> = memo((props) => {
             items={typeTabs}
             onChange={onTabClick}
             value={value}
-            className={classNames(cls.ArticleTypeTabs, {}, [className])}
+            className={classNames('', {}, [className])}
         />
     )
 })
