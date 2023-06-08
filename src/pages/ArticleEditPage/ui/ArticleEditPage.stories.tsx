@@ -4,7 +4,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import ArticleEditPage from './ArticleEditPage'
 
 const meta = {
-    title: 'shared/ArticleEditPage',
+    title: 'pages/ArticleEditPage',
     component: ArticleEditPage,
     tags: ['autodocs'],
 } satisfies Meta<typeof ArticleEditPage>

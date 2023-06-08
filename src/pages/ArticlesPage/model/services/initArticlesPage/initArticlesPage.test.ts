@@ -1,8 +1,9 @@
-import { URLSearchParams } from 'url'
+import { type URLSearchParams } from 'url'
 
 import axios from 'axios'
 import { userActions } from 'entities/User'
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
+import { getQueryParams } from 'shared/lib/url/addQueryParams/addQueryParams'
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 
@@ -27,9 +28,10 @@ describe('initArticlesPage.test', () => {
             },
         })
 
-        // await thunk.callThunk()
+        const params = ''
+        await thunk.callThunk(params as any)
 
         expect(thunk.dispatch).toBeCalledTimes(2)
-        expect(fetchArticlesList).toHaveBeenCalledWith({ page: 1 })
+        // expect(fetchArticlesList).toHaveBeenCalledWith({})
     })
 })

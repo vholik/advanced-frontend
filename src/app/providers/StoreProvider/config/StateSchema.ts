@@ -7,11 +7,11 @@ import {
 import { type AxiosInstance } from 'axios'
 import { type ArticleDetailsSchema } from 'entities/Article/model/types/articleDetailsSchema'
 import { type CounterSchema } from 'entities/Counter'
-import { type ProfileSchema } from 'entities/Profile'
 import { type UserSchema } from 'entities/User'
 import { type AddCommentFormSchema } from 'features/AddCommentForm'
 import { type LoginSchema } from 'features/AuthByUsername'
 import { type RestoreScrollSchema } from 'features/RestoreScroll'
+import { type ProfileSchema } from 'features/editableProfileCard'
 import {
     type ArticleDetailsPageRecommendationsSchema,
     type ArticleDetailsCommentsSchema,
@@ -23,10 +23,13 @@ import {
     type NavigateFunction,
     type NavigateOptions,
 } from 'react-router-dom'
+import { type rtkApi } from 'shared/api/rtkApi'
 
 export interface StateSchema {
     counter: CounterSchema
     user: UserSchema
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
+
     loginForm?: LoginSchema
     profile?: ProfileSchema
     articleDetails?: ArticleDetailsSchema

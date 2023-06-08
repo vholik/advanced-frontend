@@ -1,30 +1,28 @@
-import { useCallback, type FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { Text } from 'shared/ui/Text/Text'
-import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button'
+import { type FC, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
+import { classNames } from 'shared/lib/classNames/classNames'
 import { useSelector } from 'react-redux'
-import {
-    getProfileData,
-    getProfileReadonly,
-    profileActions,
-    updateProfileData,
-} from 'entities/Profile'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { getUserAuthData } from 'entities/User'
 import { HStack, VStack } from 'shared/ui/Stack'
+import { Avatar } from 'shared/ui/Avatar/Avatar'
+import { Text } from 'shared/ui/Text/Text'
+import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button'
 
-import cls from './ProfilePageHeader.module.scss'
+import { getProfileForm } from '../../model/selector/getProfileForm/getProfileForm'
+import { getProfileReadonly } from '../../model/selector/getProfileReadonly/getProfileReadonly'
+import { getProfileData } from '../../model/selector/getProfileData/getProfileData'
+import { profileActions } from '../../model/slice/profileSlice'
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData'
+
+import cls from './EditableProfileHeader.module.scss'
 
 interface ProfilePageHeaderProps {
     className?: string
-    avatar?: string
 }
 
 export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
     className,
-    avatar,
 }) => {
     const { t } = useTranslation()
     const readonly = useSelector(getProfileReadonly)
@@ -32,6 +30,7 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
     const authData = useSelector(getUserAuthData)
     const profileData = useSelector(getProfileData)
     const canEdit = authData?.id === profileData?.id
+    const avatar = useSelector(getProfileForm)?.avatar
 
     const onEdit = useCallback(() => {
         dispatch(profileActions.setReadonly(false))

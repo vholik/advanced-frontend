@@ -13,6 +13,7 @@ import { TypedUseSelectorHook, useDispatch } from 'react-redux'
 import { $api } from 'shared/api/api'
 import { type NavigateFunction } from 'react-router-dom'
 import { restoreScrollReducer } from 'features/RestoreScroll'
+import { rtkApi } from 'shared/api/rtkApi'
 
 import { type ThunkExtraArg, type StateSchema } from './StateSchema'
 import { createReducerManager } from './reducerManager'
@@ -23,10 +24,11 @@ export function createReduxStore(
     navigate?: NavigateFunction
 ) {
     const rootReducer: ReducersMapObject<StateSchema> = {
+        ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
         restoreScroll: restoreScrollReducer,
-        ...asyncReducers,
+        [rtkApi.reducerPath]: rtkApi.reducer,
     }
 
     const reducerManager = createReducerManager(rootReducer)
@@ -45,7 +47,7 @@ export function createReduxStore(
                     extraArgument: extraArg,
                 },
                 serializableCheck: false,
-            }),
+            }).concat(rtkApi.middleware),
     })
 
     // @ts-expect-error: test

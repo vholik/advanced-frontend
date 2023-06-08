@@ -3,8 +3,8 @@ import { type ThunkConfig } from 'app/providers/StoreProvider'
 import axios from 'axios'
 import { userActions, type User } from 'entities/User'
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage'
+import { type Profile, ValidateProfileError } from 'entities/Profile'
 
-import { ValidateProfileError, type Profile } from '../../types/profile'
 import { getProfileForm } from '../../selector/getProfileForm/getProfileForm'
 import { validateProfileData } from '../validateProfileData/validateProfileData'
 

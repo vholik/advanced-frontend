@@ -23,6 +23,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { AddCommentForm } from 'features/AddCommentForm'
 import { Page } from 'widgets/Page/Page'
 import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList'
+import { ArticleRecommendationsList } from 'features/articleRecommendationsList'
 
 import { addCommmentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
 import { getArticleReccomendationsIsLoading } from '../../model/selectors/recommendations'
@@ -42,6 +43,7 @@ import {
     getArticleReccomendations,
 } from '../../model/slices/articleDetailsPageRecommendationsSlice'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
+import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments'
 
 import cls from './ArticleDetailsPage.module.scss'
 
@@ -55,27 +57,8 @@ const reducers: ReducersList = {
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { className } = props
-    const dispatch = useAppDispatch()
     const { t } = useTranslation()
     const { id } = useParams<{ id: string }>()
-    const comments = useSelector(getArticleComments.selectAll)
-    const commentIsLoading = useSelector(getArticleCommentsIsLoading)
-    const recommendations = useSelector(getArticleReccomendations.selectAll)
-    const recommendationsIsLoading = useSelector(
-        getArticleReccomendationsIsLoading
-    )
-
-    useInitialEffect(() => {
-        dispatch(fetchCommentsByArticleId(id))
-        dispatch(fetchArticleRecommendations())
-    })
-
-    const onSendComment = useCallback(
-        (text: string) => {
-            dispatch(addCommmentForArticle(text))
-        },
-        [dispatch]
-    )
 
     if (!id) {
         return (
@@ -97,31 +80,8 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                 <div className={cls.inner}>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    <Text
-                        text={`${t('Comments')}:`}
-                        weight={TextWeight.MEDIUM}
-                        color={TextColor.PRIMARY}
-                        size={TextSize.M}
-                        className={cls.title}
-                    />
-                    <AddCommentForm onSendComment={onSendComment} />
-                    <CommentList
-                        comments={comments}
-                        isLoading={commentIsLoading}
-                    />
-                    <Text
-                        text={`${t('Also read')}:`}
-                        weight={TextWeight.MEDIUM}
-                        color={TextColor.PRIMARY}
-                        size={TextSize.M}
-                        className={cls.title}
-                    />
-                    <ArticleList
-                        className={cls.recommendations}
-                        view={ArticleView.GRID}
-                        isLoading={recommendationsIsLoading}
-                        articles={recommendations}
-                    />
+                    <ArticleDetailsComments id={id} />
+                    <ArticleRecommendationsList />
                 </div>
             </Page>
         </DynamicModuleLoader>

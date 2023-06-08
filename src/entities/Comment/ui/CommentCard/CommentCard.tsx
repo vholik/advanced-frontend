@@ -53,13 +53,15 @@ export const CommentCard: FC<CommentCardProps> = memo((props) => {
                 to={`${RoutePath.profile}${comment.user.id}`}
                 className={cls.header}
             >
-                <Avatar size={32} src={comment.user.avatar} />
-                <Text
-                    text={comment.user.username}
-                    className={cls.user}
-                    color={TextColor.PRIMARY}
-                    weight={TextWeight.MEDIUM}
-                />
+                <HStack max>
+                    <Avatar size={32} src={comment.user.avatar} />
+                    <Text
+                        text={comment.user.username}
+                        className={cls.user}
+                        color={TextColor.PRIMARY}
+                        weight={TextWeight.MEDIUM}
+                    />
+                </HStack>
             </AppLink>
             <Text text={comment.text} className={cls.text} />
         </div>

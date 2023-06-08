@@ -30,6 +30,7 @@ import {
     getArticlesPageNum,
 } from '../../model/selectors/articlesPageSelector'
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
+import { ArticlesInfiniteList } from '../ArticlesInfiniteList/ArticlesInfiniteList'
 
 import cls from './ArticlesPage.module.scss'
 
@@ -45,28 +46,12 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
     const { className } = props
     const { t } = useTranslation()
     const dispatch = useAppDispatch()
-    const articles = useSelector(getArticles.selectAll)
-    const isLoading = useSelector(getArticlesPageIsLoading)
-    const page = useSelector(getArticlesPageNum)
-    const view = useSelector(getArticlesPageView)
-    const error = useSelector(getArticlesPageError)
+
     const [searchParams] = useSearchParams()
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage())
     }, [dispatch])
-
-    useInitialEffect(() => {
-        dispatch(initArticlesPage(searchParams))
-    })
-
-    if (error) {
-        return (
-            <Note>
-                <Text text={t('Error occured')} theme={TextTheme.ERROR} />
-            </Note>
-        )
-    }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
@@ -77,12 +62,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
             >
                 <div className={cls.inner}>
                     <ArticlesPageFilters />
-                    <ArticleList
-                        target="_blank"
-                        isLoading={isLoading}
-                        view={view}
-                        articles={articles}
-                    />
+                    <ArticlesInfiniteList searchParams={searchParams} />
                 </div>
             </Page>
         </DynamicModuleLoader>

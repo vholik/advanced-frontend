@@ -20,12 +20,3 @@ export interface Profile {
     avatar?: string
     id?: string
 }
-
-export interface ProfileSchema {
-    data?: Profile
-    isLoading: boolean
-    error?: string
-    readonly: boolean
-    form?: Profile
-    validateError?: ValidateProfileError[]
-}

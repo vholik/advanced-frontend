@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader'
 
@@ -13,4 +14,21 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
     args: {},
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: {
+                    id: '1',
+                    username: 'hello',
+                },
+            },
+            articleDetails: {
+                data: {
+                    user: {
+                        id: '1',
+                    },
+                },
+            },
+        }),
+    ],
 }
