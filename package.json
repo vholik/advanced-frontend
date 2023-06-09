@@ -30,6 +30,8 @@
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.21.8",
+        "@babel/plugin-transform-runtime": "^7.22.5",
+        "@babel/plugin-transform-typescript": "^7.22.5",
         "@babel/preset-env": "^7.21.5",
         "@babel/preset-react": "^7.18.6",
         "@babel/preset-typescript": "^7.21.5",
@@ -73,6 +75,7 @@
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-ulbi-tv-plugin": "^0.0.10",
         "file-loader": "^6.2.0",
+        "fork-ts-checker-webpack-plugin": "^8.0.0",
         "html-webpack-plugin": "^5.5.0",
         "husky": "^8.0.0",
         "identity-obj-proxy": "^3.0.0",
@@ -102,7 +105,7 @@
     },
     "dependencies": {
         "@headlessui/react": "^1.7.15",
-        "@reduxjs/toolkit": "^1.9.5",
+        "@reduxjs/toolkit": "^1.8.0",
         "axios": "^1.4.0",
         "deelay": "^2.0.0",
         "i18next": "^21.9.0",
@@ -112,7 +115,7 @@
         "react-dom": "^18.2.0",
         "react-i18next": "^11.18.3",
         "react-loading-skeleton": "^3.3.1",
-        "react-redux": "^8.0.7",
+        "react-redux": "^7.2.6",
         "react-router-dom": "^6.2.1"
     },
     "loki": {
