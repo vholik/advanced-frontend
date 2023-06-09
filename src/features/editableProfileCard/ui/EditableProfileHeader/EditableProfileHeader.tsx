@@ -62,7 +62,11 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
                 {canEdit && (
                     <div className={cls.btnsWrapper}>
                         {readonly ? (
-                            <Button onClick={onEdit} size={ButtonSize.SM}>
+                            <Button
+                                onClick={onEdit}
+                                size={ButtonSize.SM}
+                                data-testid="EditableProfileHeader.EditButton"
+                            >
                                 {t('Edit')}
                             </Button>
                         ) : (
@@ -71,10 +75,15 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
                                     onClick={onCancelEdit}
                                     theme={ThemeButton.OUTLINE}
                                     size={ButtonSize.SM}
+                                    data-testid="EditableProfileHeader.CancelButton"
                                 >
                                     {t('Cancel')}
                                 </Button>
-                                <Button onClick={onSave} size={ButtonSize.SM}>
+                                <Button
+                                    data-testid="EditableProfileHeader.SaveButton"
+                                    onClick={onSave}
+                                    size={ButtonSize.SM}
+                                >
                                     {t('Save')}
                                 </Button>
                             </HStack>

@@ -44,6 +44,7 @@ interface TextProps {
     size?: TextSize
     color?: TextColor
     weight?: TextWeight
+    'data-testid'?: string
 }
 
 type HeaderTag = 'h1' | 'h2' | 'h3'
@@ -64,6 +65,7 @@ export const Text: FC<TextProps> = memo((props) => {
         size = TextSize.M,
         color = TextColor.UNSET,
         weight = TextWeight.DEFAULT,
+        'data-testid': dataTestId = '',
     } = props
 
     const HeaderTag = mapSizeToHeaderTag[size]
@@ -78,12 +80,20 @@ export const Text: FC<TextProps> = memo((props) => {
     return (
         <div className={classNames(cls.Text, mods, [className])}>
             {title && (
-                <HeaderTag className={classNames(cls.title, {}, [cls[color]])}>
+                <HeaderTag
+                    data-testid={`${dataTestId}.Header`}
+                    className={classNames(cls.title, {}, [cls[color]])}
+                >
                     {title}
                 </HeaderTag>
             )}
             {text && (
-                <p className={classNames(cls.text, {}, [cls[color]])}>{text}</p>
+                <p
+                    data-testid={`${dataTestId}.Paragraph`}
+                    className={classNames(cls.text, {}, [cls[color]])}
+                >
+                    {text}
+                </p>
             )}
         </div>
     )

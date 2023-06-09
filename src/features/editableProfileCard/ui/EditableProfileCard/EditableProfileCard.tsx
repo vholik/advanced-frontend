@@ -14,6 +14,7 @@ import {
     DynamicModuleLoader,
     type ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text'
 
 import { getProfileForm } from '../../model/selector/getProfileForm/getProfileForm'
 import { getProfileIsLoading } from '../../model/selector/getProfileIsLoading/getProfileIsLoading'
@@ -22,6 +23,7 @@ import { getProfileReadonly } from '../../model/selector/getProfileReadonly/getP
 import { getProfileValidateErrors } from '../../model/selector/getProfileValidateErrors/getProfileValidateErrors'
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
 import { profileActions, profileReducer } from '../../model/slice/profileSlice'
+import { ProfilePageHeader } from '../EditableProfileHeader/EditableProfileHeader'
 
 interface EditableProfileCardProps {
     className?: string
@@ -32,7 +34,7 @@ const reducers: ReducersList = {
     profile: profileReducer,
 }
 
-export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
+export const EditableProfileCard = (props: EditableProfileCardProps) => {
     const { className, id } = props
     const { t } = useTranslation()
     const dispatch = useAppDispatch()
@@ -141,8 +143,15 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             <div className={classNames('', {}, [className])}>
                 {Boolean(validateErrors?.length) &&
                     validateErrors?.map((err) => (
-                        <Note key={err}>{validateErrorTranslates[err]}</Note>
+                        <Note data-testid="EditableProfileCard.Error" key={err}>
+                            <Text
+                                text={validateErrorTranslates[err]}
+                                theme={TextTheme.ERROR}
+                                align={TextAlign.CENTER}
+                            />
+                        </Note>
                     ))}
+                <ProfilePageHeader />
                 <ProfileCard
                     data={formData}
                     onChangeLastname={onChangeLastname}
@@ -158,4 +167,4 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             </div>
         </DynamicModuleLoader>
     )
-})
+}

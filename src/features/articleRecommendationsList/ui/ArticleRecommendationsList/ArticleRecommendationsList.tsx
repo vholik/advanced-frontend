@@ -4,12 +4,8 @@ import { memo } from 'react'
 import { ArticleList, ArticleView } from 'entities/Article'
 import { Text, TextColor, TextSize, TextWeight } from 'shared/ui/Text/Text'
 import { VStack } from 'shared/ui/Stack'
-import { rtkApi } from 'shared/api/rtkApi'
 
-import {
-    recommendationsApi,
-    useArticleRecommendationsQuery,
-} from '../../api/articleRecommendationsApi'
+import { useArticleRecommendationsQuery } from '../../api/articleRecommendationsApi'
 
 interface ArticleRecommendationsListProps {
     className?: string
@@ -22,6 +18,10 @@ export const ArticleRecommendationsList = memo(
 
         const { isLoading, data: recommendations } =
             useArticleRecommendationsQuery(3)
+
+        if (!recommendations) {
+            return null
+        }
 
         return (
             <VStack gap="8" className={classNames('', {}, [className])}>

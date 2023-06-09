@@ -47,7 +47,6 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
     return (
         <Page className={cls.ProfilePage}>
             <div className={cls.inner}>
-                <ProfilePageHeader />
                 <EditableProfileCard id={id} />
             </div>
         </Page>
