@@ -47,9 +47,7 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo(
                         color={TextColor.PRIMARY}
                         size={TextSize.M}
                     />
-                    <Suspense fallback="">
-                        <AddCommentForm onSendComment={onSendComment} />
-                    </Suspense>
+                    <AddCommentForm onSendComment={onSendComment} />
                 </VStack>
 
                 <CommentList comments={comments} isLoading={isLoading} />

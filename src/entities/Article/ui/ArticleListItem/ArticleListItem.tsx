@@ -23,12 +23,8 @@ import { useNavigate } from 'react-router-dom'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
 
-import {
-    ArticleView,
-    type Article,
-    ArticleBlockType,
-    type ArticleTextBlock,
-} from '../../model/types/article'
+import { ArticleBlockType, ArticleView } from '../../model/conts/articleConsts'
+import { type Article, type ArticleTextBlock } from '../../model/types/article'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 
 import cls from './ArticleListItem.module.scss'

@@ -4,11 +4,8 @@ import { Theme } from 'app/providers/ThemeProvider'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 import { avatarLink } from 'shared/const/tests'
 
-import {
-    type Article,
-    ArticleType,
-    ArticleBlockType,
-} from '../../model/types/article'
+import { ArticleType, ArticleBlockType } from '../../model/conts/articleConsts'
+import { type Article } from '../../model/types/article'
 
 import { ArticleDetails } from './ArticleDetails'
 

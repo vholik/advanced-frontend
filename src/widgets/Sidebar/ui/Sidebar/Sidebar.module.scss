@@ -19,6 +19,7 @@
     position: absolute;
     right: -60px;
     bottom: 40px;
+    z-index: var(--sidebar-btn-z-index);
 }
 
 .logo {

@@ -6,6 +6,7 @@ import {
     useRef,
     type MutableRefObject,
     type UIEvent,
+    type ReactNode,
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
@@ -24,6 +25,7 @@ interface PageProps {
     className?: string
     onScrollEnd?: () => void
     storeScroll?: boolean
+    children?: ReactNode
 }
 
 export const Page: FC<PageProps> = (props) => {

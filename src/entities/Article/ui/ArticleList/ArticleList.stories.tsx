@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { avatarLink } from 'shared/const/tests'
 
-import { ArticleView, type Article } from '../../model/types/article'
+import { ArticleView } from '../../model/conts/articleConsts'
+import { type Article } from '../../model/types/article'
 
 import { ArticleList } from './ArticleList'
 

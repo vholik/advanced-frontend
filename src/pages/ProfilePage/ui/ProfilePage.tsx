@@ -12,15 +12,15 @@ import { type Country } from 'entities/Country'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Loader } from 'shared/ui/Loader/Loader'
 import { Note } from 'shared/ui/Note/Note'
-import { ValidateProfileError } from 'entities/Profile/model/types/profile'
+import {
+    ValidateProfileError,
+    EditableProfileCard,
+    ProfilePageHeader,
+} from 'features/editableProfileCard'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useParams } from 'react-router-dom'
 import { Page } from 'widgets/Page/Page'
 import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
-import {
-    EditableProfileCard,
-    ProfilePageHeader,
-} from 'features/editableProfileCard'
 
 import cls from './ProfilePage.module.scss'
 

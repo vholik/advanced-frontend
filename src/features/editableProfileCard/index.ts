@@ -8,3 +8,4 @@ export { getProfileReadonly } from './model/selector/getProfileReadonly/getProfi
 export { getProfileValidateErrors } from './model/selector/getProfileValidateErrors/getProfileValidateErrors'
 export { profileActions } from './model/slice/profileSlice'
 export { ProfilePageHeader } from './ui/EditableProfileHeader/EditableProfileHeader'
+export { ValidateProfileError } from './model/consts/consts'

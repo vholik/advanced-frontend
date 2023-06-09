@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react'
+import { SuspenseDecorator } from 'shared/config/storybook/SuspenseDecorator/SuspenseDecorator'
 
 import { Theme } from '../../src/app/providers/ThemeProvider/index'
 import '../../src/app/styles/index.scss'
@@ -15,7 +16,11 @@ const preview: Preview = {
             },
         },
     },
-    decorators: [ThemeDecorator(Theme.LIGHT), RouterDecorator],
+    decorators: [
+        ThemeDecorator(Theme.LIGHT),
+        RouterDecorator,
+        SuspenseDecorator,
+    ],
 }
 
 export default preview

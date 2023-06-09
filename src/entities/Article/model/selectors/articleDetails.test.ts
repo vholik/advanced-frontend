@@ -2,7 +2,7 @@ import { type StateSchema } from 'app/providers/StoreProvider'
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 
-import { ArticleBlockType, ArticleType } from '../types/article'
+import { ArticleBlockType, ArticleType } from '../conts/articleConsts'
 
 import {
     getArticleDetailsData,

@@ -5,7 +5,12 @@ import { Button } from 'shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next'
 import { LoginModal } from 'features/AuthByUsername'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUserAuthData, userActions } from 'entities/User'
+import {
+    getUserAuthData,
+    isUserAdmin,
+    isUserManager,
+    userActions,
+} from 'entities/User'
 import { Input, InputTheme } from 'shared/ui/Input/Input'
 import { articlePageActions } from 'pages/ArticlesPage/model/slice/articlesPageSlice'
 import { getArticlesPageSearch } from 'pages/ArticlesPage/model/selectors/articlesPageSelector'
@@ -33,6 +38,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const authData = useSelector(getUserAuthData)
     const search = useSelector(getArticlesPageSearch)
     const navigate = useNavigate()
+    const isAdmin = useSelector(isUserAdmin)
+    const isManager = useSelector(isUserManager)
 
     const fetchData = useCallback(() => {
         dispatch(fetchArticlesList({ replace: true }))
@@ -62,6 +69,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         [dispatch, debounceFetchData, navigate]
     )
 
+    const isAdminPanelAvailable = isAdmin || isManager
+
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
@@ -86,6 +95,14 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                             content: t('Profile'),
                             href: RoutePath.profile + authData.id,
                         },
+                        ...(isAdminPanelAvailable
+                            ? [
+                                  {
+                                      content: t('Panel'),
+                                      href: RoutePath.admin_panel,
+                                  },
+                              ]
+                            : []),
                     ]}
                     trigger={<Avatar src={authData.avatar} size={32} />}
                 />

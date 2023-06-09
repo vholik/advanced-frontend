@@ -3,7 +3,7 @@ import { useCallback, useRef } from 'react'
 export function useThrottle(cb: (...args: any[]) => void, delay: number) {
     const throttleRef = useRef(false)
     return useCallback(
-        (...args) => {
+        (...args: any[]) => {
             if (!throttleRef.current) {
                 // eslint-disable-next-line n/no-callback-literal
                 cb(...args)
