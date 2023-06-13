@@ -1,10 +1,12 @@
+import { ValidateProfileError } from '../../consts/consts'
+
+import { getProfileValidateErrors } from './getProfileValidateErrors'
+
 import { type StateSchema } from '@/app/providers/StoreProvider'
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
 
-import { ValidateProfileError } from '../../consts/consts'
 
-import { getProfileValidateErrors } from './getProfileValidateErrors'
 
 const data = {
     username: 'admin',

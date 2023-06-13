@@ -1,8 +1,10 @@
 import { type FC, memo, useState, useRef, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from '@/shared/lib/classNames/classNames'
 
 import cls from './Tabs.module.scss'
+
+import { classNames } from '@/shared/lib/classNames/classNames'
+
 
 interface TabsProps<T> {
     className?: string

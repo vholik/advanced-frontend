@@ -1,7 +1,17 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
+
+import { ValidateProfileError } from '../../model/consts/consts'
+import { getProfileForm } from '../../model/selector/getProfileForm/getProfileForm'
+import { getProfileIsLoading } from '../../model/selector/getProfileIsLoading/getProfileIsLoading'
+import { getProfileError } from '../../model/selector/getProfileError/getProfileError'
+import { getProfileReadonly } from '../../model/selector/getProfileReadonly/getProfileReadonly'
+import { getProfileValidateErrors } from '../../model/selector/getProfileValidateErrors/getProfileValidateErrors'
+import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
+import { profileActions, profileReducer } from '../../model/slice/profileSlice'
+import { ProfilePageHeader } from '../EditableProfileHeader/EditableProfileHeader'
+
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { ProfileCard } from '@/entities/Profile'
 import { isNumeric } from '@/shared/lib/isNumeric/isNumeric'
@@ -15,16 +25,7 @@ import {
     type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text'
-
-import { ValidateProfileError } from '../../model/consts/consts'
-import { getProfileForm } from '../../model/selector/getProfileForm/getProfileForm'
-import { getProfileIsLoading } from '../../model/selector/getProfileIsLoading/getProfileIsLoading'
-import { getProfileError } from '../../model/selector/getProfileError/getProfileError'
-import { getProfileReadonly } from '../../model/selector/getProfileReadonly/getProfileReadonly'
-import { getProfileValidateErrors } from '../../model/selector/getProfileValidateErrors/getProfileValidateErrors'
-import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
-import { profileActions, profileReducer } from '../../model/slice/profileSlice'
-import { ProfilePageHeader } from '../EditableProfileHeader/EditableProfileHeader'
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 interface EditableProfileCardProps {
     className?: string

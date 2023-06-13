@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { ArticleViewSelector } from './ArticleViewSelector'
+
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { ArticleView } from '@/entities/Article'
 
-import { ArticleViewSelector } from './ArticleViewSelector'
 
 const meta = {
     title: 'features/ArticleViewSelector',

@@ -1,8 +1,21 @@
 import { type FC, memo, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
+import {
+    getArticlesPageOrder,
+    getArticlesPageSearch,
+    getArticlesPageSort,
+    getArticlesPageType,
+    getArticlesPageView,
+} from '../../model/selectors/articlesPageSelector'
+import { articlePageActions } from '../../model/slice/articlesPageSlice'
+
+import cls from './ArticlesPageFilters.module.scss'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { ArticleViewSelector } from '@/features/ArticleViewSelector'
-import { useSelector } from 'react-redux'
 import {
     type ArticlesSortField,
     type ArticleView,
@@ -16,17 +29,7 @@ import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
 import { type TabItem, Tabs } from '@/shared/ui/Tabs/Tabs'
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs'
 
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
-import {
-    getArticlesPageOrder,
-    getArticlesPageSearch,
-    getArticlesPageSort,
-    getArticlesPageType,
-    getArticlesPageView,
-} from '../../model/selectors/articlesPageSelector'
-import { articlePageActions } from '../../model/slice/articlesPageSlice'
 
-import cls from './ArticlesPageFilters.module.scss'
 
 interface ArticlesPageFiltersProps {
     className?: string

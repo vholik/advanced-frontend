@@ -1,5 +1,8 @@
 import { type FC, memo, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+
+import cls from './ArticleSortSelect.module.scss'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
 import {
     CustomSelect,
@@ -10,7 +13,6 @@ import { type SortOrder } from '@/shared/types'
 import FilterIcon from '@/shared/assets/icons/filter.svg'
 import { Icon, IconColor } from '@/shared/ui/Icon/Icon'
 
-import cls from './ArticleSortSelect.module.scss'
 
 interface ArticleSortSelectProps {
     className?: string

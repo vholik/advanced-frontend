@@ -1,6 +1,7 @@
+import { type ArticleBlockType, type ArticleType } from '../conts/articleConsts'
+
 import { type User } from '@/entities/User'
 
-import { type ArticleBlockType, type ArticleType } from '../conts/articleConsts'
 
 export interface ArticleBlockBase {
     id: string

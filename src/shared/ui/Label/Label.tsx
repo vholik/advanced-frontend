@@ -1,7 +1,9 @@
 import { type ReactNode, type FC } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
 
 import cls from './Label.module.scss'
+
+import { classNames } from '@/shared/lib/classNames/classNames'
+
 
 interface LabelProps {
     className?: string

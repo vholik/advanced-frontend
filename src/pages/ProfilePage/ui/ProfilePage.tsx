@@ -1,11 +1,15 @@
 import { useEffect, type FC, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
+
+import cls from './ProfilePage.module.scss'
+
 import {
     DynamicModuleLoader,
     type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { useSelector } from 'react-redux'
 import { isNumeric } from '@/shared/lib/isNumeric/isNumeric'
 import { type Currency } from '@/entities/Currency'
 import { type Country } from '@/entities/Country'
@@ -18,11 +22,9 @@ import {
     ProfilePageHeader,
 } from '@/features/editableProfileCard'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { useParams } from 'react-router-dom'
 import { Page } from '@/widgets/Page/Page'
 import { fetchArticlesList } from '@/pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
 
-import cls from './ProfilePage.module.scss'
 
 interface ProfilePageProps {
     className?: string

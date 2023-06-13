@@ -7,13 +7,16 @@ import {
     useRef,
     useEffect,
 } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import ChevronDown from '@/shared/assets/icons/chevron_down.svg'
-import Check from '@/shared/assets/icons/check.svg'
 
 import { Portal } from '../Portal/Portal'
 
 import cls from './CustomSelect.module.scss'
+
+import { classNames } from '@/shared/lib/classNames/classNames'
+import ChevronDown from '@/shared/assets/icons/chevron_down.svg'
+import Check from '@/shared/assets/icons/check.svg'
+
+
 
 export interface SelectOption<T> {
     value: T

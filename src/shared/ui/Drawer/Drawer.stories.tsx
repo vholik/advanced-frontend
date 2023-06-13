@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
 import { Drawer } from './Drawer'
+
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+
 
 const meta = {
     title: 'shared/Drawer',

@@ -1,11 +1,11 @@
 import type { Preview } from '@storybook/react'
 
-import { SuspenseDecorator } from '@/shared/config/storybook/SuspenseDecorator/SuspenseDecorator'
-
 import { Theme } from '../../src/app/providers/ThemeProvider/index'
 import '../../src/app/styles/index.scss'
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator'
+
+import { SuspenseDecorator } from '@/shared/config/storybook/SuspenseDecorator/SuspenseDecorator'
 
 const preview: Preview = {
     parameters: {

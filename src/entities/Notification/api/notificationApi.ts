@@ -1,6 +1,7 @@
+import { type Notification } from '../model/types/notification'
+
 import { rtkApi } from '@/shared/api/rtkApi'
 
-import { type Notification } from '../model/types/notification'
 
 export const notificationsApi = rtkApi.injectEndpoints({
     endpoints: (build) => ({

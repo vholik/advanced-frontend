@@ -1,8 +1,9 @@
 import { type FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useDispatch, useSelector } from 'react-redux'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Dropdown } from '@/shared/ui/Popups'
-import { useDispatch, useSelector } from 'react-redux'
 import {
     getUserAuthData,
     isUserAdmin,

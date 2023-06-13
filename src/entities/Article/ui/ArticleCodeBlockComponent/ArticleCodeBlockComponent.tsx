@@ -1,11 +1,14 @@
 import { memo, type FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { Code } from '@/shared/ui/Code/Code'
 
 import { type ArticleCodeBlock } from '../../model/types/article'
 
 import cls from './ArticleCodeBlockComponent.module.scss'
+
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { Code } from '@/shared/ui/Code/Code'
+
+
 
 interface ArticleCodeBlockComponentProps {
     className?: string

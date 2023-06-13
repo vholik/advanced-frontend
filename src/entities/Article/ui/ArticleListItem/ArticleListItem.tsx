@@ -5,6 +5,14 @@ import {
     type HTMLAttributeAnchorTarget,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
+
+import { ArticleBlockType, ArticleView } from '../../model/conts/articleConsts'
+import { type Article, type ArticleTextBlock } from '../../model/types/article'
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
+
+import cls from './ArticleListItem.module.scss'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
 import {
     Text,
@@ -19,15 +27,10 @@ import { Icon, IconColor } from '@/shared/ui/Icon/Icon'
 import { Card } from '@/shared/ui/Card/Card'
 import { useHover } from '@/shared/lib/hooks/useHover/useHover'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'
-import { useNavigate } from 'react-router-dom'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { AppLink } from '@/shared/ui/AppLink/AppLink'
 
-import { ArticleBlockType, ArticleView } from '../../model/conts/articleConsts'
-import { type Article, type ArticleTextBlock } from '../../model/types/article'
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 
-import cls from './ArticleListItem.module.scss'
 
 interface ArticleListItemProps {
     className?: string

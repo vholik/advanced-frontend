@@ -1,7 +1,3 @@
-import { type StateSchema } from '@/app/providers/StoreProvider'
-import { Country } from '@/entities/Country'
-import { Currency } from '@/entities/Currency'
-
 import { ArticleBlockType, ArticleType } from '../conts/articleConsts'
 
 import {
@@ -9,6 +5,12 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from './articleDetails'
+
+import { type StateSchema } from '@/app/providers/StoreProvider'
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
+
+
 
 const data = {
     id: '1',

@@ -5,6 +5,12 @@ import {
     type CombinedState,
 } from '@reduxjs/toolkit'
 import { type AxiosInstance } from 'axios'
+import {
+    type To,
+    type NavigateFunction,
+    type NavigateOptions,
+} from 'react-router-dom'
+
 import { type ArticleDetailsSchema } from '@/entities/Article/model/types/articleDetailsSchema'
 import { type CounterSchema } from '@/entities/Counter'
 import { type UserSchema } from '@/entities/User'
@@ -18,11 +24,6 @@ import {
     type ArticleDetailsPageSchema,
 } from '@/pages/ArticleDetailsPage'
 import { type ArticlesPagesSchema } from '@/pages/ArticlesPage'
-import {
-    type To,
-    type NavigateFunction,
-    type NavigateOptions,
-} from 'react-router-dom'
 import { type rtkApi } from '@/shared/api/rtkApi'
 
 export interface StateSchema {

@@ -1,9 +1,11 @@
 import { memo, type FC, useCallback } from 'react'
+
+import { Country } from '../types/country'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect'
 import { ListBox } from '@/shared/ui/Popups'
 
-import { Country } from '../types/country'
 
 const countryArray = [
     { value: Country.Germany, content: 'Germany' },

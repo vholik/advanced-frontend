@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { ArticleTypeTabs } from './ArticleTypeTabs'
+
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { ArticleType } from '@/entities/Article'
 
-import { ArticleTypeTabs } from './ArticleTypeTabs'
 
 const meta = {
     title: 'shared/ArticleTypeTabs',

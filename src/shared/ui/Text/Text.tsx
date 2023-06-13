@@ -1,7 +1,9 @@
 import { memo, type FC } from 'react'
-import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
 
 import cls from './Text.module.scss'
+
+import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
+
 
 export enum TextTheme {
     PRIMARY = 'primary',

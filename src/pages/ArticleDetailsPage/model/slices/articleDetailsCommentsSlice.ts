@@ -4,11 +4,13 @@ import {
     configureStore,
     type PayloadAction,
 } from '@reduxjs/toolkit'
-import { type StateSchema } from '@/app/providers/StoreProvider'
-import { type Comment } from '@/entities/Comment'
 
 import { type ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema'
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+
+import { type StateSchema } from '@/app/providers/StoreProvider'
+import { type Comment } from '@/entities/Comment'
+
 
 interface Book {
     bookId: string

@@ -1,11 +1,14 @@
 import { memo, type FC, useCallback } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect'
-import { ListBox, type ListBoxItem } from '@/shared/ui/Popups'
 
 import { Currency } from '../../model/types/currency'
 
 import cls from './CurrencySelect.module.scss'
+
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect'
+import { ListBox, type ListBoxItem } from '@/shared/ui/Popups'
+
+
 
 const currencyArray = [
     { value: Currency.EUR, content: Currency.EUR },

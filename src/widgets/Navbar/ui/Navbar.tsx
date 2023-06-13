@@ -1,10 +1,14 @@
+import { memo, useCallback, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+
+import cls from './Navbar.module.scss'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
-import { memo, useCallback, useState } from 'react'
 import { Button, ThemeButton } from '@/shared/ui/Button/Button'
-import { useTranslation } from 'react-i18next'
 import { LoginModal } from '@/features/AuthByUsername'
-import { useDispatch, useSelector } from 'react-redux'
 import {
     getUserAuthData,
     isUserAdmin,
@@ -16,7 +20,6 @@ import { articlePageActions } from '@/pages/ArticlesPage/model/slice/articlesPag
 import { getArticlesPageSearch } from '@/pages/ArticlesPage/model/selectors/articlesPageSelector'
 import { fetchArticlesList } from '@/pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
-import { useNavigate } from 'react-router-dom'
 import { AppRoutes, RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import EditIcon from '@/shared/assets/icons/edit.svg'
 import { AppLink } from '@/shared/ui/AppLink/AppLink'
@@ -30,7 +33,6 @@ import { NotificationButton } from '@/features/notificationButton'
 import { AvatarDropdown } from '@/features/avatarDropdown'
 import { Drawer } from '@/shared/ui/Drawer/Drawer'
 
-import cls from './Navbar.module.scss'
 
 interface NavbarProps {
     className?: string

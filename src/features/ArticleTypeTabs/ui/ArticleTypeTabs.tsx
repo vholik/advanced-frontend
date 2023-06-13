@@ -1,5 +1,6 @@
 import { type FC, memo, useMemo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Tabs, type TabItem } from '@/shared/ui/Tabs/Tabs'
 import { ArticleType } from '@/entities/Article'

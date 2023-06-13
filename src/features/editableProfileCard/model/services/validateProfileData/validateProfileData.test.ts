@@ -1,11 +1,14 @@
 import axios from 'axios'
-import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
-import { Country } from '@/entities/Country'
-import { Currency } from '@/entities/Currency'
 
 import { ValidateProfileError } from '../../consts/consts'
 
 import { validateProfileData } from './validateProfileData'
+
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
+
+
 
 jest.mock('axios')
 

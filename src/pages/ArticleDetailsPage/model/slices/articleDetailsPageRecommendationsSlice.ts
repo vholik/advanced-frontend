@@ -4,13 +4,15 @@ import {
     configureStore,
     type PayloadAction,
 } from '@reduxjs/toolkit'
-import { type StateSchema } from '@/app/providers/StoreProvider'
-import { type Comment } from '@/entities/Comment'
-import { type Article } from '@/entities/Article'
 
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { fetchArticleRecommendations } from '../services/fetchArticleRecommendations/fetchArticleRecommendation'
 import { type ArticleDetailsPageRecommendationsSchema } from '../types/ArticleDetailsPageRecommendationsSchema'
+
+import { type StateSchema } from '@/app/providers/StoreProvider'
+import { type Comment } from '@/entities/Comment'
+import { type Article } from '@/entities/Article'
+
 
 interface Book {
     bookId: string

@@ -1,12 +1,16 @@
 import { type FC, memo, type ReactNode, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
-import { useAnimationModules } from '@/shared/lib/components/AnimationProvider'
 
 import { Overlay } from '../Overlay/Overlay'
 import { Portal } from '../Portal/Portal'
 
 import cls from './Drawer.module.scss'
+
+import {
+    AnimationProvider,
+    useAnimationModules,
+} from '@/shared/lib/components/AnimationProvider'
+import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
 
 interface DrawerProps {
     className?: string
@@ -101,7 +105,7 @@ const DrawerContent: FC<DrawerProps> = memo((props) => {
     )
 })
 
-export const Drawer = memo((props: DrawerProps) => {
+const DrawerAsync = memo((props: DrawerProps) => {
     const { isLoaded } = useAnimationModules()
 
     if (!isLoaded) {
@@ -109,4 +113,12 @@ export const Drawer = memo((props: DrawerProps) => {
     }
 
     return <DrawerContent {...props} />
+})
+
+export const Drawer = memo((props: DrawerProps) => {
+    return (
+        <AnimationProvider>
+            <DrawerAsync {...props} />
+        </AnimationProvider>
+    )
 })

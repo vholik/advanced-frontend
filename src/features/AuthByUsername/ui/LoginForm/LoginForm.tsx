@@ -1,18 +1,6 @@
 import { useCallback, type FC, useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { Button, ThemeButton } from '@/shared/ui/Button/Button'
-import { Input } from '@/shared/ui/Input/Input'
-import { Label } from '@/shared/ui/Label/Label'
 import { useDispatch, useSelector, useStore } from 'react-redux'
-import { Text } from '@/shared/ui/Text/Text'
-import { Note } from '@/shared/ui/Note/Note'
-import { type ReduxStoreWithManager } from '@/app/providers/StoreProvider'
-import {
-    DynamicModuleLoader,
-    type ReducersList,
-} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername'
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword'
@@ -22,6 +10,21 @@ import { loginByUsername } from '../../model/services/loginByUsername/loginByUse
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 
 import cls from './LoginForm.module.scss'
+
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { Button, ThemeButton } from '@/shared/ui/Button/Button'
+import { Input } from '@/shared/ui/Input/Input'
+import { Label } from '@/shared/ui/Label/Label'
+import { Text } from '@/shared/ui/Text/Text'
+import { Note } from '@/shared/ui/Note/Note'
+import { type ReduxStoreWithManager } from '@/app/providers/StoreProvider'
+import {
+    DynamicModuleLoader,
+    type ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+
+
 
 export interface LoginFormProps {
     className?: string

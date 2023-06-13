@@ -4,6 +4,10 @@ import {
     configureStore,
     type PayloadAction,
 } from '@reduxjs/toolkit'
+
+import { type ArticlesPagesSchema } from '../types/articlesPageSchema'
+import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList'
+
 import { type StateSchema } from '@/app/providers/StoreProvider'
 import {
     ArticleView,
@@ -14,8 +18,6 @@ import {
 import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localStorage'
 import { type SortOrder } from '@/shared/types'
 
-import { type ArticlesPagesSchema } from '../types/articlesPageSchema'
-import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList'
 
 interface Book {
     bookId: string

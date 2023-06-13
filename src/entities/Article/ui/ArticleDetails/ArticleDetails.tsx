@@ -1,26 +1,6 @@
 import { useEffect, type FC, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import {
-    DynamicModuleLoader,
-    type ReducersList,
-} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useSelector } from 'react-redux'
-import { Note } from '@/shared/ui/Note/Note'
-import {
-    Text,
-    TextAlign,
-    TextColor,
-    TextSize,
-    TextTheme,
-    TextWeight,
-} from '@/shared/ui/Text/Text'
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
-import EyeIcon from '@/shared/assets/icons/eye.svg'
-import DateIcon from '@/shared/assets/icons/date.svg'
-import { Icon, IconColor } from '@/shared/ui/Icon/Icon'
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 
 import { ArticleBlockType } from '../../model/conts/articleConsts'
 import { type ArticleBlock } from '../../model/types/article'
@@ -36,6 +16,27 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 
 import cls from './ArticleDetails.module.scss'
+
+import { classNames } from '@/shared/lib/classNames/classNames'
+import {
+    DynamicModuleLoader,
+    type ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { Note } from '@/shared/ui/Note/Note'
+import {
+    Text,
+    TextAlign,
+    TextColor,
+    TextSize,
+    TextTheme,
+    TextWeight,
+} from '@/shared/ui/Text/Text'
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import EyeIcon from '@/shared/assets/icons/eye.svg'
+import DateIcon from '@/shared/assets/icons/date.svg'
+import { Icon, IconColor } from '@/shared/ui/Icon/Icon'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 
 interface ArticleDetailsProps {
     className?: string

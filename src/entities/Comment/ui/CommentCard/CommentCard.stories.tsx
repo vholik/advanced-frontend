@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { CommentCard } from './CommentCard'
+
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { avatarLink } from '@/shared/const/tests'
 
-import { CommentCard } from './CommentCard'
 
 const meta = {
     title: 'shared/CommentCard',

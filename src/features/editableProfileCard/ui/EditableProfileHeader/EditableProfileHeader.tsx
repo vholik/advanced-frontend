@@ -1,13 +1,6 @@
 import { type FC, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from '@/shared/lib/classNames/classNames'
 import { useSelector } from 'react-redux'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { getUserAuthData } from '@/entities/User'
-import { HStack, VStack } from '@/shared/ui/Stack'
-import { Avatar } from '@/shared/ui/Avatar/Avatar'
-import { Text } from '@/shared/ui/Text/Text'
-import { Button, ButtonSize, ThemeButton } from '@/shared/ui/Button/Button'
 
 import { getProfileForm } from '../../model/selector/getProfileForm/getProfileForm'
 import { getProfileReadonly } from '../../model/selector/getProfileReadonly/getProfileReadonly'
@@ -16,6 +9,16 @@ import { profileActions } from '../../model/slice/profileSlice'
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData'
 
 import cls from './EditableProfileHeader.module.scss'
+
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { getUserAuthData } from '@/entities/User'
+import { HStack, VStack } from '@/shared/ui/Stack'
+import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { Text } from '@/shared/ui/Text/Text'
+import { Button, ButtonSize, ThemeButton } from '@/shared/ui/Button/Button'
+
+
 
 interface ProfilePageHeaderProps {
     className?: string

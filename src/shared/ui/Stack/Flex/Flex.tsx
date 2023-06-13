@@ -1,7 +1,9 @@
 import { type FC, memo, type ReactNode } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
 
 import cls from './Flex.module.scss'
+
+import { classNames } from '@/shared/lib/classNames/classNames'
+
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between'
 export type FlexAlign = 'center' | 'start' | 'end'

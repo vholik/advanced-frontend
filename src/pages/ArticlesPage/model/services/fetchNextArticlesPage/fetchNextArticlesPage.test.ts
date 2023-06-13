@@ -1,12 +1,15 @@
 import axios from 'axios'
+
+import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList'
+
+import { fetchNextArticlesPage } from './fetchNextArticlesPage'
+
 import { userActions } from '@/entities/User'
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
 
-import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList'
 
-import { fetchNextArticlesPage } from './fetchNextArticlesPage'
 
 jest.mock('axios')
 

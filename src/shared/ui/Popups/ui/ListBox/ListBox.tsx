@@ -1,16 +1,18 @@
 import { type FC, memo, Fragment } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Mods, classNames } from '@/shared/lib/classNames/classNames'
 import { useState } from 'react'
 import { Listbox } from '@headlessui/react'
-import CheckIcon from '@/shared/assets/icons/check.svg'
-import { type DropdownDirection } from '@/shared/types/ui'
+
 
 import popupCls from '../../styles/popup.module.scss'
 import { Icon, IconColor } from '../../../Icon/Icon'
 import { mapDirectionClass } from '../../styles/consts'
 
 import cls from './ListBox.module.scss'
+
+import { type DropdownDirection } from '@/shared/types/ui'
+import CheckIcon from '@/shared/assets/icons/check.svg'
+import { Mods, classNames } from '@/shared/lib/classNames/classNames'
 
 type ListBoxTheme = 'primary_theme' | 'secondary_theme'
 

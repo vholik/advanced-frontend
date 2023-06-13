@@ -1,5 +1,10 @@
 import { memo, type FC } from 'react'
 import { useTranslation } from 'react-i18next'
+
+import { type ArticleTextBlock } from '../../model/types/article'
+
+import cls from './ArticleTextBlockComponent.module.scss'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
 import {
     Text,
@@ -9,9 +14,7 @@ import {
     TextWeight,
 } from '@/shared/ui/Text/Text'
 
-import { type ArticleTextBlock } from '../../model/types/article'
 
-import cls from './ArticleTextBlockComponent.module.scss'
 
 interface ArticleTextBlockComponentProps {
     className?: string

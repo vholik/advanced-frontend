@@ -1,5 +1,10 @@
 import { type FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
+
+import { type Comment } from '../../model/types/comment'
+
+import cls from './CommentCard.module.scss'
+
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import { Text, TextColor, TextWeight } from '@/shared/ui/Text/Text'
@@ -8,9 +13,7 @@ import { AppLink } from '@/shared/ui/AppLink/AppLink'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { HStack, VStack } from '@/shared/ui/Stack'
 
-import { type Comment } from '../../model/types/comment'
 
-import cls from './CommentCard.module.scss'
 
 interface CommentCardProps {
     className?: string
