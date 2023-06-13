@@ -60,5 +60,6 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'jsx-a11y/no-noninteractive-element-interactions': 'off',
         'ulbi-tv-plugin/path-checker': 'error',
+        '@typescript-eslint/consistent-type-imports': 'off',
     },
 }

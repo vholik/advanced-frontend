@@ -50,9 +50,14 @@
     }
 }
 
-.isClosing {
-    .content {
-        transform: translateY(-10%);
-        opacity: 0;
-    }
+.sheet {
+    z-index: 100;
+    position: fixed;
+    left: 2vw;
+    height: calc(100vh + 100px);
+    width: 96vw;
+    border-radius: 0.75rem 0.75rem 0;
+    background-color: var(--bg-color);
+    touch-action: none;
+    padding: 1rem;
 }
