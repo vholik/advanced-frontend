@@ -7,13 +7,13 @@ import {
     type Reducer,
     type CombinedState,
 } from '@reduxjs/toolkit'
-import { counterReducer } from 'entities/Counter/model/slice/counterSlice'
-import { userReducer } from 'entities/User'
+import { counterReducer } from '@/entities/Counter/model/slice/counterSlice'
+import { userReducer } from '@/entities/User'
 import { TypedUseSelectorHook, useDispatch } from 'react-redux'
-import { $api } from 'shared/api/api'
+import { $api } from '@/shared/api/api'
 import { type NavigateFunction } from 'react-router-dom'
-import { restoreScrollReducer } from 'features/RestoreScroll'
-import { rtkApi } from 'shared/api/rtkApi'
+import { restoreScrollReducer } from '@/features/RestoreScroll'
+import { rtkApi } from '@/shared/api/rtkApi'
 
 import { type ThunkExtraArg, type StateSchema } from './StateSchema'
 import { createReducerManager } from './reducerManager'

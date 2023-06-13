@@ -1,6 +1,6 @@
 import { type Story } from '@storybook/react'
-import { type StateSchema, StoreProvider } from 'app/providers/StoreProvider'
-import 'app/styles/index.scss'
+import { type StateSchema, StoreProvider } from '@/app/providers/StoreProvider'
+import '@/app/styles/index.scss'
 import { Suspense } from 'react'
 import { I18nextProvider } from 'react-i18next'
 

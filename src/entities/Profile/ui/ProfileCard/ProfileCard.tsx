@@ -1,11 +1,11 @@
 import { type FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
-import { Input } from 'shared/ui/Input/Input'
-import { type Currency, CurrencySelect } from 'entities/Currency'
-import { type Country } from 'entities/Country'
-import { CountrySelect } from 'entities/Country/ui/CountrySelect'
-import { Label } from 'shared/ui/Label/Label'
+import { Input } from '@/shared/ui/Input/Input'
+import { type Currency, CurrencySelect } from '@/entities/Currency'
+import { type Country } from '@/entities/Country'
+import { CountrySelect } from '@/entities/Country/ui/CountrySelect'
+import { Label } from '@/shared/ui/Label/Label'
 
 import { type Profile } from '../../model/types/profile'
 

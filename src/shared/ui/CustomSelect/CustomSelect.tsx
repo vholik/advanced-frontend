@@ -7,9 +7,9 @@ import {
     useRef,
     useEffect,
 } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
-import ChevronDown from 'shared/assets/icons/chevron_down.svg'
-import Check from 'shared/assets/icons/check.svg'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import ChevronDown from '@/shared/assets/icons/chevron_down.svg'
+import Check from '@/shared/assets/icons/check.svg'
 
 import { Portal } from '../Portal/Portal'
 

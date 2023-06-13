@@ -1,12 +1,12 @@
 import { type FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { ArticleList } from 'entities/Article'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { ArticleList } from '@/entities/Article'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useSelector } from 'react-redux'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { Note } from 'shared/ui/Note/Note'
-import { Text, TextTheme } from 'shared/ui/Text/Text'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { Note } from '@/shared/ui/Note/Note'
+import { Text, TextTheme } from '@/shared/ui/Text/Text'
 
 import {
     getArticlesPageError,

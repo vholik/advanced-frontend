@@ -6,8 +6,8 @@ import {
     useEffect,
     useCallback,
 } from 'react'
-import { type Mods, classNames } from 'shared/lib/classNames/classNames'
-import { useModal } from 'shared/lib/hooks/useModal/useModal'
+import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
+import { useModal } from '@/shared/lib/hooks/useModal/useModal'
 
 import { Portal } from '../Portal/Portal'
 import { Overlay } from '../Overlay/Overlay'

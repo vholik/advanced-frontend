@@ -4,8 +4,8 @@ import {
     type Article,
     type ArticleView,
     type ArticleType,
-} from 'entities/Article'
-import { type SortOrder } from 'shared/types'
+} from '@/entities/Article'
+import { type SortOrder } from '@/shared/types'
 
 export interface ArticlesPagesSchema extends EntityState<Article> {
     isLoading?: boolean

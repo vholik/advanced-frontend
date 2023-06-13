@@ -1,14 +1,14 @@
 import { type FC, memo, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import {
     CustomSelect,
     type SelectOption,
-} from 'shared/ui/CustomSelect/CustomSelect'
-import { ArticlesSortField } from 'entities/Article'
-import { type SortOrder } from 'shared/types'
-import FilterIcon from 'shared/assets/icons/filter.svg'
-import { Icon, IconColor } from 'shared/ui/Icon/Icon'
+} from '@/shared/ui/CustomSelect/CustomSelect'
+import { ArticlesSortField } from '@/entities/Article'
+import { type SortOrder } from '@/shared/types'
+import FilterIcon from '@/shared/assets/icons/filter.svg'
+import { Icon, IconColor } from '@/shared/ui/Icon/Icon'
 
 import cls from './ArticleSortSelect.module.scss'
 

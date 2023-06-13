@@ -9,15 +9,15 @@ import {
     type ReactNode,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { getScrollByPath, restoreScrollActions } from 'features/RestoreScroll'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { getScrollByPath, restoreScrollActions } from '@/features/RestoreScroll'
 import { useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { type RootState } from 'app/providers/StoreProvider/config/store'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle'
+import { type RootState } from '@/app/providers/StoreProvider/config/store'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle'
 
 import cls from './Page.module.scss'
 

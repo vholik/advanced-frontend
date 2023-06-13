@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { avatarLink } from 'shared/const/tests'
+import { avatarLink } from '@/shared/const/tests'
 
 import { Avatar } from './Avatar'
 

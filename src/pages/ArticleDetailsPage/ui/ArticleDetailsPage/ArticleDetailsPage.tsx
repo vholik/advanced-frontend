@@ -1,9 +1,9 @@
 import { memo, type FC, useEffect, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { ArticleDetails, ArticleView } from 'entities/Article'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { ArticleDetails, ArticleView } from '@/entities/Article'
 import { useParams } from 'react-router-dom'
-import { Note } from 'shared/ui/Note/Note'
+import { Note } from '@/shared/ui/Note/Note'
 import {
     Text,
     TextAlign,
@@ -11,19 +11,19 @@ import {
     TextSize,
     TextTheme,
     TextWeight,
-} from 'shared/ui/Text/Text'
-import { CommentList } from 'entities/Comment'
+} from '@/shared/ui/Text/Text'
+import { CommentList } from '@/entities/Comment'
 import {
     DynamicModuleLoader,
     type ReducersList,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useSelector } from 'react-redux'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { AddCommentForm } from 'features/AddCommentForm'
-import { Page } from 'widgets/Page/Page'
-import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList'
-import { ArticleRecommendationsList } from 'features/articleRecommendationsList'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { AddCommentForm } from '@/features/AddCommentForm'
+import { Page } from '@/widgets/Page/Page'
+import { ArticleList } from '@/entities/Article/ui/ArticleList/ArticleList'
+import { ArticleRecommendationsList } from '@/features/articleRecommendationsList'
 
 import { addCommmentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
 import { getArticleReccomendationsIsLoading } from '../../model/selectors/recommendations'

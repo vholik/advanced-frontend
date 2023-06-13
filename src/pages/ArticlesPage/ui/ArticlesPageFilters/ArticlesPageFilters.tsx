@@ -1,20 +1,20 @@
 import { type FC, memo, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { ArticleViewSelector } from 'features/ArticleViewSelector'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { ArticleViewSelector } from '@/features/ArticleViewSelector'
 import { useSelector } from 'react-redux'
 import {
     type ArticlesSortField,
     type ArticleView,
     type ArticleType,
-} from 'entities/Article'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { ArticleSortSelect } from 'features/ArticleSortSelect'
-import { type SortOrder } from 'shared/types'
-import { Input } from 'shared/ui/Input/Input'
-import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce'
-import { type TabItem, Tabs } from 'shared/ui/Tabs/Tabs'
-import { ArticleTypeTabs } from 'features/ArticleTypeTabs'
+} from '@/entities/Article'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { ArticleSortSelect } from '@/features/ArticleSortSelect'
+import { type SortOrder } from '@/shared/types'
+import { Input } from '@/shared/ui/Input/Input'
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
+import { type TabItem, Tabs } from '@/shared/ui/Tabs/Tabs'
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs'
 
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
 import {

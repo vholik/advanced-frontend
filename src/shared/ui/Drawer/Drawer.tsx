@@ -1,7 +1,7 @@
 import { type FC, memo, type ReactNode, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { type Mods, classNames } from 'shared/lib/classNames/classNames'
-import { useAnimationModules } from 'shared/lib/components/AnimationProvider'
+import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
+import { useAnimationModules } from '@/shared/lib/components/AnimationProvider'
 
 import { Overlay } from '../Overlay/Overlay'
 import { Portal } from '../Portal/Portal'

@@ -1,9 +1,9 @@
 import { memo, type FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { AppLink } from 'shared/ui/AppLink/AppLink'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { AppLink } from '@/shared/ui/AppLink/AppLink'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { getUserAuthData } from 'entities/User'
+import { getUserAuthData } from '@/entities/User'
 
 import { type SidebarItemType } from '../../model/types/sidebar'
 

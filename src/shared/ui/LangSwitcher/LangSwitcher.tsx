@@ -1,7 +1,7 @@
 import { memo, type FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
-import GlobeIcon from 'shared/assets/icons/globe.svg'
+import GlobeIcon from '@/shared/assets/icons/globe.svg'
 
 import { Button, ThemeButton } from '../Button/Button'
 
