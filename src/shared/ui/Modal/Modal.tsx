@@ -9,6 +9,7 @@ import {
 import { type Mods, classNames } from 'shared/lib/classNames/classNames'
 
 import { Portal } from '../Portal/Portal'
+import { Overlay } from '../Overlay/Overlay'
 
 import cls from './Modal.module.scss'
 
@@ -59,10 +60,6 @@ export const Modal: FC<ModalProps> = (props) => {
         }
     }, [isOpen, onKeyDown])
 
-    const onContentClick = (event: React.MouseEvent) => {
-        event.stopPropagation()
-    }
-
     const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
@@ -81,15 +78,13 @@ export const Modal: FC<ModalProps> = (props) => {
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className])}>
-                <div className={cls.overlay} onClick={closeHandler}>
-                    <div
-                        className={classNames(cls.content, {
-                            [cls.contentOpened]: isOpen,
-                        })}
-                        onClick={onContentClick}
-                    >
-                        {children}
-                    </div>
+                <Overlay onClick={closeHandler} />
+                <div
+                    className={classNames(cls.content, {
+                        [cls.contentOpened]: isOpen,
+                    })}
+                >
+                    {children}
                 </div>
             </div>
         </Portal>
