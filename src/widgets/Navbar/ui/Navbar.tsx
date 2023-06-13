@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import { ThemeSwitcher } from 'features/ThemeSwitcher'
 import { memo, useCallback, useState } from 'react'
-import { Button } from 'shared/ui/Button/Button'
+import { Button, ThemeButton } from 'shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next'
 import { LoginModal } from 'features/AuthByUsername'
 import { useDispatch, useSelector } from 'react-redux'
@@ -22,8 +22,12 @@ import EditIcon from 'shared/assets/icons/edit.svg'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
 import { Icon, IconColor } from 'shared/ui/Icon/Icon'
 import { Text } from 'shared/ui/Text/Text'
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown'
+import { Dropdown, Popover } from 'shared/ui/Popups'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
+import { HStack } from 'shared/ui/Stack'
+import { NotificationList } from 'entities/Notification'
+import { NotificationButton } from 'features/notificationButton'
+import { AvatarDropdown } from 'features/avatarDropdown'
 
 import cls from './Navbar.module.scss'
 
@@ -38,8 +42,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const authData = useSelector(getUserAuthData)
     const search = useSelector(getArticlesPageSearch)
     const navigate = useNavigate()
-    const isAdmin = useSelector(isUserAdmin)
-    const isManager = useSelector(isUserManager)
 
     const fetchData = useCallback(() => {
         dispatch(fetchArticlesList({ replace: true }))
@@ -55,10 +57,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         setIsAuthModal(true)
     }, [])
 
-    const onLogout = () => {
-        dispatch(userActions.logout())
-    }
-
     const onChangeSearch = useCallback(
         (value: string) => {
             dispatch(articlePageActions.setPage(1))
@@ -68,8 +66,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         },
         [dispatch, debounceFetchData, navigate]
     )
-
-    const isAdminPanelAvailable = isAdmin || isManager
 
     if (authData) {
         return (
@@ -86,26 +82,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     <Text text={t('Write')} />
                 </AppLink>
                 <ThemeSwitcher />
-                <Dropdown
-                    direction="bottom right"
-                    className={cls.dropdown}
-                    items={[
-                        { content: t('Log out'), onClick: onLogout },
-                        {
-                            content: t('Profile'),
-                            href: RoutePath.profile + authData.id,
-                        },
-                        ...(isAdminPanelAvailable
-                            ? [
-                                  {
-                                      content: t('Panel'),
-                                      href: RoutePath.admin_panel,
-                                  },
-                              ]
-                            : []),
-                    ]}
-                    trigger={<Avatar src={authData.avatar} size={32} />}
-                />
+                <HStack gap="16" className={cls.actions}>
+                    <NotificationButton />
+                    <AvatarDropdown />
+                </HStack>
             </header>
         )
     }

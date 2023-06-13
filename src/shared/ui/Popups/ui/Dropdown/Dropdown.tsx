@@ -4,7 +4,9 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { Menu } from '@headlessui/react'
 import { type DropdownDirection } from 'shared/types/ui'
 
-import { AppLink } from '../AppLink/AppLink'
+import popupCls from '../../styles/popup.module.scss'
+import { AppLink } from '../../../AppLink/AppLink'
+import { mapDirectionClass } from '../../styles/consts'
 
 import cls from './Dropdown.module.scss'
 
@@ -22,22 +24,15 @@ interface DropdownProps {
     direction?: DropdownDirection
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-    'top left': cls.directionBottomLeft,
-    'bottom left': cls.directionTopLeft,
-    'bottom right': cls.directionBottomRight,
-    'top right': cls.directionTopRight,
-}
-
 export const Dropdown: FC<DropdownProps> = memo((props) => {
-    const { className, trigger, items, direction = 'top left' } = props
+    const { className, trigger, items, direction = 'top right' } = props
     const { t } = useTranslation()
 
     const menuClasses = [mapDirectionClass[direction]]
 
     return (
-        <Menu as="div" className={classNames(cls.Dropdown, {}, [])}>
-            <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
+        <Menu as="div" className={classNames(popupCls.popup, {}, [])}>
+            <Menu.Button className={popupCls.btn}>{trigger}</Menu.Button>
             <Menu.Items
                 className={classNames(cls.menu, {}, menuClasses)}
                 as="ul"
@@ -48,7 +43,7 @@ export const Dropdown: FC<DropdownProps> = memo((props) => {
                             type="button"
                             className={classNames(
                                 cls.item,
-                                { [cls.active]: active },
+                                { [popupCls.active]: active },
                                 []
                             )}
                             onClick={item.onClick}

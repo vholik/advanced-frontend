@@ -1,0 +1,40 @@
+.popup {
+    position: relative;
+}
+
+.active {
+    background-color: var(--secondary-bg-color);
+}
+
+.directionTopLeft {
+    right: 0;
+}
+
+.directionTopRight {
+    left: 0;
+}
+
+.directionBottomLeft {
+    top: 100%;
+    right: 0;
+}
+
+.directionBottomRight {
+    top: 100%;
+    left: 0;
+}
+
+.readonly {
+    pointer-events: none;
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-color);
+}
+
+.btn {
+    background: none;
+    outline-color: transparent;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}

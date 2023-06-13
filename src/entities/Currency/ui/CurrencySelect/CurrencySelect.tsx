@@ -1,7 +1,7 @@
 import { memo, type FC, useCallback } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { CustomSelect } from 'shared/ui/CustomSelect/CustomSelect'
-import { ListBox, type ListBoxItem } from 'shared/ui/ListBox/ListBox'
+import { ListBox, type ListBoxItem } from 'shared/ui/Popups'
 
 import { Currency } from '../../model/types/currency'
 

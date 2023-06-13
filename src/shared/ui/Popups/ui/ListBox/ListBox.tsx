@@ -6,7 +6,9 @@ import { Listbox } from '@headlessui/react'
 import CheckIcon from 'shared/assets/icons/check.svg'
 import { type DropdownDirection } from 'shared/types/ui'
 
-import { Icon, IconColor } from '../Icon/Icon'
+import popupCls from '../../styles/popup.module.scss'
+import { Icon, IconColor } from '../../../Icon/Icon'
+import { mapDirectionClass } from '../../styles/consts'
 
 import cls from './ListBox.module.scss'
 
@@ -26,13 +28,6 @@ interface ListBoxProps {
     onChange: (value: string) => void
     readonly?: boolean
     direction?: DropdownDirection
-}
-
-const mapDirectionClass: Record<DropdownDirection, string> = {
-    'top left': cls.directionBottomLeft,
-    'bottom left': cls.directionTopLeft,
-    'bottom right': cls.directionBottomRight,
-    'top right': cls.directionTopRight,
 }
 
 export const ListBox: FC<ListBoxProps> = (props) => {
@@ -59,11 +54,15 @@ export const ListBox: FC<ListBoxProps> = (props) => {
             {({ open }) => (
                 <>
                     <Listbox.Button
-                        className={classNames(cls.trigger, {
-                            [cls.open]: open,
-                            [cls[theme]]: true,
-                            [cls.readonly]: readonly,
-                        })}
+                        className={classNames(
+                            cls.trigger,
+                            {
+                                [cls.open]: open,
+                                [cls[theme]]: true,
+                                [popupCls.readonly]: readonly,
+                            },
+                            [popupCls.popup]
+                        )}
                     >
                         {value || defaultValue}
                     </Listbox.Button>
@@ -72,28 +71,28 @@ export const ListBox: FC<ListBoxProps> = (props) => {
                     >
                         {items
                             ? items.map((item) => (
-                                <Listbox.Option
-                                    key={item.value}
-                                    value={item.value}
-                                    as={Fragment}
-                                >
-                                    {({ active, selected }) => (
-                                        <li
-                                            className={classNames(cls.item, {
-                                                [cls.active]: active,
-                                            })}
-                                        >
-                                            {item.content}{' '}
-                                            {selected && (
-                                                <Icon
-                                                    Icon={CheckIcon}
-                                                    color={IconColor.PRIMARY}
-                                                />
-                                            )}
-                                        </li>
-                                    )}
-                                </Listbox.Option>
-                            ))
+                                  <Listbox.Option
+                                      key={item.value}
+                                      value={item.value}
+                                      as={Fragment}
+                                  >
+                                      {({ active, selected }) => (
+                                          <li
+                                              className={classNames(cls.item, {
+                                                  [popupCls.active]: active,
+                                              })}
+                                          >
+                                              {item.content}{' '}
+                                              {selected && (
+                                                  <Icon
+                                                      Icon={CheckIcon}
+                                                      color={IconColor.PRIMARY}
+                                                  />
+                                              )}
+                                          </li>
+                                      )}
+                                  </Listbox.Option>
+                              ))
                             : null}
                     </Listbox.Options>
                 </>

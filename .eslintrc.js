@@ -29,7 +29,7 @@ module.exports = {
         'react/react-in-jsx-scope': [0],
         'no-tabs': 0,
         '@shopify/jsx-no-hardcoded-content': 'off',
-        'react/jsx-indent': [2, 4],
+        // 'react/jsx-indent': [2, 4],
         // indent: [2, 4, { SwitchCase: 1 }],
         indent: 'off',
         'prettier/prettier': 'off',
