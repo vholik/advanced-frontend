@@ -2,7 +2,6 @@ import { type FC, memo, Fragment, type ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Menu } from '@headlessui/react'
 
-
 import popupCls from '../../styles/popup.module.scss'
 import { AppLink } from '../../../AppLink/AppLink'
 import { mapDirectionClass } from '../../styles/consts'
@@ -39,7 +38,7 @@ export const Dropdown: FC<DropdownProps> = memo((props) => {
                 className={classNames(cls.menu, {}, menuClasses)}
                 as="ul"
             >
-                {items.map((item) => {
+                {items.map((item, index) => {
                     const content = ({ active }: { active: boolean }) => (
                         <button
                             type="button"
@@ -67,7 +66,7 @@ export const Dropdown: FC<DropdownProps> = memo((props) => {
                     }
 
                     return (
-                        <Menu.Item as={Fragment} key={item.href}>
+                        <Menu.Item as={Fragment} key={index}>
                             {content}
                         </Menu.Item>
                     )

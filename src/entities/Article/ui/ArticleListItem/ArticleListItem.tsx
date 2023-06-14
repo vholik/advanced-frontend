@@ -30,8 +30,6 @@ import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { AppLink } from '@/shared/ui/AppLink/AppLink'
 
-
-
 interface ArticleListItemProps {
     className?: string
     view: ArticleView
@@ -106,7 +104,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
                             {t('Read more')}
                         </Button>
                         <div className={cls.statistics}>
-                            <Icon Icon={EyeIcon} color={IconColor.TERTIARY} />
+                            <Icon Svg={EyeIcon} color={IconColor.TERTIARY} />
                             <Text
                                 text={String(article?.views)}
                                 size={TextSize.S}

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { BugButton } from '@/app/providers/ErrorBoundary'
+import { RatingCard } from '@/entities/Rating'
 
 const MainPage = () => {
     const { t } = useTranslation()
@@ -15,7 +16,11 @@ const MainPage = () => {
     return (
         <>
             {t('Main page')}
-            <BugButton />
+            <RatingCard
+                title="How do you feel?"
+                feedbackTitle="Leave your feedback"
+                hasFeeback
+            />
         </>
     )
 }

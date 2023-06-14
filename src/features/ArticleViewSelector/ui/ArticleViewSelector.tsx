@@ -10,7 +10,6 @@ import GridIcon from '@/shared/assets/icons/grid.svg'
 import { Button, ThemeButton } from '@/shared/ui/Button/Button'
 import { Icon, IconColor } from '@/shared/ui/Icon/Icon'
 
-
 interface ArticleViewSelectorProps {
     className?: string
     onViewClick?: (view: ArticleView) => void
@@ -42,7 +41,7 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo(
                         key={viewType.view}
                     >
                         <Icon
-                            Icon={viewType.icon}
+                            Svg={viewType.icon}
                             color={
                                 view === viewType.view
                                     ? IconColor.PRIMARY

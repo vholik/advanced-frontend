@@ -564,7 +564,7 @@
             "first": "jgh",
             "lastname": "asf",
             "age": 465,
-            "currency": "EUR",
+            "currency": "USD",
             "country": "Poland",
             "city": "Moscow",
             "username": "admin213",
@@ -580,6 +580,15 @@
             "city": "Moscow",
             "username": "hello",
             "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
+        }
+    ],
+    "article-ratings": [
+        {
+            "id": "`1",
+            "rate": 4,
+            "feedback": "Good article",
+            "userId": "1",
+            "articleId": "1"
         }
     ]
 }

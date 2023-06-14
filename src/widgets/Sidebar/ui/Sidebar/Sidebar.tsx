@@ -15,8 +15,6 @@ import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { VStack } from '@/shared/ui/Stack'
 
-
-
 interface SidebarProps {
     className?: string
 }
@@ -56,7 +54,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
 
             <VStack gap="32" role="navigation">
                 <AppLink to={RoutePath.main} className={cls.logo}>
-                    <Icon Icon={Logo} color={IconColor.PRIMARY} />
+                    <Icon Svg={Logo} color={IconColor.PRIMARY} />
                 </AppLink>
                 <VStack gap="32">
                     <VStack>{itemsList}</VStack>

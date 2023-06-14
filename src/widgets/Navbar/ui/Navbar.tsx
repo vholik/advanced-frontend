@@ -33,7 +33,6 @@ import { NotificationButton } from '@/features/notificationButton'
 import { AvatarDropdown } from '@/features/avatarDropdown'
 import { Drawer } from '@/shared/ui/Drawer/Drawer'
 
-
 interface NavbarProps {
     className?: string
 }
@@ -81,7 +80,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     theme={InputTheme.BASE}
                 />
                 <AppLink to={RoutePath.article_create} className={cls.writeBtn}>
-                    <Icon Icon={EditIcon} color={IconColor.SECONDARY} />
+                    <Icon Svg={EditIcon} color={IconColor.SECONDARY} />
                     <Text text={t('Write')} />
                 </AppLink>
                 <ThemeSwitcher />

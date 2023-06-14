@@ -47,6 +47,7 @@ import {
 import { Note } from '@/shared/ui/Note/Note'
 import { ArticleDetails, ArticleView } from '@/entities/Article'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { ArticleRating } from '@/features/articleRating'
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -81,6 +82,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                 <div className={cls.inner}>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
+                    <ArticleRating articleId={id} />
                     <ArticleDetailsComments id={id} />
                     <ArticleRecommendationsList />
                 </div>

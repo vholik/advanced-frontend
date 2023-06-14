@@ -32,3 +32,12 @@
         }
     }
 }
+.unset_color {
+    svg {
+        fill: none;
+
+        path {
+            fill: none;
+        }
+    }
+}

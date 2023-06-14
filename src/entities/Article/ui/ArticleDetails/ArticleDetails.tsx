@@ -142,7 +142,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
                 />
                 <div className={cls.row}>
                     <div className={cls.stats}>
-                        <Icon Icon={EyeIcon} color={IconColor.TERTIARY} />
+                        <Icon Svg={EyeIcon} color={IconColor.TERTIARY} />
                         <Text
                             text={String(data?.views)}
                             size={TextSize.S}
@@ -150,7 +150,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
                         />
                     </div>
                     <div className={cls.stats}>
-                        <Icon Icon={DateIcon} color={IconColor.TERTIARY} />
+                        <Icon Svg={DateIcon} color={IconColor.TERTIARY} />
                         <Text
                             text={String(data?.createdAt)}
                             size={TextSize.S}

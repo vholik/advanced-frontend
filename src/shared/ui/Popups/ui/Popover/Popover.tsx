@@ -2,7 +2,6 @@ import { type FC, memo, type ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Popover as HPopover } from '@headlessui/react'
 
-
 import { mapDirectionClass } from '../../styles/consts'
 import popupCls from '../../styles/popup.module.scss'
 
@@ -25,7 +24,7 @@ export const Popover: FC<PopoverProps> = memo((props) => {
 
     return (
         <HPopover className={classNames(popupCls.popup, {}, [className])}>
-            <HPopover.Button className={popupCls.btn}>
+            <HPopover.Button as="div" className={popupCls.btn}>
                 {trigger}
             </HPopover.Button>
 

@@ -32,7 +32,7 @@ export const NotificationButton: FC<NotificationButtonProps> = memo((props) => {
 
     const trigger = (
         <Button theme={ThemeButton.CLEAR} onClick={onOpenDrawer}>
-            <Icon Icon={NotificationIcon} color={IconColor.SECONDARY} />
+            <Icon Svg={NotificationIcon} color={IconColor.SECONDARY} />
         </Button>
     )
 

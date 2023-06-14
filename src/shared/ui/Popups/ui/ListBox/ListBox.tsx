@@ -1,8 +1,8 @@
-import { type FC, memo, Fragment } from 'react'
+import { type FC, memo, Fragment, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
 import { Listbox } from '@headlessui/react'
-
+import { useMatch } from 'react-router-dom'
 
 import popupCls from '../../styles/popup.module.scss'
 import { Icon, IconColor } from '../../../Icon/Icon'
@@ -16,23 +16,23 @@ import { Mods, classNames } from '@/shared/lib/classNames/classNames'
 
 type ListBoxTheme = 'primary_theme' | 'secondary_theme'
 
-export interface ListBoxItem {
-    value: string
+export interface ListBoxItem<T> {
+    value: T
     content: string
 }
 
-interface ListBoxProps {
+interface ListBoxProps<T> {
     className?: string
     theme?: ListBoxTheme
-    items?: ListBoxItem[]
-    value?: string
-    defaultValue?: string
-    onChange: (value: string) => void
+    items?: ListBoxItem<T>[]
+    value?: T
+    defaultValue?: T
+    onChange: (value: T) => void
     readonly?: boolean
     direction?: DropdownDirection
 }
 
-export const ListBox: FC<ListBoxProps> = (props) => {
+export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
     const {
         className,
         theme = 'primary_theme',
@@ -46,12 +46,17 @@ export const ListBox: FC<ListBoxProps> = (props) => {
 
     const { t } = useTranslation()
     const optionsMods = [cls.options, mapDirectionClass[direction]]
+
+    const content = useMemo(() => {
+        return items?.find((it) => it.value === value)?.content
+    }, [value, items])
+
     return (
         <Listbox
             as="div"
             value={value}
             onChange={onChange}
-            className={cls.ListBox}
+            className={popupCls.popup}
         >
             {({ open }) => (
                 <>
@@ -66,10 +71,10 @@ export const ListBox: FC<ListBoxProps> = (props) => {
                             [popupCls.popup]
                         )}
                     >
-                        {value || defaultValue}
+                        {content}
                     </Listbox.Button>
                     <Listbox.Options
-                        className={classNames('', {}, optionsMods)}
+                        className={classNames(cls.menu, {}, optionsMods)}
                     >
                         {items
                             ? items.map((item) => (
@@ -87,7 +92,7 @@ export const ListBox: FC<ListBoxProps> = (props) => {
                                               {item.content}{' '}
                                               {selected && (
                                                   <Icon
-                                                      Icon={CheckIcon}
+                                                      Svg={CheckIcon}
                                                       color={IconColor.PRIMARY}
                                                   />
                                               )}

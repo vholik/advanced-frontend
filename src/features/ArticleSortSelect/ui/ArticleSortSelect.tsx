@@ -12,7 +12,7 @@ import { ArticlesSortField } from '@/entities/Article'
 import { type SortOrder } from '@/shared/types'
 import FilterIcon from '@/shared/assets/icons/filter.svg'
 import { Icon, IconColor } from '@/shared/ui/Icon/Icon'
-
+import { Dropdown, ListBox } from '@/shared/ui/Popups'
 
 interface ArticleSortSelectProps {
     className?: string
@@ -63,19 +63,19 @@ export const ArticleSortSelect: FC<ArticleSortSelectProps> = memo((props) => {
     return (
         <div className={classNames(cls.ArticleSortSelect, {}, [className])}>
             <Icon
-                Icon={FilterIcon}
+                Svg={FilterIcon}
                 color={IconColor.SECONDARY}
                 className={cls.icon}
             />
-            <CustomSelect
-                options={sortFieldOptions}
-                label={t('Sort by parameter')}
+            <ListBox
+                theme="secondary_theme"
+                items={sortFieldOptions}
                 value={sort}
                 onChange={onChangeSort}
             />
-            <CustomSelect
-                options={orderOptions}
-                label={t('Sort by growth')}
+            <ListBox
+                theme="secondary_theme"
+                items={orderOptions}
                 value={order}
                 onChange={onChangeOrder}
             />

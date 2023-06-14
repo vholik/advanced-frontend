@@ -8,8 +8,6 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect'
 import { ListBox, type ListBoxItem } from '@/shared/ui/Popups'
 
-
-
 const currencyArray = [
     { value: Currency.EUR, content: Currency.EUR },
     { value: Currency.RUB, content: Currency.RUB },
@@ -33,7 +31,7 @@ export const CurrencySelect: FC<CurrencySelectProps> = memo(
 
         return (
             <ListBox
-                items={currencyArray as ListBoxItem[]}
+                items={currencyArray as ListBoxItem<Currency>[]}
                 onChange={onChangeHandler}
                 readonly={readonly}
                 value={value}

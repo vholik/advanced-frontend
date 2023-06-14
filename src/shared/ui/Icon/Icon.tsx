@@ -4,10 +4,9 @@ import cls from './Icon.module.scss'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 
-
-interface IconProps {
+interface IconProps extends React.SVGProps<SVGSVGElement> {
     className?: string
-    Icon: React.FunctionComponent<React.SVGAttributes<SVGElement>>
+    Svg: React.FunctionComponent<React.SVGAttributes<SVGElement>>
     color?: IconColor
 }
 
@@ -15,17 +14,18 @@ export enum IconColor {
     PRIMARY = 'primary_color',
     SECONDARY = 'secondary_color',
     TERTIARY = 'tertiary_color',
+    UNSET = 'unset_color',
 }
 
 export const Icon: FC<IconProps> = memo(
-    ({ className, Icon, color = IconColor.PRIMARY }) => {
+    ({ className, Svg, color = IconColor.PRIMARY, ...otherProps }) => {
         return (
             <div
                 className={classNames(cls.Icon, { [cls[color]]: true }, [
                     className,
                 ])}
             >
-                <Icon />
+                <Svg {...otherProps} />
             </div>
         )
     }
