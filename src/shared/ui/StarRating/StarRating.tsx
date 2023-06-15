@@ -1,12 +1,13 @@
 import { FC, memo, useState } from 'react'
+
 import { useTranslation } from 'react-i18next'
 
-import { Icon, IconColor } from '../Icon/Icon'
-
 import cls from './StarRating.module.scss'
+import { IconColor } from '../Icon/Icon'
 
-import { classNames } from '@/shared/lib/classNames/classNames'
+
 import StarIcon from '@/shared/assets/icons/star.svg'
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 interface StarRatingProps {
     className?: string

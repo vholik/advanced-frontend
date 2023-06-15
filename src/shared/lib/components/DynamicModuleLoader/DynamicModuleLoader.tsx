@@ -1,5 +1,6 @@
-import { type Reducer } from '@reduxjs/toolkit'
 import { useEffect, type FC, type ReactNode } from 'react'
+
+import { type Reducer } from '@reduxjs/toolkit'
 import { useDispatch, useStore } from 'react-redux'
 
 import {

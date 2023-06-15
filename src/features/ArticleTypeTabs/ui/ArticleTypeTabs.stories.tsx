@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
-
 import { ArticleTypeTabs } from './ArticleTypeTabs'
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import type { Meta, StoryObj } from '@storybook/react'
+
+
 import { ArticleType } from '@/entities/Article'
 
 

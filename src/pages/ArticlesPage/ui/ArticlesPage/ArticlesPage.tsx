@@ -1,39 +1,24 @@
 import { memo, type FC, useCallback } from 'react'
+
 import { useTranslation } from 'react-i18next'
-import { useSelector } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
 
-import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
-import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
-import {
-    articlePageActions,
-    articlesPageReducer,
-    getArticles,
-} from '../../model/slice/articlesPageSlice'
-import {
-    getArticlesPageIsLoading,
-    getArticlesPageError,
-    getArticlesPageView,
-    getArticlesPageNum,
-} from '../../model/selectors/articlesPageSelector'
-import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
-import { ArticlesInfiniteList } from '../ArticlesInfiniteList/ArticlesInfiniteList'
-
 import cls from './ArticlesPage.module.scss'
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
+import {
+    articlesPageReducer,
+} from '../../model/slice/articlesPageSlice'
+import { ArticlesInfiniteList } from '../ArticlesInfiniteList/ArticlesInfiniteList'
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
+
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { ArticleList } from '@/entities/Article'
-import { type ArticleView, type Article } from '@/entities/Article'
 import {
     DynamicModuleLoader,
     type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { ArticleViewSelector } from '@/features/ArticleViewSelector'
 import { Page } from '@/widgets/Page'
-import { Note } from '@/shared/ui/Note/Note'
-import { Text, TextTheme } from '@/shared/ui/Text/Text'
 
 interface ArticlesPageProps {
     className?: string

@@ -1,38 +1,33 @@
 import { memo, useCallback, useState } from 'react'
+
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 import cls from './Navbar.module.scss'
 
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { ThemeSwitcher } from '@/features/ThemeSwitcher'
-import { Button, ThemeButton } from '@/shared/ui/Button/Button'
-import { LoginModal } from '@/features/AuthByUsername'
 import {
     getUserAuthData,
-    isUserAdmin,
-    isUserManager,
-    userActions,
 } from '@/entities/User'
-import { Input, InputTheme } from '@/shared/ui/Input/Input'
+import { LoginModal } from '@/features/AuthByUsername'
+import { AvatarDropdown } from '@/features/avatarDropdown'
+import { NotificationButton } from '@/features/notificationButton'
+import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import {
     articlePageActions,
     getArticlesPageSearch,
     fetchArticlesList,
 } from '@/pages/ArticlesPage'
-import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
-import { RoutePath } from '@/shared/const/router'
 import EditIcon from '@/shared/assets/icons/edit.svg'
-import { AppLink } from '@/shared/ui/AppLink/AppLink'
-import { Icon, IconColor } from '@/shared/ui/Icon/Icon'
-import { Text } from '@/shared/ui/Text/Text'
-import { Dropdown, Popover } from '@/shared/ui/Popups'
-import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { RoutePath } from '@/shared/const/router'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
+import { AppLink } from '@/shared/ui/AppLink'
+import { Button } from '@/shared/ui/Button'
+import { Icon, IconColor } from '@/shared/ui/Icon'
+import { Input, InputTheme } from '@/shared/ui/Input'
 import { HStack } from '@/shared/ui/Stack'
-import { NotificationList } from '@/entities/Notification'
-import { NotificationButton } from '@/features/notificationButton'
-import { AvatarDropdown } from '@/features/avatarDropdown'
+import { Text } from '@/shared/ui/Text'
 
 interface NavbarProps {
     className?: string

@@ -1,12 +1,13 @@
 /* eslint-disable i18next/no-literal-string */
 import { type FC } from 'react'
+
 import { useDispatch, useSelector } from 'react-redux'
 
-import { counterActions } from '../model/slice/counterSlice'
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue'
+import { counterActions } from '../model/slice/counterSlice'
 
-import { Button } from '@/shared/ui/Button/Button'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { Button } from '@/shared/ui/Button'
 
 interface CounterProps {
     className?: string

@@ -3,20 +3,18 @@ import {
     configureStore,
     type ThunkDispatch,
     type AnyAction,
-    type Store,
     type Reducer,
     type CombinedState,
 } from '@reduxjs/toolkit'
-import { TypedUseSelectorHook, useDispatch } from 'react-redux'
 import { type NavigateFunction } from 'react-router-dom'
 
-import { type ThunkExtraArg, type StateSchema } from './StateSchema'
 import { createReducerManager } from './reducerManager'
+import { type ThunkExtraArg, type StateSchema } from './StateSchema'
 
 import { counterReducer } from '@/entities/Counter'
 import { userReducer } from '@/entities/User'
-import { $api } from '@/shared/api/api'
 import { restoreScrollReducer } from '@/features/RestoreScroll'
+import { $api } from '@/shared/api/api'
 import { rtkApi } from '@/shared/api/rtkApi'
 
 export function createReduxStore(

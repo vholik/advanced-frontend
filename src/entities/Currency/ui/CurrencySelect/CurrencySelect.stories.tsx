@@ -1,6 +1,7 @@
+import { CurrencySelect } from './CurrencySelect'
+
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { CurrencySelect } from './CurrencySelect'
 
 const meta = {
     title: 'shared/CurrencySelect',

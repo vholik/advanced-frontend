@@ -1,18 +1,16 @@
-import { type FC, memo, Fragment, useCallback, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useState } from 'react'
-import { Listbox } from '@headlessui/react'
-import { useMatch } from 'react-router-dom'
+import { Fragment, useMemo } from 'react'
 
-import popupCls from '../../styles/popup.module.scss'
-import { Icon, IconColor } from '../../../Icon/Icon'
-import { mapDirectionClass } from '../../styles/consts'
+import { Listbox } from '@headlessui/react'
+import { useTranslation } from 'react-i18next'
 
 import cls from './ListBox.module.scss'
+import { Icon, IconColor } from '../../../Icon/Icon'
+import { mapDirectionClass } from '../../styles/consts'
+import popupCls from '../../styles/popup.module.scss'
 
-import { type DropdownDirection } from '@/shared/types/ui'
 import CheckIcon from '@/shared/assets/icons/check.svg'
-import { Mods, classNames } from '@/shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { type DropdownDirection } from '@/shared/types/ui'
 
 type ListBoxTheme = 'primary_theme' | 'secondary_theme'
 

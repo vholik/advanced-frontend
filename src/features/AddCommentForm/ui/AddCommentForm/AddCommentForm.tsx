@@ -1,7 +1,9 @@
 import { type FC, memo, useCallback } from 'react'
+
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
+import cls from './AddCommentForm.module.scss'
 import {
     getAddCommentFormError,
     getAddCommentFormText,
@@ -10,18 +12,16 @@ import {
     addCommentFormActions,
     addCommentFormReducer,
 } from '../../model/slice/addCommentFormSlice'
-import { sendComment } from '../../model/services/sendComment/sendComment'
 
-import cls from './AddCommentForm.module.scss'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Input, InputTheme } from '@/shared/ui/Input/Input'
-import { Button, ButtonSize } from '@/shared/ui/Button/Button'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import {
     DynamicModuleLoader,
     type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { Button, ButtonSize } from '@/shared/ui/Button'
+import { Input, InputTheme } from '@/shared/ui/Input'
 
 
 

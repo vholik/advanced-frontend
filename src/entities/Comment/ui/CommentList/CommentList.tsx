@@ -1,14 +1,15 @@
 import { type FC, memo } from 'react'
+
 import { useTranslation } from 'react-i18next'
 
+import cls from './CommentList.module.scss'
 import { type Comment } from '../../model/types/comment'
 import { CommentCard } from '../CommentCard/CommentCard'
 
-import cls from './CommentList.module.scss'
 
-import { Text, TextColor, TextSize, TextWeight } from '@/shared/ui/Text/Text'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { HStack, VStack } from '@/shared/ui/Stack'
+import { VStack } from '@/shared/ui/Stack'
+import { Text, TextSize } from '@/shared/ui/Text'
 
 interface CommentListProps {
     className?: string

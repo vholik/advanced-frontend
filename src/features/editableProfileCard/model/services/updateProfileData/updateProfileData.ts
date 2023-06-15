@@ -1,13 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import axios from 'axios'
 
 import { ValidateProfileError } from '../../consts/consts'
 import { getProfileForm } from '../../selector/getProfileForm/getProfileForm'
 import { validateProfileData } from '../validateProfileData/validateProfileData'
 
 import { type ThunkConfig } from '@/app/providers/StoreProvider'
-import { userActions, type User } from '@/entities/User'
-import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage'
 import { type Profile } from '@/entities/Profile'
 
 

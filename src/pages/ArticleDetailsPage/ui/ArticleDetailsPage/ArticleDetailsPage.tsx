@@ -1,53 +1,32 @@
-import { memo, type FC, useEffect, useCallback } from 'react'
+import { memo, type FC } from 'react'
+
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 
-import { addCommmentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
-import { getArticleReccomendationsIsLoading } from '../../model/selectors/recommendations'
-import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
-import {
-    getArticleCommentsIsLoading,
-    getArticleCommentsError,
-} from '../../model/selectors/comments'
-import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendation'
-import { articleDetailsPageReducer } from '../../model/slices'
-import {
-    ArticleDetailsCommentsReducer,
-    getArticleComments,
-} from '../../model/slices/articleDetailsCommentsSlice'
-import {
-    ArticleDetailsPageRecommendationsReducer,
-    getArticleReccomendations,
-} from '../../model/slices/articleDetailsPageRecommendationsSlice'
-import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
-import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments'
+
 
 import cls from './ArticleDetailsPage.module.scss'
+import { articleDetailsPageReducer } from '../../model/slices'
+import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments'
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 
+
+import { ArticleDetails } from '@/entities/Article'
+import { ArticleRating } from '@/features/articleRating'
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList'
-import { ArticleList, ArticleDetails, ArticleView } from '@/entities/Article'
-import { Page } from '@/widgets/Page'
-import { AddCommentForm } from '@/features/AddCommentForm'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import {
     DynamicModuleLoader,
     type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { CommentList } from '@/entities/Comment'
+import { Note } from '@/shared/ui/Note'
+import { VStack } from '@/shared/ui/Stack'
 import {
     Text,
     TextAlign,
-    TextColor,
-    TextSize,
     TextTheme,
-    TextWeight,
-} from '@/shared/ui/Text/Text'
-import { Note } from '@/shared/ui/Note/Note'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { ArticleRating } from '@/features/articleRating'
-import { VStack } from '@/shared/ui/Stack'
+} from '@/shared/ui/Text'
+import { Page } from '@/widgets/Page'
 
 interface ArticleDetailsPageProps {
     className?: string

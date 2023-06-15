@@ -1,8 +1,6 @@
 import { getProfileReadonly } from './getProfileReadonly'
 
 import { type StateSchema } from '@/app/providers/StoreProvider'
-import { Country } from '@/entities/Country'
-import { Currency } from '@/entities/Currency'
 
 
 describe('getProfileReadonyl test', () => {

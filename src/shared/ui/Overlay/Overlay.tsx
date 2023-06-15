@@ -1,5 +1,4 @@
 import { type FC, memo } from 'react'
-import { useTranslation } from 'react-i18next'
 
 import cls from './Overlay.module.scss'
 

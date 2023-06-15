@@ -1,7 +1,7 @@
 import { useState } from 'react'
+
 import { useTranslation } from 'react-i18next'
 
-import { BugButton } from '@/app/providers/ErrorBoundary'
 import { RatingCard } from '@/entities/Rating'
 
 const MainPage = () => {

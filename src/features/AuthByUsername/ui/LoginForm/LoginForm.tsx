@@ -1,28 +1,27 @@
-import { useCallback, type FC, useState, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useDispatch, useSelector, useStore } from 'react-redux'
+import { useCallback, type FC } from 'react'
 
-import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername'
-import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword'
-import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading'
+import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+
+import cls from './LoginForm.module.scss'
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading'
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword'
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername'
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 
-import cls from './LoginForm.module.scss'
-
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Button, ThemeButton } from '@/shared/ui/Button/Button'
-import { Input } from '@/shared/ui/Input/Input'
-import { Label } from '@/shared/ui/Label/Label'
-import { Text } from '@/shared/ui/Text/Text'
-import { Note } from '@/shared/ui/Note/Note'
-import { type ReduxStoreWithManager } from '@/app/providers/StoreProvider'
 import {
     DynamicModuleLoader,
     type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { Button, ThemeButton } from '@/shared/ui/Button'
+import { Input } from '@/shared/ui/Input'
+import { Label } from '@/shared/ui/Label'
+import { Note } from '@/shared/ui/Note'
+import { Text } from '@/shared/ui/Text'
 
 
 

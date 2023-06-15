@@ -2,7 +2,6 @@ import {
     type ReducersMapObject,
     combineReducers,
     type Reducer,
-    type CombinedState,
     type AnyAction,
 } from '@reduxjs/toolkit'
 

@@ -1,29 +1,35 @@
-import { useEffect, type FC, memo, useCallback } from 'react'
+import { type FC, memo, useCallback } from 'react'
+
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
+import cls from './ArticleDetails.module.scss'
 import { ArticleBlockType } from '../../model/conts/articleConsts'
-import { type ArticleBlock } from '../../model/types/article'
-import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import {
     getArticleDetailsData,
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails'
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
+import { type ArticleBlock } from '../../model/types/article'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 
-import cls from './ArticleDetails.module.scss'
 
+import DateIcon from '@/shared/assets/icons/date.svg'
+import EyeIcon from '@/shared/assets/icons/eye.svg'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import {
     DynamicModuleLoader,
     type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { Note } from '@/shared/ui/Note/Note'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { Icon, IconColor } from '@/shared/ui/Icon'
+import { Note } from '@/shared/ui/Note'
+import { Skeleton } from '@/shared/ui/Skeleton'
 import {
     Text,
     TextAlign,
@@ -31,12 +37,7 @@ import {
     TextSize,
     TextTheme,
     TextWeight,
-} from '@/shared/ui/Text/Text'
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
-import EyeIcon from '@/shared/assets/icons/eye.svg'
-import DateIcon from '@/shared/assets/icons/date.svg'
-import { Icon, IconColor } from '@/shared/ui/Icon/Icon'
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
+} from '@/shared/ui/Text'
 
 interface ArticleDetailsProps {
     className?: string

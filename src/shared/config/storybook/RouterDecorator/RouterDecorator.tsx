@@ -1,4 +1,4 @@
-import { type Story, type StoryFn } from '@storybook/react'
+import { type Story } from '@storybook/react'
 import { BrowserRouter } from 'react-router-dom'
 
 import '@/app/styles/index.scss'

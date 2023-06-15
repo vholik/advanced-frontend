@@ -1,11 +1,12 @@
-import { type Story } from '@storybook/react'
-import '@/app/styles/index.scss'
 import { Suspense } from 'react'
+
+import { type Story } from '@storybook/react'
+
+import '@/app/styles/index.scss'
+
 import { I18nextProvider } from 'react-i18next'
 
 import i18n from '../../i18n/i18n'
-
-import { type StateSchema, StoreProvider } from '@/app/providers/StoreProvider'
 
 export const TranslationDecorator = (Component: Story) => {
     return (

@@ -1,10 +1,11 @@
 import { memo, type FC } from 'react'
+
 import { useTranslation } from 'react-i18next'
 
 
+import cls from './LangSwitcher.module.scss'
 import { Button, ThemeButton } from '../Button/Button'
 
-import cls from './LangSwitcher.module.scss'
 
 import GlobeIcon from '@/shared/assets/icons/globe.svg'
 import { classNames } from '@/shared/lib/classNames/classNames'

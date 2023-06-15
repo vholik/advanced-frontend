@@ -1,32 +1,31 @@
+import { useCallback } from 'react'
+
 import { useTranslation } from 'react-i18next'
-import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 
 import { ValidateProfileError } from '../../model/consts/consts'
+import { getProfileError } from '../../model/selector/getProfileError/getProfileError'
 import { getProfileForm } from '../../model/selector/getProfileForm/getProfileForm'
 import { getProfileIsLoading } from '../../model/selector/getProfileIsLoading/getProfileIsLoading'
-import { getProfileError } from '../../model/selector/getProfileError/getProfileError'
 import { getProfileReadonly } from '../../model/selector/getProfileReadonly/getProfileReadonly'
 import { getProfileValidateErrors } from '../../model/selector/getProfileValidateErrors/getProfileValidateErrors'
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
 import { profileActions, profileReducer } from '../../model/slice/profileSlice'
 import { ProfilePageHeader } from '../EditableProfileHeader/EditableProfileHeader'
 
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { ProfileCard } from '@/entities/Profile'
-import { isNumeric } from '@/shared/lib/isNumeric/isNumeric'
-import { Loader } from '@/shared/ui/Loader/Loader'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { type Currency } from '@/entities/Currency'
 import { type Country } from '@/entities/Country'
-import { Note } from '@/shared/ui/Note/Note'
+import { type Currency } from '@/entities/Currency'
+import { ProfileCard } from '@/entities/Profile'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import {
     DynamicModuleLoader,
     type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { VStack } from '@/shared/ui/Stack'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { isNumeric } from '@/shared/lib/isNumeric/isNumeric'
+import { Note } from '@/shared/ui/Note'
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text'
 
 interface EditableProfileCardProps {
     className?: string

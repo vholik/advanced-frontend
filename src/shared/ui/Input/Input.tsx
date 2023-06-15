@@ -1,11 +1,9 @@
 import { memo, type FC, type InputHTMLAttributes } from 'react'
 
-import { Icon, IconColor } from '../Icon/Icon'
 
 import cls from './Input.module.scss'
 
 import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
-import SearchIcon from '@/shared/assets/icons/search.svg'
 
 
 

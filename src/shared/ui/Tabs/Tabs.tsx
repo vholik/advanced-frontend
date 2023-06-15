@@ -1,5 +1,4 @@
-import { type FC, memo, useState, useRef, useCallback, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useCallback } from 'react'
 
 import cls from './Tabs.module.scss'
 

@@ -1,4 +1,4 @@
-import { type Story, type StoryFn } from '@storybook/react'
+import { type Story } from '@storybook/react'
 
 import { ThemeProvider } from '@/app/providers/ThemeProvider'
 import { Theme } from '@/shared/const/theme'

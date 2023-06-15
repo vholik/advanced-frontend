@@ -1,4 +1,4 @@
-import { memo, type ButtonHTMLAttributes, type FC } from 'react'
+import { type ButtonHTMLAttributes, type FC } from 'react'
 
 import cls from './Button.module.scss'
 

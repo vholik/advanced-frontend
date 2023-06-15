@@ -1,4 +1,4 @@
-import { type FC, memo, ReactNode, type HTMLAttributes } from 'react'
+import { type FC, memo, type HTMLAttributes } from 'react'
 
 import cls from './Card.module.scss'
 

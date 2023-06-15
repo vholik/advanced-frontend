@@ -1,6 +1,7 @@
+import AddCommentForm from './AddCommentForm'
+
 import type { Meta, StoryObj } from '@storybook/react'
 
-import AddCommentForm from './AddCommentForm'
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 

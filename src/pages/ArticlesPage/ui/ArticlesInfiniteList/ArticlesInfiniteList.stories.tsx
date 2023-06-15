@@ -1,9 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
-
 import { ArticlesInfiniteList } from './ArticlesInfiniteList'
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
+import type { Meta, StoryObj } from '@storybook/react'
+
+
 
 
 const meta = {

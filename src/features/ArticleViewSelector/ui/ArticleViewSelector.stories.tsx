@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
-
 import { ArticleViewSelector } from './ArticleViewSelector'
 
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
+import type { Meta, StoryObj } from '@storybook/react'
+
+
 import { ArticleView } from '@/entities/Article'
 
 

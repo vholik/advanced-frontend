@@ -1,15 +1,15 @@
 import { type FC, memo, Fragment, type ReactNode } from 'react'
-import { useTranslation } from 'react-i18next'
-import { Menu } from '@headlessui/react'
 
-import popupCls from '../../styles/popup.module.scss'
-import { AppLink } from '../../../AppLink/AppLink'
-import { mapDirectionClass } from '../../styles/consts'
+import { Menu } from '@headlessui/react'
+import { useTranslation } from 'react-i18next'
 
 import cls from './Dropdown.module.scss'
+import { AppLink } from '../../../AppLink/AppLink'
+import { mapDirectionClass } from '../../styles/consts'
+import popupCls from '../../styles/popup.module.scss'
 
-import { type DropdownDirection } from '@/shared/types/ui'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { type DropdownDirection } from '@/shared/types/ui'
 
 export interface DropdownItem {
     disabled?: boolean

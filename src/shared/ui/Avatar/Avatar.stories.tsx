@@ -1,6 +1,7 @@
+import { Avatar } from './Avatar'
+
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Avatar } from './Avatar'
 
 import { avatarLink } from '@/shared/const/tests'
 

@@ -1,13 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react'
-
-
+import { ArticleListItem } from './ArticleListItem'
 import { ArticleView } from '../../model/conts/articleConsts'
 import { type Article } from '../../model/types/article'
 
-import { ArticleListItem } from './ArticleListItem'
+import type { Meta, StoryObj } from '@storybook/react'
+
+
 
 import { avatarLink } from '@/shared/const/tests'
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
 const meta = {
     title: 'shared/ArticleListItem',

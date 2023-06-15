@@ -1,24 +1,22 @@
 import { type FC, memo } from 'react'
+
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
 import {
     getArticlesPageError,
     getArticlesPageIsLoading,
-    getArticlesPageNum,
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelector'
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
 import { getArticles } from '../../model/slice/articlesPageSlice'
 
-import cls from './ArticlesInfiniteList.module.scss'
 
-import { classNames } from '@/shared/lib/classNames/classNames'
 import { ArticleList } from '@/entities/Article'
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { Note } from '@/shared/ui/Note/Note'
-import { Text, TextTheme } from '@/shared/ui/Text/Text'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { Note } from '@/shared/ui/Note'
+import { Text, TextTheme } from '@/shared/ui/Text'
 
 
 

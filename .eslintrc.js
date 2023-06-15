@@ -21,8 +21,16 @@ module.exports = {
         },
         project: ['./tsconfig.json'],
     },
-    plugins: ['react', 'i18next', 'prettier', 'react-hooks', 'viktors-plugin'],
+    plugins: [
+        'react',
+        'i18next',
+        'prettier',
+        'react-hooks',
+        'viktors-plugin',
+        'unused-imports',
+    ],
     rules: {
+        'unused-imports/no-unused-imports': 'error',
         'import/no-extraneous-dependencies': [0],
         '@typescript-eslint/prefer-nullish-coalescing': [0],
         '@shopify/typescript/prefer-pascal-case-enums': [0],
@@ -79,5 +87,32 @@ module.exports = {
             },
         ],
         '@typescript-eslint/consistent-type-imports': 'off',
+        'import/order': [
+            'error',
+            {
+                groups: [
+                    'builtin',
+                    'external',
+                    'internal',
+                    ['parent', 'sibling'],
+                    'object',
+                    'type',
+                    'index',
+                ],
+                pathGroups: [
+                    {
+                        pattern: '{react,react-dom/**}',
+                        group: 'external',
+                        position: 'before',
+                    },
+                ],
+                pathGroupsExcludedImportTypes: ['react'],
+                'newlines-between': 'always',
+                alphabetize: {
+                    order: 'asc',
+                    caseInsensitive: true,
+                },
+            },
+        ],
     },
 }

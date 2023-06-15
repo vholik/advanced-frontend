@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
-
 import { Tabs } from './Tabs'
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import type { Meta, StoryObj } from '@storybook/react'
+
+
 
 
 const meta = {

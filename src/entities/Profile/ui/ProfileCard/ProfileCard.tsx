@@ -1,18 +1,19 @@
 import { type FC } from 'react'
+
 import { useTranslation } from 'react-i18next'
 
+import cls from './ProfileCard.module.scss'
 import { type Profile } from '../../model/types/profile'
 
-import cls from './ProfileCard.module.scss'
 
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { Input } from '@/shared/ui/Input/Input'
-import { type Currency, CurrencySelect } from '@/entities/Currency'
 import { type Country } from '@/entities/Country'
 import { CountrySelect } from '@/entities/Country'
-import { Label } from '@/shared/ui/Label/Label'
+import { type Currency, CurrencySelect } from '@/entities/Currency'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { Input } from '@/shared/ui/Input'
+import { Label } from '@/shared/ui/Label'
+import { Loader } from '@/shared/ui/Loader'
 import { VStack } from '@/shared/ui/Stack'
-import { Loader } from '@/shared/ui/Loader/Loader'
 
 interface ProfileCardProps {
     className?: string

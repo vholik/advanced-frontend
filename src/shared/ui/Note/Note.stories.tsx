@@ -1,6 +1,7 @@
+import { Note } from './Note'
+
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Note } from './Note'
 
 const meta = {
     title: 'shared/Note',

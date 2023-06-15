@@ -1,18 +1,18 @@
 import { type FC, memo, useMemo } from 'react'
+
 import { useTranslation } from 'react-i18next'
 
 import cls from './ArticleSortSelect.module.scss'
 
-import { classNames } from '@/shared/lib/classNames/classNames'
-import {
-    CustomSelect,
-    type SelectOption,
-} from '@/shared/ui/CustomSelect/CustomSelect'
 import { ArticlesSortField } from '@/entities/Article'
-import { type SortOrder } from '@/shared/types'
 import FilterIcon from '@/shared/assets/icons/filter.svg'
-import { Icon, IconColor } from '@/shared/ui/Icon/Icon'
-import { Dropdown, ListBox } from '@/shared/ui/Popups'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { type SortOrder } from '@/shared/types'
+import {
+    type SelectOption,
+} from '@/shared/ui/CustomSelect'
+import { Icon, IconColor } from '@/shared/ui/Icon'
+import { ListBox } from '@/shared/ui/Popups'
 
 interface ArticleSortSelectProps {
     className?: string

@@ -1,18 +1,18 @@
 import { type FC, useState, useMemo, memo } from 'react'
+
 import { useSelector } from 'react-redux'
 
+import cls from './Sidebar.module.scss'
 import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 
-import cls from './Sidebar.module.scss'
-
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { LangSwitcher } from '@/shared/ui/LangSwitcher/LangSwitcher'
-import { Button, ButtonSize, ThemeButton } from '@/shared/ui/Button/Button'
 import Logo from '@/shared/assets/icons/logo.svg'
-import { Icon, IconColor } from '@/shared/ui/Icon/Icon'
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink'
 import { RoutePath } from '@/shared/const/router'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { AppLink } from '@/shared/ui/AppLink'
+import { Button, ButtonSize, ThemeButton } from '@/shared/ui/Button'
+import { Icon, IconColor } from '@/shared/ui/Icon'
+import { LangSwitcher } from '@/shared/ui/LangSwitcher'
 import { VStack } from '@/shared/ui/Stack'
 
 interface SidebarProps {

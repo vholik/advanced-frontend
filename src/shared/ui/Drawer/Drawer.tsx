@@ -1,16 +1,17 @@
 import { type FC, memo, type ReactNode, useCallback, useEffect } from 'react'
+
 import { useTranslation } from 'react-i18next'
 
+import cls from './Drawer.module.scss'
 import { Overlay } from '../Overlay/Overlay'
 import { Portal } from '../Portal/Portal'
 
-import cls from './Drawer.module.scss'
 
+import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
 import {
     AnimationProvider,
     useAnimationModules,
 } from '@/shared/lib/components/AnimationProvider'
-import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
 
 interface DrawerProps {
     className?: string

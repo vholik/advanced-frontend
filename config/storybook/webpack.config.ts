@@ -2,8 +2,8 @@ import path from 'path'
 
 import { type RuleSetRule, type Configuration, DefinePlugin } from 'webpack'
 
-import { type BuildPaths } from '../build/types/config'
 import { buildCssLoaders } from '../build/loaders/buildCssLoaders'
+import { type BuildPaths } from '../build/types/config'
 
 export default ({ config }: { config: Configuration }) => {
     const paths: BuildPaths = {

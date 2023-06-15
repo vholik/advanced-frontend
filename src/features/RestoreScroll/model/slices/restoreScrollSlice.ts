@@ -2,10 +2,8 @@ import { type PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 import {
     type RestoreScrollSchema,
-    ScrollSchema,
 } from '../types/RestoreScrollSchema'
 
-import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage'
 
 
 const initialState: RestoreScrollSchema = {

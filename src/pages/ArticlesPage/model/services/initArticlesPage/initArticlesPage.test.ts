@@ -1,16 +1,10 @@
-import { type URLSearchParams } from 'url'
 
 import axios from 'axios'
 
-import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList'
 
 import { initArticlesPage } from './initArticlesPage'
 
-import { userActions } from '@/entities/User'
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
-import { getQueryParams } from '@/shared/lib/url/addQueryParams/addQueryParams'
-import { Country } from '@/entities/Country'
-import { Currency } from '@/entities/Currency'
 
 
 

@@ -1,12 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import axios from 'axios'
 
 import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId'
 
 import { type ThunkConfig } from '@/app/providers/StoreProvider'
-import { userActions, type User, getUserAuthData } from '@/entities/User'
-import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage'
 import { getArticleDetailsData } from '@/entities/Article'
+import { getUserAuthData } from '@/entities/User'
 
 interface LoginByUsernameProps {
     username: string
