@@ -6,7 +6,6 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect'
 import { ListBox } from '@/shared/ui/Popups'
 
-
 const countryArray = [
     { value: Country.Germany, content: 'Germany' },
     { value: Country.Poland, content: 'Poland' },

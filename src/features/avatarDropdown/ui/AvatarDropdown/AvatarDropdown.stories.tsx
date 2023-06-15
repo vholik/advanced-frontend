@@ -4,9 +4,8 @@ import { AvatarDropdown } from './AvatarDropdown'
 
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
-
 const meta = {
-    title: 'shared/AvatarDropdown',
+    title: 'features/AvatarDropdown',
     component: AvatarDropdown,
     tags: ['autodocs'],
 } satisfies Meta<typeof AvatarDropdown>

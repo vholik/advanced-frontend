@@ -15,7 +15,6 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { Text, TextColor, TextSize, TextWeight } from '@/shared/ui/Text/Text'
 import { VStack } from '@/shared/ui/Stack'
 
-
 interface ArticleDetailsCommentsProps {
     className?: string
     id?: string
@@ -41,8 +40,8 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo(
         )
 
         return (
-            <div className={classNames('', {}, [className])}>
-                <VStack gap="8">
+            <VStack max className={classNames('', {}, [className])}>
+                <VStack gap="8" max>
                     <Text
                         text={`${t('Comments')}:`}
                         weight={TextWeight.MEDIUM}
@@ -53,7 +52,7 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo(
                 </VStack>
 
                 <CommentList comments={comments} isLoading={isLoading} />
-            </div>
+            </VStack>
         )
     }
 )

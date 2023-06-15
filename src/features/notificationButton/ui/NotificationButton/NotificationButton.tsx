@@ -40,7 +40,7 @@ export const NotificationButton: FC<NotificationButtonProps> = memo((props) => {
         <>
             <BrowserView>
                 <Popover
-                    direction="bottom left"
+                    direction="bottom right"
                     className={classNames(cls.NotificationButton, {}, [
                         className,
                     ])}

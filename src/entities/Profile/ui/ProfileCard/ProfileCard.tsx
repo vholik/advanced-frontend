@@ -11,8 +11,8 @@ import { type Currency, CurrencySelect } from '@/entities/Currency'
 import { type Country } from '@/entities/Country'
 import { CountrySelect } from '@/entities/Country/ui/CountrySelect'
 import { Label } from '@/shared/ui/Label/Label'
-
-
+import { VStack } from '@/shared/ui/Stack'
+import { Loader } from '@/shared/ui/Loader/Loader'
 
 interface ProfileCardProps {
     className?: string
@@ -26,6 +26,7 @@ interface ProfileCardProps {
     onChangeCurrency: (value: Currency) => void
     onChangeCountry: (value: Country) => void
     readonly?: boolean
+    isLoading?: boolean
 }
 
 export const ProfileCard: FC<ProfileCardProps> = (props) => {
@@ -41,9 +42,18 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         onChangeUsername,
         onChangeCountry,
         onChangeCurrency,
+        isLoading,
     } = props
 
     const { t } = useTranslation('profile')
+
+    if (isLoading) {
+        return (
+            <VStack max align="center">
+                <Loader />
+            </VStack>
+        )
+    }
 
     return (
         <div className={classNames(cls.ProfileCard, {}, [className])}>

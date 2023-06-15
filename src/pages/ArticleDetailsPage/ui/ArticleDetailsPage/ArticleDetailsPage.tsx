@@ -48,6 +48,7 @@ import { Note } from '@/shared/ui/Note/Note'
 import { ArticleDetails, ArticleView } from '@/entities/Article'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { ArticleRating } from '@/features/articleRating'
+import { VStack } from '@/shared/ui/Stack'
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -81,10 +82,15 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
             >
                 <div className={cls.inner}>
                     <ArticleDetailsPageHeader />
-                    <ArticleDetails id={id} />
-                    <ArticleRating articleId={id} />
-                    <ArticleDetailsComments id={id} />
-                    <ArticleRecommendationsList />
+                    <VStack align="center" gap="32">
+                        <ArticleDetails id={id} />
+
+                        <ArticleRating articleId={id} />
+                        <VStack gap="32">
+                            <ArticleDetailsComments id={id} />
+                            <ArticleRecommendationsList />
+                        </VStack>
+                    </VStack>
                 </div>
             </Page>
         </DynamicModuleLoader>

@@ -10,8 +10,6 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { VStack } from '@/shared/ui/Stack'
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
 
-
-
 interface NotificationListProps {
     className?: string
 }

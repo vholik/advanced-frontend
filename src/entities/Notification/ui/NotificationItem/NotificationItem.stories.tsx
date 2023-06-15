@@ -4,9 +4,8 @@ import { NotificationItem } from './NotificationItem'
 
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
-
 const meta = {
-    title: 'shared/NotificationItem',
+    title: 'entities/Notification/NotificationItem',
     component: NotificationItem,
     tags: ['autodocs'],
 } satisfies Meta<typeof NotificationItem>

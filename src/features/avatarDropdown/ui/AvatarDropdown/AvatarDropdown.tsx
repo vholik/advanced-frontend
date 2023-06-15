@@ -38,7 +38,7 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo((props) => {
     return (
         <Dropdown
             className={classNames('', {}, [className])}
-            direction="bottom left"
+            direction="bottom right"
             items={[
                 { content: t('Log out'), onClick: onLogout },
                 {

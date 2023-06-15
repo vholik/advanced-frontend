@@ -19,3 +19,31 @@ body {
 .content-page {
     flex-grow: 1;
 }
+
+/* Customize website's scrollbar like Mac OS
+Not supports in Firefox and IE */
+
+/* total width */
+*::-webkit-scrollbar {
+    border-radius: 12px;
+    background-color: var(--stroke-color);
+    width: 16px;
+}
+
+/* background of the scrollbar except button or resizer */
+*::-webkit-scrollbar-track {
+    border-radius: 12px;
+    background-color: var(--stroke-color);
+}
+
+/* scrollbar itself */
+*::-webkit-scrollbar-thumb {
+    background-color: var(--tertiary-color);
+    border-radius: 16px;
+    border: 4px solid var(--stroke-color);
+}
+
+/* set button(top and bottom of the scrollbar) */
+*::-webkit-scrollbar-button {
+    display: none;
+}

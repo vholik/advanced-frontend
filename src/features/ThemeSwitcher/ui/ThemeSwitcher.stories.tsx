@@ -5,9 +5,8 @@ import { ThemeSwitcher } from './ThemeSwitcher'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/app/providers/ThemeProvider'
 
-
 const meta = {
-    title: 'shared/ThemeSwitcher',
+    title: 'features/ThemeSwitcher',
     component: ThemeSwitcher,
     tags: ['autodocs'],
 } satisfies Meta<typeof ThemeSwitcher>

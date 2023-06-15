@@ -2,8 +2,9 @@
     --bg-color: #171717;
     --bg-color-hover: #2e2e2e;
     --secondary-bg-color: #212221;
-    --stroke-color: #505050;
-    --stroke-light-color: #313131;
+    --stroke-color: #313131;
+
+    --stroke-light-color: rgb(63, 63, 70);
     --primary-color: #fff;
     --primary-color-hover: #f6f6f6;
     --primary-variant-color: #0085ff;
@@ -15,6 +16,9 @@
     //skeleton
     --skeleton-color: #323232;
     --skeleton-highlight: #1d1d1d;
+
+    // card
+    --card-bg-color: rgb(29, 29, 31);
 
     // Shadows
     --box-shadow: 0px 1px 3px rgba(255, 255, 255, 0.1),

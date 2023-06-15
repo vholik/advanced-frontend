@@ -26,10 +26,11 @@ import {
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { VStack } from '@/shared/ui/Stack'
 
 interface EditableProfileCardProps {
     className?: string
-    id?: string
+    id: string
 }
 
 const reducers: ReducersList = {
@@ -55,9 +56,7 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
     }
 
     useInitialEffect(() => {
-        if (id) {
-            dispatch(fetchProfileData(id))
-        }
+        dispatch(fetchProfileData(id))
     })
 
     const onChangeFirstname = useCallback(
@@ -120,14 +119,6 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
         [dispatch]
     )
 
-    if (isLoading) {
-        return (
-            <div className={classNames('', {})}>
-                <Loader />
-            </div>
-        )
-    }
-
     if (error) {
         return (
             <>
@@ -153,8 +144,9 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
                             />
                         </Note>
                     ))}
-                <ProfilePageHeader />
+                <ProfilePageHeader isLoading={isLoading} />
                 <ProfileCard
+                    isLoading={isLoading}
                     data={formData}
                     onChangeLastname={onChangeLastname}
                     onChangeFirstname={onChangeFirstname}

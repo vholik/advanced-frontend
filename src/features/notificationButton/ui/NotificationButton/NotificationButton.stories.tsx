@@ -4,9 +4,8 @@ import { NotificationButton } from './NotificationButton'
 
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
-
 const meta = {
-    title: 'shared/NotificationButton',
+    title: 'features/NotificationButton',
     component: NotificationButton,
     tags: ['autodocs'],
 } satisfies Meta<typeof NotificationButton>

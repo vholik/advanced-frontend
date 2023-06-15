@@ -5,7 +5,7 @@ import { RatingCard } from './RatingCard'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
 const meta = {
-    title: 'shared/RatingCard',
+    title: 'entities/Rating/RatingCard',
     component: RatingCard,
     tags: ['autodocs'],
 } satisfies Meta<typeof RatingCard>

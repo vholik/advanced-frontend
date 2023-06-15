@@ -1,4 +1,3 @@
-/* eslint-disable promise/param-names */
 /* eslint-disable id-length */
 /* eslint-disable no-console */
 const fs = require('fs')

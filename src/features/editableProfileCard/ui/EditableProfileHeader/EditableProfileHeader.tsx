@@ -18,14 +18,14 @@ import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import { Text } from '@/shared/ui/Text/Text'
 import { Button, ButtonSize, ThemeButton } from '@/shared/ui/Button/Button'
 
-
-
 interface ProfilePageHeaderProps {
     className?: string
+    isLoading?: boolean
 }
 
 export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
     className,
+    isLoading,
 }) => {
     const { t } = useTranslation()
     const readonly = useSelector(getProfileReadonly)
@@ -47,6 +47,10 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
     const onSave = useCallback(() => {
         dispatch(updateProfileData())
     }, [dispatch])
+
+    if (isLoading) {
+        return null
+    }
 
     return (
         <div className={classNames('', {}, [className])}>

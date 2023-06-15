@@ -1,5 +1,6 @@
 .popup {
     position: relative;
+    color: var(--primary-color);
 }
 
 .active {
@@ -7,26 +8,28 @@
 }
 
 .directionTopLeft {
-    right: 0;
+    left: 0;
+    bottom: 100%;
 }
 
 .directionTopRight {
-    left: 0;
+    right: 0;
+    bottom: 100%;
 }
 
 .directionBottomLeft {
     top: 100%;
-    right: 0;
+    left: 0;
 }
 
 .directionBottomRight {
     top: 100%;
-    left: 0;
+    right: 0;
 }
 
 .readonly {
     pointer-events: none;
-    background-color: var(--secondary-bg-color);
+    background-color: var(--secondary-bg-color) !important;
     color: var(--secondary-color);
 }
 

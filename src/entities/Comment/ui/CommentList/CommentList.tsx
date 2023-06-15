@@ -1,7 +1,6 @@
 import { type FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
-
 import { type Comment } from '../../model/types/comment'
 import { CommentCard } from '../CommentCard/CommentCard'
 
@@ -9,6 +8,7 @@ import cls from './CommentList.module.scss'
 
 import { Text, TextColor, TextSize, TextWeight } from '@/shared/ui/Text/Text'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { HStack, VStack } from '@/shared/ui/Stack'
 
 interface CommentListProps {
     className?: string
@@ -31,7 +31,7 @@ export const CommentList: FC<CommentListProps> = memo((props) => {
     }
 
     return (
-        <div className={classNames(cls.CommentList, {}, [className])}>
+        <VStack max className={classNames(cls.CommentList, {}, [className])}>
             {comments?.length ? (
                 comments.map((comment) => (
                     <CommentCard
@@ -47,6 +47,6 @@ export const CommentList: FC<CommentListProps> = memo((props) => {
                     size={TextSize.S}
                 />
             )}
-        </div>
+        </VStack>
     )
 })

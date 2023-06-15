@@ -8,7 +8,6 @@ import { ArticleList, ArticleView } from '@/entities/Article'
 import { Text, TextColor, TextSize, TextWeight } from '@/shared/ui/Text/Text'
 import { VStack } from '@/shared/ui/Stack'
 
-
 interface ArticleRecommendationsListProps {
     className?: string
 }
@@ -26,7 +25,7 @@ export const ArticleRecommendationsList = memo(
         }
 
         return (
-            <VStack gap="8" className={classNames('', {}, [className])}>
+            <VStack className={classNames('', {}, [className])}>
                 <Text
                     text={`${t('Also read')}:`}
                     weight={TextWeight.MEDIUM}
