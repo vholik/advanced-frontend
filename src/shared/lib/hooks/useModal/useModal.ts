@@ -6,7 +6,12 @@ interface UseModalProps {
     lazy?: boolean
     animationDelay?: number
 }
-
+/**
+ * Reusable hook for drawer/modal components
+ * @param animationDelay
+ * @param isOpen
+ * @param onClose
+ */
 export function useModal({
     animationDelay = 300,
     isOpen,
