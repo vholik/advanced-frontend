@@ -6,11 +6,9 @@ import { type Article } from '../../model/types/article'
 import { ArticleDetails } from './ArticleDetails'
 
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/const/theme'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { avatarLink } from '@/shared/const/tests'
-
-
 
 const data: Article = {
     id: '1',

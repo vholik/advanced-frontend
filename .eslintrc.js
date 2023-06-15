@@ -71,6 +71,13 @@ module.exports = {
                 ],
             },
         ],
+        'viktors-plugin/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/StoreDecorator'],
+            },
+        ],
         '@typescript-eslint/consistent-type-imports': 'off',
     },
 }

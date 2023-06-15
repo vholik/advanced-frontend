@@ -3,12 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react'
 import ProfilePage from './ProfilePage'
 
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/const/theme'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
 import { avatarLink } from '@/shared/const/tests'
-
 
 const meta = {
     title: 'pages/ProfilePage',
