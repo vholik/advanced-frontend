@@ -26,8 +26,8 @@ import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetails
 import cls from './ArticleDetailsPage.module.scss'
 
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList'
-import { ArticleList } from '@/entities/Article/ui/ArticleList/ArticleList'
-import { Page } from '@/widgets/Page/Page'
+import { ArticleList, ArticleDetails, ArticleView } from '@/entities/Article'
+import { Page } from '@/widgets/Page'
 import { AddCommentForm } from '@/features/AddCommentForm'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
@@ -45,7 +45,6 @@ import {
     TextWeight,
 } from '@/shared/ui/Text/Text'
 import { Note } from '@/shared/ui/Note/Note'
-import { ArticleDetails, ArticleView } from '@/entities/Article'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { ArticleRating } from '@/features/articleRating'
 import { VStack } from '@/shared/ui/Stack'

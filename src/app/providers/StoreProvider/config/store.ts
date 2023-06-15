@@ -13,12 +13,11 @@ import { type NavigateFunction } from 'react-router-dom'
 import { type ThunkExtraArg, type StateSchema } from './StateSchema'
 import { createReducerManager } from './reducerManager'
 
-import { counterReducer } from '@/entities/Counter/model/slice/counterSlice'
+import { counterReducer } from '@/entities/Counter'
 import { userReducer } from '@/entities/User'
 import { $api } from '@/shared/api/api'
 import { restoreScrollReducer } from '@/features/RestoreScroll'
 import { rtkApi } from '@/shared/api/rtkApi'
-
 
 export function createReduxStore(
     initialState?: StateSchema,

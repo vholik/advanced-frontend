@@ -8,3 +8,4 @@ export {
     ArticleView,
 } from './model/conts/articleConsts'
 export { ArticleBlockType } from './model/conts/articleConsts'
+export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema'

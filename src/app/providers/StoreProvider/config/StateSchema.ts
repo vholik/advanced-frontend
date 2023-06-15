@@ -11,7 +11,7 @@ import {
     type NavigateOptions,
 } from 'react-router-dom'
 
-import { type ArticleDetailsSchema } from '@/entities/Article/model/types/articleDetailsSchema'
+import { type ArticleDetailsSchema } from '@/entities/Article'
 import { type CounterSchema } from '@/entities/Counter'
 import { type UserSchema } from '@/entities/User'
 import { type AddCommentFormSchema } from '@/features/AddCommentForm'

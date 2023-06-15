@@ -16,11 +16,13 @@ import {
     userActions,
 } from '@/entities/User'
 import { Input, InputTheme } from '@/shared/ui/Input/Input'
-import { articlePageActions } from '@/pages/ArticlesPage/model/slice/articlesPageSlice'
-import { getArticlesPageSearch } from '@/pages/ArticlesPage/model/selectors/articlesPageSelector'
-import { fetchArticlesList } from '@/pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
+import {
+    articlePageActions,
+    getArticlesPageSearch,
+    fetchArticlesList,
+} from '@/pages/ArticlesPage'
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
-import { AppRoutes, RoutePath } from '@/shared/config/routeConfig/routeConfig'
+import { RoutePath } from '@/shared/const/router'
 import EditIcon from '@/shared/assets/icons/edit.svg'
 import { AppLink } from '@/shared/ui/AppLink/AppLink'
 import { Icon, IconColor } from '@/shared/ui/Icon/Icon'
@@ -31,7 +33,6 @@ import { HStack } from '@/shared/ui/Stack'
 import { NotificationList } from '@/entities/Notification'
 import { NotificationButton } from '@/features/notificationButton'
 import { AvatarDropdown } from '@/features/avatarDropdown'
-import { Drawer } from '@/shared/ui/Drawer/Drawer'
 
 interface NavbarProps {
     className?: string

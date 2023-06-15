@@ -6,8 +6,7 @@ import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchComme
 import { type ThunkConfig } from '@/app/providers/StoreProvider'
 import { userActions, type User, getUserAuthData } from '@/entities/User'
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage'
-import { getArticleDetailsData } from '@/entities/Article/model/selectors/articleDetails'
-
+import { getArticleDetailsData } from '@/entities/Article'
 
 interface LoginByUsernameProps {
     username: string

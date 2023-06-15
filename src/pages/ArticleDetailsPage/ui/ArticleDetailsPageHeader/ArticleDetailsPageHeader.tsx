@@ -11,10 +11,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { Button, ThemeButton } from '@/shared/ui/Button/Button'
 import { getUserAuthData } from '@/entities/User'
 import { getArticleDetailsData } from '@/entities/Article'
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
-
-
-
+import { RoutePath } from '@/shared/const/router'
 
 interface ArticleDetailsPageHeaderProps {
     className?: string

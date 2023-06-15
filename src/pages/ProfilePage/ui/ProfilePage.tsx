@@ -22,9 +22,8 @@ import {
     ProfilePageHeader,
 } from '@/features/editableProfileCard'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { Page } from '@/widgets/Page/Page'
-import { fetchArticlesList } from '@/pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
-
+import { Page } from '@/widgets/Page'
+import { fetchArticlesList } from '@/pages/ArticlesPage'
 
 interface ProfilePageProps {
     className?: string

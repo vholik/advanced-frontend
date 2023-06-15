@@ -4,11 +4,10 @@ import ArticleDetailsPage from './ArticleDetailsPage'
 
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/app/providers/ThemeProvider'
-import { type Article } from '@/entities/Article/model/types/article'
+import { type Article } from '@/entities/Article'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { avatarLink } from '@/shared/const/tests'
 import { ArticleType, ArticleBlockType } from '@/entities/Article'
-
 
 const data: Article = {
     id: '1',

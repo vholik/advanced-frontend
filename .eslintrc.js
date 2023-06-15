@@ -21,7 +21,7 @@ module.exports = {
         },
         project: ['./tsconfig.json'],
     },
-    plugins: ['react', 'i18next', 'prettier', 'react-hooks', 'ulbi-tv-plugin'],
+    plugins: ['react', 'i18next', 'prettier', 'react-hooks', 'viktors-plugin'],
     rules: {
         'import/no-extraneous-dependencies': [0],
         '@typescript-eslint/prefer-nullish-coalescing': [0],
@@ -59,7 +59,18 @@ module.exports = {
         '@typescript-eslint/restrict-template-expressions': 'off',
         'react/no-array-index-key': 'off',
         'jsx-a11y/no-noninteractive-element-interactions': 'off',
-        'ulbi-tv-plugin/path-checker': 'error',
+        'viktors-plugin/path-checker': ['error', { alias: '@' }],
+        'viktors-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: [
+                    '@@/*.test.*',
+                    '**/*.story.*',
+                    '**/StoreDecorator.tsx',
+                ],
+            },
+        ],
         '@typescript-eslint/consistent-type-imports': 'off',
     },
 }
