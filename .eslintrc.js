@@ -52,7 +52,7 @@ module.exports = {
         'react/self-closing-comp': 'off',
         '@shopify/strict-component-boundaries': 'off',
         'react/display-name': 'off',
-        '@typescript-eslint/ban-ts-comment': 'warn',
+        '@typescript-eslint/ban-ts-comment': 'off',
         '@shopify/jsx-no-complex-expressions': 'off',
         '@typescript-eslint/consistent-indexed-object-style': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
@@ -66,6 +66,7 @@ module.exports = {
         '@typescript-eslint/no-invalid-void-type': 'off',
         '@typescript-eslint/restrict-template-expressions': 'off',
         'react/no-array-index-key': 'off',
+        '@typescript-eslint/prefer-ts-expect-error': 'off',
         'jsx-a11y/no-noninteractive-element-interactions': 'off',
         'viktors-plugin/path-checker': ['error', { alias: '@' }],
         'viktors-plugin/public-api-imports': [
