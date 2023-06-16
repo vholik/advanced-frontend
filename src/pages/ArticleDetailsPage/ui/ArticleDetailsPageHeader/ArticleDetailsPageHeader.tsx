@@ -7,10 +7,9 @@ import { useNavigate } from 'react-router-dom'
 import cls from './ArticleDetailsPageHeader.module.scss'
 import { getCanEditArticle } from '../../model/selectors/article'
 
-
 import { getArticleDetailsData } from '@/entities/Article'
 import { getUserAuthData } from '@/entities/User'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteArticleEdit } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Button } from '@/shared/ui/Button'
 
@@ -29,7 +28,9 @@ export const ArticleDetailsPageHeader: FC<ArticleDetailsPageHeaderProps> = memo(
         const canEdit = useSelector(getCanEditArticle)
 
         const onEditArticle = useCallback(() => {
-            navigate(`${`${RoutePath.articles}/${article?.id}`}/edit`)
+            if (article?.id) {
+                navigate(getRouteArticleEdit(article?.id))
+            }
         }, [article?.id, navigate])
 
         return (

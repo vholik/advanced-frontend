@@ -5,8 +5,7 @@ import { useTranslation } from 'react-i18next'
 import cls from './CommentCard.module.scss'
 import { type Comment } from '../../model/types/comment'
 
-
-import { RoutePath } from '@/shared/const/router'
+import { getRouteProfile } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
@@ -52,7 +51,7 @@ export const CommentCard: FC<CommentCardProps> = memo((props) => {
     return (
         <div className={classNames(cls.CommentCard, {}, [className])}>
             <AppLink
-                to={`${RoutePath.profile}${comment.user.id}`}
+                to={getRouteProfile(comment.user.id)}
                 className={cls.header}
             >
                 <HStack max>

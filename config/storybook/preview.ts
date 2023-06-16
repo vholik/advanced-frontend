@@ -1,7 +1,6 @@
 import '../../src/app/styles/index.scss'
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator'
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator'
-import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '../../src/shared/const/theme'
 
 import type { Preview } from '@storybook/react'
@@ -16,9 +15,16 @@ const preview: Preview = {
             },
         },
         layout: 'fullscreen',
+        themes: {
+            default: 'light',
+            list: [
+                { name: 'light', class: Theme.LIGHT, color: '#fff' },
+                { name: 'dark', class: Theme.DARK, color: '#000' },
+            ],
+        },
     },
     decorators: [
-        ThemeDecorator(Theme.LIGHT),
+        // ThemeDecorator(Theme.LIGHT),
         RouterDecorator,
         SuspenseDecorator,
     ],

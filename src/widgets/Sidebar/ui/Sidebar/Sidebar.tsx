@@ -7,7 +7,7 @@ import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 
 import Logo from '@/shared/assets/icons/logo.svg'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteMain } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink } from '@/shared/ui/AppLink'
 import { Button, ButtonSize, ThemeButton } from '@/shared/ui/Button'
@@ -53,7 +53,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
             </Button>
 
             <VStack gap="32" role="navigation">
-                <AppLink to={RoutePath.main} className={cls.logo}>
+                <AppLink to={getRouteMain()} className={cls.logo}>
                     <Icon Svg={Logo} color={IconColor.PRIMARY} />
                 </AppLink>
                 <VStack gap="32">

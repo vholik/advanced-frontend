@@ -6,7 +6,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
 .app {
-    background: var(--bg-color);
     display: flex;
 }
 
@@ -14,6 +13,7 @@ body {
     color: var(--primary-color);
     font: var(--font-m);
     overflow: hidden;
+    background: var(--bg-color);
 }
 
 .content-page {

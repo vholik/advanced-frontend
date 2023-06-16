@@ -12,9 +12,8 @@ import cls from './ArticleListItem.module.scss'
 import { ArticleBlockType, ArticleView } from '../../model/conts/articleConsts'
 import { type Article, type ArticleTextBlock } from '../../model/types/article'
 
-
 import EyeIcon from '@/shared/assets/icons/eye.svg'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteArticleDetails } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
@@ -46,11 +45,13 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
     ) as ArticleTextBlock
 
     const onOpenArticle = useCallback(() => {
-        navigate(RoutePath.article_details + article?.id)
+        if (article?.id) {
+            navigate(getRouteArticleDetails(article?.id))
+        }
     }, [article?.id, navigate])
 
     return (
-        <AppLink to={RoutePath.article_details + article?.id} target={target}>
+        <AppLink to={getRouteArticleDetails(article?.id || '')} target={target}>
             <Card
                 className={classNames(cls.ArticleListItem, {}, [
                     className,

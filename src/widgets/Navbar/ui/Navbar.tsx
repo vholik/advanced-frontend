@@ -6,9 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 import cls from './Navbar.module.scss'
 
-import {
-    getUserAuthData,
-} from '@/entities/User'
+import { getUserAuthData } from '@/entities/User'
 import { LoginModal } from '@/features/AuthByUsername'
 import { AvatarDropdown } from '@/features/avatarDropdown'
 import { NotificationButton } from '@/features/notificationButton'
@@ -19,7 +17,7 @@ import {
     fetchArticlesList,
 } from '@/pages/ArticlesPage'
 import EditIcon from '@/shared/assets/icons/edit.svg'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteArticleCreate, getRouteArticles } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
 import { AppLink } from '@/shared/ui/AppLink'
@@ -60,7 +58,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             dispatch(articlePageActions.setPage(1))
             dispatch(articlePageActions.setSearch(value))
             debounceFetchData()
-            navigate(RoutePath.articles)
+            navigate(getRouteArticles())
         },
         [dispatch, debounceFetchData, navigate]
     )
@@ -75,7 +73,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     placeholder={t('Search')}
                     theme={InputTheme.BASE}
                 />
-                <AppLink to={RoutePath.article_create} className={cls.writeBtn}>
+                <AppLink to={getRouteArticleCreate()} className={cls.writeBtn}>
                     <Icon Svg={EditIcon} color={IconColor.SECONDARY} />
                     <Text text={t('Write')} />
                 </AppLink>

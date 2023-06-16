@@ -9,7 +9,7 @@ import {
     isUserManager,
     userActions,
 } from '@/entities/User'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Dropdown } from '@/shared/ui/Popups'
@@ -44,13 +44,13 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo((props) => {
                 { content: t('Log out'), onClick: onLogout },
                 {
                     content: t('Profile'),
-                    href: RoutePath.profile + authData?.id,
+                    href: getRouteProfile(authData.id),
                 },
                 ...(isAdminPanelAvailable
                     ? [
                           {
                               content: t('Panel'),
-                              href: RoutePath.admin_panel,
+                              href: getRouteAdminPanel(),
                           },
                       ]
                     : []),
