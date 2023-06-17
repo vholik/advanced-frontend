@@ -82,7 +82,7 @@
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-ulbi-tv-plugin": "^0.0.10",
         "eslint-plugin-unused-imports": "^2.0.0",
-        "eslint-plugin-viktors-plugin": "^0.0.9",
+        "eslint-plugin-viktors-plugin": "^0.0.10",
         "file-loader": "^6.2.0",
         "fork-ts-checker-webpack-plugin": "^8.0.0",
         "html-webpack-plugin": "^5.5.0",
@@ -120,7 +120,7 @@
     "dependencies": {
         "@headlessui/react": "^1.7.15",
         "@react-spring/web": "^9.5.2",
-        "@reduxjs/toolkit": "^1.8.0",
+        "@reduxjs/toolkit": "^1.9.5",
         "@use-gesture/react": "^10.2.19",
         "axios": "^1.4.0",
         "deelay": "^2.0.0",
@@ -132,7 +132,7 @@
         "react-dom": "^18.2.0",
         "react-i18next": "^11.18.3",
         "react-loading-skeleton": "^3.3.1",
-        "react-redux": "^7.2.6",
+        "react-redux": "^8.1.0",
         "react-router-dom": "^6.2.1"
     },
     "loki": {

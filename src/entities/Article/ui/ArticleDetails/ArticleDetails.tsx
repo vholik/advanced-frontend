@@ -11,12 +11,12 @@ import {
     getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails'
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
+// import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import { type ArticleBlock } from '../../model/types/article'
+import { articleDetailsReducer } from '../../testing'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
-
 
 import DateIcon from '@/shared/assets/icons/date.svg'
 import EyeIcon from '@/shared/assets/icons/eye.svg'

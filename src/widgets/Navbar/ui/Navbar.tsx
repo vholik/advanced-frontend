@@ -1,7 +1,7 @@
 import { memo, useCallback, useState } from 'react'
 
 import { useTranslation } from 'react-i18next'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 import cls from './Navbar.module.scss'
@@ -19,6 +19,7 @@ import {
 import EditIcon from '@/shared/assets/icons/edit.svg'
 import { getRouteArticleCreate, getRouteArticles } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
 import { AppLink } from '@/shared/ui/AppLink'
 import { Button } from '@/shared/ui/Button'
@@ -32,7 +33,7 @@ interface NavbarProps {
 }
 
 export const Navbar = memo(({ className }: NavbarProps) => {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     const [isAuthModal, setIsAuthModal] = useState(false)
     const { t } = useTranslation()
     const authData = useSelector(getUserAuthData)
