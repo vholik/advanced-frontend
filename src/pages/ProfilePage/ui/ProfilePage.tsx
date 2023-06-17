@@ -5,11 +5,7 @@ import { useParams } from 'react-router-dom'
 
 import cls from './ProfilePage.module.scss'
 
-
-
-import {
-    EditableProfileCard,
-} from '@/features/editableProfileCard'
+import { EditableProfileCard } from '@/features/editableProfileCard'
 import { Note } from '@/shared/ui/Note'
 import { Page } from '@/widgets/Page'
 
@@ -34,7 +30,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
     }
 
     return (
-        <Page className={cls.ProfilePage}>
+        <Page data-testid="ProfilePage" className={cls.ProfilePage}>
             <div className={cls.inner}>
                 <EditableProfileCard id={id} />
             </div>

@@ -1,4 +1,3 @@
-
 import {
     type FC,
     useRef,
@@ -14,14 +13,14 @@ import cls from './Page.module.scss'
 
 import { type RootState } from '@/app/providers/StoreProvider/config/store'
 import { getScrollByPath, restoreScrollActions } from '@/features/RestoreScroll'
+import { TestProps } from '@/shared/const/tests'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle'
 
-
-interface PageProps {
+interface PageProps extends TestProps {
     className?: string
     onScrollEnd?: () => void
     storeScroll?: boolean
@@ -64,6 +63,7 @@ export const Page: FC<PageProps> = (props) => {
             className={classNames(cls.Page, {}, [className])}
             ref={wrapperRef}
             onScroll={onScroll}
+            data-testid={props['data-testid'] ?? 'Page'}
         >
             {children}
             {onScrollEnd ? (
