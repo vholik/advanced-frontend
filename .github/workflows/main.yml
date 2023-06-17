@@ -28,11 +28,7 @@
 #               run: npm run test:ui:ci
 
 name: linting, testing, building
-on:
-    push:
-        branches: [master]
-    pull_request:
-        branches: [master]
+on: [push, pull_request]
 permissions:
     contents: write
     pages: write
