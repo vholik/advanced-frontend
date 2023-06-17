@@ -49,7 +49,10 @@ export const CommentCard: FC<CommentCardProps> = memo((props) => {
     if (!comment) return null
 
     return (
-        <div className={classNames(cls.CommentCard, {}, [className])}>
+        <div
+            className={classNames(cls.CommentCard, {}, [className])}
+            data-testid="CommentCard.Content"
+        >
             <AppLink
                 to={getRouteProfile(comment.user.id)}
                 className={cls.header}

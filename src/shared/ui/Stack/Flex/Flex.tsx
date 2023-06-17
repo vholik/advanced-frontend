@@ -4,7 +4,6 @@ import cls from './Flex.module.scss'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 
-
 export type FlexJustify = 'start' | 'center' | 'end' | 'between'
 export type FlexAlign = 'center' | 'start' | 'end'
 export type FlexDirection = 'row' | 'column'
@@ -43,6 +42,7 @@ export interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
     direction?: FlexDirection
     gap?: FlexGap
     max?: boolean
+    'data-testid'?: string
 }
 
 export const Flex: FC<FlexProps> = memo(
@@ -54,6 +54,7 @@ export const Flex: FC<FlexProps> = memo(
         direction = 'row',
         gap = '4',
         max,
+        'data-testid': testId,
     }) => {
         const classes = [
             className,
@@ -68,7 +69,10 @@ export const Flex: FC<FlexProps> = memo(
         }
 
         return (
-            <div className={classNames(cls.Flex, mods, classes)}>
+            <div
+                className={classNames(cls.Flex, mods, classes)}
+                data-testid={testId}
+            >
                 {children}
             </div>
         )

@@ -53,7 +53,11 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
     }, [article?.id, navigate])
 
     return (
-        <AppLink to={getRouteArticleDetails(article?.id || '')} target={target}>
+        <AppLink
+            to={getRouteArticleDetails(article?.id || '')}
+            target={target}
+            data-testid="ArticleListItem"
+        >
             <Card
                 className={classNames(cls.ArticleListItem, {}, [
                     className,

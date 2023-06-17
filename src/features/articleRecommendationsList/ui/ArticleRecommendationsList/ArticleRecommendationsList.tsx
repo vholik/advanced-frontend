@@ -26,7 +26,10 @@ export const ArticleRecommendationsList = memo(
         }
 
         return (
-            <VStack className={classNames('', {}, [className])}>
+            <VStack
+                data-testid="ArticleRecommendationsList"
+                className={classNames('', {}, [className])}
+            >
                 <Text
                     text={`${t('Also read')}:`}
                     weight={TextWeight.MEDIUM}

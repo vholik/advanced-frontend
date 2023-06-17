@@ -537,6 +537,271 @@
           ]
         }
       ]
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "mq8S8aX"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "NqKUgVo"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "ZB6AR5j"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "sLQU37j"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "C0Fhyu8"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "AYoeRzu"
+    },
+    {
+      "title": "Nuance over monolithic narratives",
+      "subtitle": "The best free and paid tools to visualize your software architecture",
+      "img": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*oE8DRlAen_BCsroUtYlV2A.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "1",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "⚡ Tl;dr",
+          "paragraphs": [
+            "As an iOS developer, I have reviewed thousands of lines of code from my peers. Like programming, reviewing code makes you feel either smart or utterly stupid.Software architecture tools can be categorized into three groups, modelling tools, diagrams as code and diagramming tools.",
+            "In this article, we focus on what and how we should review. It’s part two of an article series explaining why, what and how to review code.Modelling and diagrams as code tools are better suited for long-term documentation, while diagramming tools are better for quick one-off sketches.",
+            "Modelling and diagrams as code have more structure and require more setup, while diagramming tools are more generic but require less thinking."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "🚀 Let’s kick-off",
+          "paragraphs": [
+            "Diagramming software architecture provides several benefits to how we communicate complexity. Well-thought-out diagrams give engineering teams an enhanced understanding of the design and plan for future development whilst identifying potential issues.",
+            "Modelling and diagrams as code tools are better suited for long-term documentation, while diagramming tools are better for quick one-off sketches."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "title": "📦 Visual modelling tools",
+          "paragraphs": [
+            "Modelling is best for long-term system design docs and requires some setup work. Reusable objects and relationships are stored in the model, which keeps all your diagrams up to date."
+          ]
+        }
+      ],
+      "id": "OKqoIer"
+    },
+    {
+      "title": "Nuance over monolithic narratives",
+      "subtitle": "The best free and paid tools to visualize your software architecture",
+      "img": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*oE8DRlAen_BCsroUtYlV2A.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "⚡ Tl;dr",
+          "paragraphs": [
+            "As an iOS developer, I have reviewed thousands of lines of code from my peers. Like programming, reviewing code makes you feel either smart or utterly stupid.Software architecture tools can be categorized into three groups, modelling tools, diagrams as code and diagramming tools.",
+            "In this article, we focus on what and how we should review. It’s part two of an article series explaining why, what and how to review code.Modelling and diagrams as code tools are better suited for long-term documentation, while diagramming tools are better for quick one-off sketches.",
+            "Modelling and diagrams as code have more structure and require more setup, while diagramming tools are more generic but require less thinking."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "🚀 Let’s kick-off",
+          "paragraphs": [
+            "Diagramming software architecture provides several benefits to how we communicate complexity. Well-thought-out diagrams give engineering teams an enhanced understanding of the design and plan for future development whilst identifying potential issues.",
+            "Modelling and diagrams as code tools are better suited for long-term documentation, while diagramming tools are better for quick one-off sketches."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "title": "📦 Visual modelling tools",
+          "paragraphs": [
+            "Modelling is best for long-term system design docs and requires some setup work. Reusable objects and relationships are stored in the model, which keeps all your diagrams up to date."
+          ]
+        }
+      ],
+      "id": "7VvL65Y"
+    },
+    {
+      "title": "Nuance over monolithic narratives",
+      "subtitle": "The best free and paid tools to visualize your software architecture",
+      "img": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*oE8DRlAen_BCsroUtYlV2A.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "4",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "⚡ Tl;dr",
+          "paragraphs": [
+            "As an iOS developer, I have reviewed thousands of lines of code from my peers. Like programming, reviewing code makes you feel either smart or utterly stupid.Software architecture tools can be categorized into three groups, modelling tools, diagrams as code and diagramming tools.",
+            "In this article, we focus on what and how we should review. It’s part two of an article series explaining why, what and how to review code.Modelling and diagrams as code tools are better suited for long-term documentation, while diagramming tools are better for quick one-off sketches.",
+            "Modelling and diagrams as code have more structure and require more setup, while diagramming tools are more generic but require less thinking."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "🚀 Let’s kick-off",
+          "paragraphs": [
+            "Diagramming software architecture provides several benefits to how we communicate complexity. Well-thought-out diagrams give engineering teams an enhanced understanding of the design and plan for future development whilst identifying potential issues.",
+            "Modelling and diagrams as code tools are better suited for long-term documentation, while diagramming tools are better for quick one-off sketches."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "title": "📦 Visual modelling tools",
+          "paragraphs": [
+            "Modelling is best for long-term system design docs and requires some setup work. Reusable objects and relationships are stored in the model, which keeps all your diagrams up to date."
+          ]
+        }
+      ],
+      "id": "9sJbJL0"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "3qgCz_R"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "ECsKCxG"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "4e7jc4X"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "DQH_3Q1"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "O1r_BQj"
     }
   ],
   "comments": [
@@ -563,6 +828,163 @@
       "userId": "1",
       "text": "Siema",
       "id": "1HGQFDW"
+    },
+    {
+      "userId": "4",
+      "text": "text",
+      "id": "6Xe_gE7"
+    },
+    {
+      "userId": "4",
+      "text": "text",
+      "id": "kyhSCsO"
+    },
+    {
+      "userId": "4",
+      "text": "text",
+      "id": "aGKi3o3"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "1",
+      "id": "IwcfMxf"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "comment hey",
+      "id": "Oi9uyB-"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "",
+      "id": "3IIOegR"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "",
+      "id": "4YCbK6R"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "elo",
+      "id": "I2QtGLk"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "elo ziomek",
+      "id": "skvadp6"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "",
+      "id": "OwMxJIs"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "what",
+      "id": "HzoClMG"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "what23",
+      "id": "C5ELF5x"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "2",
+      "id": "9KKsX2h"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "2",
+      "id": "TLMm4pN"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "wow",
+      "id": "XXnW384"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "wow",
+      "id": "yKI9wvz"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "new",
+      "id": "pmpDDtL"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "new",
+      "id": "PU_3-Ov"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "witma",
+      "id": "v6OPZBk"
+    },
+    {
+      "userId": "4",
+      "text": "text",
+      "id": "2o0AzNw"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "text": "w",
+      "id": "CAyy1Pz"
+    },
+    {
+      "userId": "4",
+      "text": "text",
+      "id": "g4a1xMx"
+    },
+    {
+      "userId": "4",
+      "text": "text",
+      "id": "wa61c_i"
+    },
+    {
+      "userId": "4",
+      "text": "text",
+      "id": "7j2BRlo"
+    },
+    {
+      "userId": "4",
+      "text": "text",
+      "id": "mridSnK"
+    },
+    {
+      "userId": "4",
+      "text": "text",
+      "id": "gRCV2Tv"
+    },
+    {
+      "userId": "4",
+      "text": "text",
+      "id": "Kvw03Y8"
+    },
+    {
+      "userId": "4",
+      "text": "text",
+      "id": "omzAQGL"
     }
   ],
   "users": [
@@ -592,6 +1014,15 @@
         "USER"
       ],
       "avatar": "https://www.film.ru/sites/default/files/people/1455111-2302563.jpg"
+    },
+    {
+      "id": "4",
+      "username": "test",
+      "password": "123",
+      "role": [
+        "USER"
+      ],
+      "avatar": "https://www.film.ru/sites/default/files/people/1455111-2302563.jpg"
     }
   ],
   "profile": [
@@ -610,7 +1041,18 @@
       "id": "2",
       "first": "name",
       "lastname": "asf",
-      "age": 465,
+      "age": 46,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "hello",
+      "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": "4",
+      "first": "test",
+      "lastname": "user",
+      "age": 45,
       "currency": "EUR",
       "country": "Russia",
       "city": "Moscow",
@@ -631,6 +1073,12 @@
       "rate": 3,
       "userId": "1",
       "id": "0ZUKHQ3"
+    },
+    {
+      "articleId": "DQH_3Q1",
+      "rate": 5,
+      "userId": "4",
+      "id": "1KOpOg4"
     }
   ]
 }

@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next'
 import cls from './StarRating.module.scss'
 import { IconColor } from '../Icon/Icon'
 
-
 import StarIcon from '@/shared/assets/icons/star.svg'
 import { classNames } from '@/shared/lib/classNames/classNames'
 
@@ -49,6 +48,8 @@ export const StarRating: FC<StarRatingProps> = memo((props) => {
         <div className={classNames(cls.StarRating, {}, [className])}>
             {stars.map((starNumber) => (
                 <StarIcon
+                    data-testid={`StarRating.${starNumber}`}
+                    data-selected={currentStarCount >= starNumber}
                     onMouseEnter={onHover(starNumber)}
                     onMouseLeave={onLeave}
                     key={starNumber}

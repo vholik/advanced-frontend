@@ -66,15 +66,24 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
                 <Text text={t('We would to love to hear your feedback')} />
             </VStack>
 
-            <Input placeholder={t('Your feedback')} onChange={setFeedback} />
+            <Input
+                placeholder={t('Your feedback')}
+                onChange={setFeedback}
+                data-testid="RatingCard.Input"
+            />
             <HStack max gap="4">
-                <Button size={ButtonSize.SM} onClick={acceptHandler}>
+                <Button
+                    size={ButtonSize.SM}
+                    onClick={acceptHandler}
+                    data-testid="RatingCard.SendButton"
+                >
                     {t('Send')}
                 </Button>
                 <Button
                     theme={ThemeButton.OUTLINE}
                     size={ButtonSize.SM}
                     onClick={cancelHandler}
+                    data-testid="RatingCard.CloseButton"
                 >
                     {t('Close')}
                 </Button>
@@ -83,7 +92,10 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
     )
 
     return (
-        <div className={classNames('', {}, [className])}>
+        <div
+            className={classNames('', {}, [className])}
+            data-testid="RatingCard"
+        >
             <VStack align="center" gap="4">
                 <Text title={title} size={TextSize.S} />
                 <StarRating

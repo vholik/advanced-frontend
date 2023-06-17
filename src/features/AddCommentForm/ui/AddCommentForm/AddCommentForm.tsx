@@ -13,7 +13,6 @@ import {
     addCommentFormReducer,
 } from '../../model/slice/addCommentFormSlice'
 
-
 import { classNames } from '@/shared/lib/classNames/classNames'
 import {
     DynamicModuleLoader,
@@ -22,9 +21,6 @@ import {
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Button, ButtonSize } from '@/shared/ui/Button'
 import { Input, InputTheme } from '@/shared/ui/Input'
-
-
-
 export interface AddCommentFormProps {
     className?: string
     onSendComment: (value: string) => void
@@ -51,18 +47,27 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props) => {
     const onSendHandler = useCallback(() => {
         onSendComment(text || '')
         onCommentTextChange('')
-    }, [onCommentTextChange, onSendComment, text])
+    }, [onSendComment, text])
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.AddCommentForm, {}, [className])}>
+            <div
+                className={classNames(cls.AddCommentForm, {}, [className])}
+                data-testid="AddCommentForm"
+            >
                 <Input
+                    data-testid="AddCommentForm.Input"
                     placeholder={t('Enter message')}
                     onChange={onCommentTextChange}
                     theme={InputTheme.BASE}
                     className={cls.input}
+                    value={text}
                 />
-                <Button size={ButtonSize.SM} onClick={onSendHandler}>
+                <Button
+                    size={ButtonSize.SM}
+                    onClick={onSendHandler}
+                    data-testid="AddCommentForm.Button"
+                >
                     {t('Send')}
                 </Button>
             </div>

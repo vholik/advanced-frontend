@@ -5,6 +5,7 @@ import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchComme
 import { type ThunkConfig } from '@/app/providers/StoreProvider'
 import { getArticleDetailsData } from '@/entities/Article'
 import { getUserAuthData } from '@/entities/User'
+import { addCommentFormActions } from '@/features/AddCommentForm'
 
 interface LoginByUsernameProps {
     username: string
@@ -41,6 +42,8 @@ export const addCommmentForArticle = createAsyncThunk<
         }
 
         dispatch(fetchCommentsByArticleId(articleId))
+
+        dispatch(addCommentFormActions.setText(''))
 
         return response.data
     } catch (error) {
