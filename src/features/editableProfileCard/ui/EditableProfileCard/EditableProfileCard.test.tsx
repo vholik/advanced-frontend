@@ -2,6 +2,7 @@ import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 import { EditableProfileCard } from './EditableProfileCard'
+import { profileReducer } from '../../testing'
 
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
@@ -31,7 +32,7 @@ const options = {
             authData: { id: '1' },
         },
     },
-    // asyncReducers: { profile: profileReducer },
+    asyncReducers: { profile: profileReducer },
 }
 
 describe('features/editableProfileCard', () => {
@@ -81,7 +82,6 @@ describe('features/editableProfileCard', () => {
         await userEvent.click(
             screen.getByTestId('EditableProfileHeader.EditButton')
         )
-
         await userEvent.type(
             screen.getByTestId('ProfileCard.firstname'),
             'user'

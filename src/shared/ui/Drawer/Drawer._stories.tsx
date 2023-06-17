@@ -2,9 +2,6 @@ import { Drawer } from './Drawer'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-
-
-
 const meta = {
     title: 'shared/Drawer',
     component: Drawer,

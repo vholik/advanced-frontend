@@ -54,6 +54,7 @@ describe('AppRouter.test', () => {
                 },
             },
         })
+
         const page = await screen.findByTestId('ForbiddenPage')
         expect(page).toBeInTheDocument()
     })
