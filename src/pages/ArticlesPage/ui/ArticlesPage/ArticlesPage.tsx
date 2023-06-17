@@ -5,12 +5,9 @@ import { useSearchParams } from 'react-router-dom'
 
 import cls from './ArticlesPage.module.scss'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
-import {
-    articlesPageReducer,
-} from '../../model/slice/articlesPageSlice'
+import { articlesPageReducer } from '../../model/slice/articlesPageSlice'
 import { ArticlesInfiniteList } from '../ArticlesInfiniteList/ArticlesInfiniteList'
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
-
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 import {
@@ -42,6 +39,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page
+                data-testid="ArticlesPage"
                 storeScroll
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlesPage, {}, [className])}

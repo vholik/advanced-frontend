@@ -46,6 +46,7 @@
         "./src/**/*.tsx",
         "**/*.ts",
         "**/*.tsx",
-        "./webpack.config.ts"
+        "./webpack.config.ts",
+        "cypress/tsconfig.json"
     ]
 }

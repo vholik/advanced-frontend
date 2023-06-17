@@ -67,6 +67,10 @@ module.exports = {
         '@typescript-eslint/restrict-template-expressions': 'off',
         'react/no-array-index-key': 'off',
         '@typescript-eslint/prefer-ts-expect-error': 'off',
+        'no-undef': 'off',
+        '@typescript-eslint/method-signature-style': 'off',
+        '@typescript-eslint/no-namespace': 'off',
+        'promise/catch-or-return': 'off',
         'jsx-a11y/no-noninteractive-element-interactions': 'off',
         'viktors-plugin/path-checker': ['error', { alias: '@' }],
         'viktors-plugin/public-api-imports': [
