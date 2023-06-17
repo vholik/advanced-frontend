@@ -6,7 +6,6 @@ import {
     type Reducer,
     type CombinedState,
 } from '@reduxjs/toolkit'
-import { type NavigateFunction } from 'react-router-dom'
 
 import { createReducerManager } from './reducerManager'
 import { type ThunkExtraArg, type StateSchema } from './StateSchema'
@@ -19,8 +18,7 @@ import { rtkApi } from '@/shared/api/rtkApi'
 
 export function createReduxStore(
     initialState?: StateSchema,
-    asyncReducers?: ReducersMapObject<StateSchema>,
-    navigate?: NavigateFunction
+    asyncReducers?: ReducersMapObject<StateSchema>
 ) {
     const rootReducer: ReducersMapObject<StateSchema> = {
         ...asyncReducers,

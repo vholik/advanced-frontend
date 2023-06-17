@@ -15,11 +15,13 @@ import { type Article, type ArticleTextBlock } from '../../model/types/article'
 import EyeIcon from '@/shared/assets/icons/eye.svg'
 import { getRouteArticleDetails } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { AppImage } from '@/shared/ui/AppImage'
 import { AppLink } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Button, ThemeButton } from '@/shared/ui/Button'
 import { Card } from '@/shared/ui/Card'
 import { Icon, IconColor } from '@/shared/ui/Icon'
+import { Skeleton } from '@/shared/ui/Skeleton'
 import {
     Text,
     TextColor,
@@ -58,7 +60,8 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
                     cls[view],
                 ])}
             >
-                <img
+                <AppImage
+                    fallback={<Skeleton height={220} />}
                     src={article?.img}
                     alt={article?.title}
                     className={cls.coverImg}
