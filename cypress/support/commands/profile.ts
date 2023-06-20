@@ -40,7 +40,7 @@ declare global {
         interface Chainable {
             updateProfile(
                 firstname?: string,
-                lastname?: string
+                lastname?: string,
             ): Chainable<User>
             resetProfile(testId: string): Cypress.Chainable<JQuery<HTMLElement>>
         }

@@ -29,7 +29,11 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
 
     const itemsList = useMemo(() => {
         return sidebarItemsList.map((item) => (
-            <SidebarItem item={item} key={item.path} collapsed={collapsed} />
+            <SidebarItem
+                item={item}
+                key={item.path}
+                collapsed={collapsed}
+            />
         ))
     }, [collapsed, sidebarItemsList])
 
@@ -38,8 +42,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
             data-testid="sidebar"
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
                 className,
-            ])}
-        >
+            ])}>
             <Button
                 theme={ThemeButton.OUTLINE}
                 type="button"
@@ -47,21 +50,30 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
                 size={ButtonSize.XL}
                 onClick={onToggle}
                 className={cls.collapsedBtn}
-                data-testid="toggle-button"
-            >
+                data-testid="toggle-button">
                 {collapsed ? '<' : '>'}
             </Button>
 
-            <VStack gap="32" role="navigation">
-                <AppLink to={getRouteMain()} className={cls.logo}>
-                    <Icon Svg={Logo} color={IconColor.PRIMARY} />
+            <VStack
+                gap="32"
+                role="navigation">
+                <AppLink
+                    to={getRouteMain()}
+                    className={cls.logo}>
+                    <Icon
+                        Svg={Logo}
+                        color={IconColor.PRIMARY}
+                    />
                 </AppLink>
                 <VStack gap="32">
                     <VStack>{itemsList}</VStack>
                 </VStack>
             </VStack>
 
-            <LangSwitcher collapsed={collapsed} className={cls.langSwitcher} />
+            <LangSwitcher
+                collapsed={collapsed}
+                className={cls.langSwitcher}
+            />
         </aside>
     )
 })

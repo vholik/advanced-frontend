@@ -11,14 +11,11 @@ import {
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
 import { getArticles } from '../../model/slice/articlesPageSlice'
 
-
 import { ArticleList } from '@/entities/Article'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { Note } from '@/shared/ui/Note'
 import { Text, TextTheme } from '@/shared/ui/Text'
-
-
 
 interface ArticlesInfiniteListProps {
     className?: string
@@ -45,7 +42,10 @@ export const ArticlesInfiniteList: FC<ArticlesInfiniteListProps> = memo(
         if (error) {
             return (
                 <Note>
-                    <Text text={t('Error occured')} theme={TextTheme.ERROR} />
+                    <Text
+                        text={t('Error occured')}
+                        theme={TextTheme.ERROR}
+                    />
                 </Note>
             )
         }
@@ -58,5 +58,5 @@ export const ArticlesInfiniteList: FC<ArticlesInfiniteListProps> = memo(
                 className={className}
             />
         )
-    }
+    },
 )

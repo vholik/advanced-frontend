@@ -1,9 +1,7 @@
 import { type FC } from 'react'
 
-
 import cls from './PageLoader.module.scss'
 import { Loader } from '../Loader/Loader'
-
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 

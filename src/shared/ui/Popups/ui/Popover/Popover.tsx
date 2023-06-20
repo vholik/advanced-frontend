@@ -6,7 +6,6 @@ import cls from './Popover.module.scss'
 import { mapDirectionClass } from '../../styles/consts'
 import popupCls from '../../styles/popup.module.scss'
 
-
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { type DropdownDirection } from '@/shared/types/ui'
 
@@ -24,7 +23,9 @@ export const Popover: FC<PopoverProps> = memo((props) => {
 
     return (
         <HPopover className={classNames(popupCls.popup, {}, [className])}>
-            <HPopover.Button as="div" className={popupCls.btn}>
+            <HPopover.Button
+                as="div"
+                className={popupCls.btn}>
                 {trigger}
             </HPopover.Button>
 

@@ -3,12 +3,9 @@ import { type FC, memo } from 'react'
 import cls from './NotificationItem.module.scss'
 import { type Notification } from '../../model/types/notification'
 
-
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink } from '@/shared/ui/AppLink'
 import { Text, TextSize } from '@/shared/ui/Text'
-
-
 
 interface NotificationItemProps {
     className?: string
@@ -20,7 +17,10 @@ export const NotificationItem: FC<NotificationItemProps> = memo((props) => {
 
     const content = (
         <div className={classNames(cls.NotificationItem, {}, [className])}>
-            <Text size={TextSize.S} title={item.title} />
+            <Text
+                size={TextSize.S}
+                title={item.title}
+            />
             <Text text={item.description} />
         </div>
     )
@@ -31,8 +31,7 @@ export const NotificationItem: FC<NotificationItemProps> = memo((props) => {
                 className={cls.link}
                 to={item.href}
                 target="_blank"
-                rel="noreferrer"
-            >
+                rel="noreferrer">
                 {content}
             </AppLink>
         )

@@ -10,7 +10,6 @@ import { type ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommen
 import { type StateSchema } from '@/app/providers/StoreProvider'
 import { type Comment } from '@/entities/Comment'
 
-
 interface Book {
     bookId: string
     title: string
@@ -22,7 +21,7 @@ const commentsAdapter = createEntityAdapter<Comment>({
 
 export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
     (state) =>
-        state.articleDetailsPage?.comments || commentsAdapter.getInitialState()
+        state.articleDetailsPage?.comments || commentsAdapter.getInitialState(),
 )
 
 const articleDetailsCommentsSlice = createSlice({
@@ -33,7 +32,7 @@ const articleDetailsCommentsSlice = createSlice({
             error: undefined,
             ids: [],
             entities: {},
-        }
+        },
     ),
     reducers: {},
     extraReducers: (builder) => {
@@ -46,7 +45,7 @@ const articleDetailsCommentsSlice = createSlice({
             (state, action: PayloadAction<Comment[]>) => {
                 state.isLoading = false
                 commentsAdapter.setAll(state, action.payload)
-            }
+            },
         )
         builder.addCase(fetchCommentsByArticleId.rejected, (state, action) => {
             state.isLoading = false

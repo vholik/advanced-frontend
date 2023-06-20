@@ -1,11 +1,8 @@
 import { memo, type FC, type InputHTMLAttributes } from 'react'
 
-
 import cls from './Input.module.scss'
 
 import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
-
-
 
 type HTMLInputProps = Omit<
     InputHTMLAttributes<HTMLInputElement>,

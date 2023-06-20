@@ -8,9 +8,7 @@ import { ArticlesSortField } from '@/entities/Article'
 import FilterIcon from '@/shared/assets/icons/filter.svg'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { type SortOrder } from '@/shared/types'
-import {
-    type SelectOption,
-} from '@/shared/ui/CustomSelect'
+import { type SelectOption } from '@/shared/ui/CustomSelect'
 import { Icon, IconColor } from '@/shared/ui/Icon'
 import { ListBox } from '@/shared/ui/Popups'
 
@@ -38,7 +36,7 @@ export const ArticleSortSelect: FC<ArticleSortSelectProps> = memo((props) => {
             },
         ],
 
-        [t]
+        [t],
     )
 
     const sortFieldOptions = useMemo<SelectOption<ArticlesSortField>[]>(
@@ -57,7 +55,7 @@ export const ArticleSortSelect: FC<ArticleSortSelectProps> = memo((props) => {
                 content: t('Sort by views'),
             },
         ],
-        [t]
+        [t],
     )
 
     return (

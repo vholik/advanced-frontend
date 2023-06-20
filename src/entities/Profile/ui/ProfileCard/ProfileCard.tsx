@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next'
 import cls from './ProfileCard.module.scss'
 import { type Profile } from '../../model/types/profile'
 
-
 import { type Country } from '@/entities/Country'
 import { CountrySelect } from '@/entities/Country'
 import { type Currency, CurrencySelect } from '@/entities/Currency'
@@ -50,7 +49,9 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
     if (isLoading) {
         return (
-            <VStack max align="center">
+            <VStack
+                max
+                align="center">
                 <Loader />
             </VStack>
         )

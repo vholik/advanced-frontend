@@ -4,7 +4,6 @@ import cls from './Button.module.scss'
 
 import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
 
-
 export enum ThemeButton {
     CLEAR = 'clear',
     OUTLINE = 'outline',
@@ -51,8 +50,7 @@ export const Button: FC<ButtonProps> = (props) => {
             className={classNames(cls.Button, mods, [
                 className,
                 theme ? cls[theme] : undefined,
-            ])}
-        >
+            ])}>
             {children}
         </button>
     )

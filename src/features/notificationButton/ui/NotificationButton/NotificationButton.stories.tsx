@@ -2,8 +2,6 @@ import { NotificationButton } from './NotificationButton'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-
-
 const meta = {
     title: 'features/NotificationButton',
     component: NotificationButton,

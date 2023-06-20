@@ -22,7 +22,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
             <>
                 <Note>
                     {t(
-                        'Error occured while loading profile. Try to refresh your page.'
+                        'Error occured while loading profile. Try to refresh your page.',
                     )}
                 </Note>
             </>
@@ -30,7 +30,9 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
     }
 
     return (
-        <Page data-testid="ProfilePage" className={cls.ProfilePage}>
+        <Page
+            data-testid="ProfilePage"
+            className={cls.ProfilePage}>
             <div className={cls.inner}>
                 <EditableProfileCard id={id} />
             </div>

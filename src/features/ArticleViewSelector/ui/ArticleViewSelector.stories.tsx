@@ -2,9 +2,7 @@ import { ArticleViewSelector } from './ArticleViewSelector'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-
 import { ArticleView } from '@/entities/Article'
-
 
 const meta = {
     title: 'features/ArticleViewSelector',

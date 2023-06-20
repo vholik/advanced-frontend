@@ -37,12 +37,16 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo(
             (text: string) => {
                 dispatch(addCommmentForArticle(text))
             },
-            [dispatch]
+            [dispatch],
         )
 
         return (
-            <VStack max className={classNames('', {}, [className])}>
-                <VStack gap="8" max>
+            <VStack
+                max
+                className={classNames('', {}, [className])}>
+                <VStack
+                    gap="8"
+                    max>
                     <Text
                         text={`${t('Comments')}:`}
                         weight={TextWeight.MEDIUM}
@@ -52,8 +56,11 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo(
                     <AddCommentForm onSendComment={onSendComment} />
                 </VStack>
 
-                <CommentList comments={comments} isLoading={isLoading} />
+                <CommentList
+                    comments={comments}
+                    isLoading={isLoading}
+                />
             </VStack>
         )
-    }
+    },
 )

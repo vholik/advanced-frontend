@@ -9,7 +9,7 @@ project.addSourceFilesAtPaths('src/**/*.tsx')
 
 const files = project.getSourceFiles()
 const sharedUiDirectory = project.getDirectory(
-    path.resolve(__dirname, '..', '..', 'src', 'shared', 'ui')
+    path.resolve(__dirname, '..', '..', 'src', 'shared', 'ui'),
 )
 const componentsDirs = sharedUiDirectory?.getDirectories()
 

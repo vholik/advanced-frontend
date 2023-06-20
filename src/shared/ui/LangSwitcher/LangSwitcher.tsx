@@ -2,10 +2,8 @@ import { memo, type FC } from 'react'
 
 import { useTranslation } from 'react-i18next'
 
-
 import cls from './LangSwitcher.module.scss'
 import { Button, ThemeButton } from '../Button/Button'
-
 
 import GlobeIcon from '@/shared/assets/icons/globe.svg'
 import { classNames } from '@/shared/lib/classNames/classNames'
@@ -31,12 +29,11 @@ export const LangSwitcher: FC<LangSwitcherProps> = memo(
                 className={classNames(
                     cls.LangSwitcher,
                     { [cls.collapsed]: collapsed },
-                    [className]
-                )}
-            >
+                    [className],
+                )}>
                 <GlobeIcon />
                 {t(collapsed ? 'Language' : 'Language short')}
             </Button>
         )
-    }
+    },
 )

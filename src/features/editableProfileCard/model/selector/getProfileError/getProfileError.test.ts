@@ -2,7 +2,6 @@ import { getProfileError } from './getProfileError'
 
 import { type StateSchema } from '@/app/providers/StoreProvider'
 
-
 describe('getProfileError test', () => {
     test('test selector', () => {
         const state: DeepPartial<StateSchema> = {

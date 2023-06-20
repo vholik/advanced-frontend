@@ -43,7 +43,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
     const navigate = useNavigate()
 
     const textBlock = article?.blocks.find(
-        (block) => block.type === ArticleBlockType.TEXT
+        (block) => block.type === ArticleBlockType.TEXT,
     ) as ArticleTextBlock
 
     const onOpenArticle = useCallback(() => {
@@ -56,14 +56,12 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
         <AppLink
             to={getRouteArticleDetails(article?.id || '')}
             target={target}
-            data-testid="ArticleListItem"
-        >
+            data-testid="ArticleListItem">
             <Card
                 className={classNames(cls.ArticleListItem, {}, [
                     className,
                     cls[view],
-                ])}
-            >
+                ])}>
                 <AppImage
                     fallback={<Skeleton height={220} />}
                     src={article?.img}
@@ -93,7 +91,10 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
                     )}
                     {view === ArticleView.LIST && (
                         <div className={cls.user}>
-                            <Avatar size={32} src={article?.user.avatar} />
+                            <Avatar
+                                size={32}
+                                src={article?.user.avatar}
+                            />
                             <Text
                                 text={article?.user.username}
                                 color={TextColor.PRIMARY}
@@ -106,12 +107,14 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
                         <Button
                             theme={ThemeButton.OUTLINE}
                             className={cls.button}
-                            onClick={onOpenArticle}
-                        >
+                            onClick={onOpenArticle}>
                             {t('Read more')}
                         </Button>
                         <div className={cls.statistics}>
-                            <Icon Svg={EyeIcon} color={IconColor.TERTIARY} />
+                            <Icon
+                                Svg={EyeIcon}
+                                color={IconColor.TERTIARY}
+                            />
                             <Text
                                 text={String(article?.views)}
                                 size={TextSize.S}

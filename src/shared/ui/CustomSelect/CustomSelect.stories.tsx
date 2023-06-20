@@ -2,7 +2,6 @@ import { CustomSelect } from './CustomSelect'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-
 const meta = {
     title: 'shared/CustomSelect',
     component: CustomSelect,

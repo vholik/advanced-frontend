@@ -2,10 +2,8 @@ import { ArticleDetailsComments } from './ArticleDetailsComments'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { avatarLink } from '@/shared/const/tests'
-
 
 const meta = {
     title: 'shared/ArticleDetailsComments',

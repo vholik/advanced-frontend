@@ -26,8 +26,7 @@ export const StoreDecorator =
                 asyncReducers={{
                     ...defaultAsyncReducers,
                     ...asyncReducers,
-                }}
-            >
+                }}>
                 <Component />
             </StoreProvider>
         )

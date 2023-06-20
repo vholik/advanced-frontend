@@ -1,13 +1,8 @@
-import {
-    type ReactNode,
-    type FC,
-} from 'react'
-
+import { type ReactNode, type FC } from 'react'
 
 import cls from './Modal.module.scss'
 import { Overlay } from '../Overlay/Overlay'
 import { Portal } from '../Portal/Portal'
-
 
 import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
 import { useModal } from '@/shared/lib/hooks/useModal/useModal'
@@ -40,8 +35,7 @@ export const Modal: FC<ModalProps> = (props) => {
                 <div
                     className={classNames(cls.content, {
                         [cls.contentOpened]: isOpen,
-                    })}
-                >
+                    })}>
                     {children}
                 </div>
             </div>

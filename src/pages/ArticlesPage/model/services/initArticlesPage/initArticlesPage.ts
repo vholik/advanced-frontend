@@ -8,7 +8,6 @@ import { type ThunkConfig } from '@/app/providers/StoreProvider'
 import { type ArticleType, type ArticlesSortField } from '@/entities/Article'
 import { type SortOrder } from '@/shared/types'
 
-
 export const initArticlesPage = createAsyncThunk<
     void,
     URLSearchParams,
@@ -30,7 +29,7 @@ export const initArticlesPage = createAsyncThunk<
 
         if (sortFromUrl) {
             dispatch(
-                articlePageActions.setSort(sortFromUrl as ArticlesSortField)
+                articlePageActions.setSort(sortFromUrl as ArticlesSortField),
             )
         }
 

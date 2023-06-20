@@ -6,7 +6,6 @@ import { EditableProfileCard } from './EditableProfileCard'
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 
-
 export default {
     title: 'features/EditableProfileCard',
     component: EditableProfileCard,

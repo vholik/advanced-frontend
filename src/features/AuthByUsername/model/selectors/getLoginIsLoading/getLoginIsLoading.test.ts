@@ -2,7 +2,6 @@ import { getLoginIsLoading } from './getLoginIsLoading'
 
 import { type StateSchema } from '@/app/providers/StoreProvider'
 
-
 describe('getLoginIsLoading test', () => {
     test('should return isLoading state', () => {
         const state: DeepPartial<StateSchema> = {

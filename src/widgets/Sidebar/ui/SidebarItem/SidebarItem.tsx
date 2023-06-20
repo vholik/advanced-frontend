@@ -3,10 +3,8 @@ import { memo, type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
-
 import cls from './SidebarItem.module.scss'
 import { type SidebarItemType } from '../../model/types/sidebar'
-
 
 import { getUserAuthData } from '@/entities/User'
 import { classNames } from '@/shared/lib/classNames/classNames'
@@ -32,8 +30,7 @@ export const SidebarItem: FC<SidebarItemProps> = memo(({ collapsed, item }) => {
                 to={item.path}
                 className={classNames(cls.mainLink, {
                     [cls.collapsed]: collapsed,
-                })}
-            >
+                })}>
                 <item.Icon />
                 <span className={cls.linkInner}>{t(item.text)}</span>
             </AppLink>

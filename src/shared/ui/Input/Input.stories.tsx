@@ -2,7 +2,6 @@ import { Input } from './Input'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-
 const meta = {
     title: 'shared/Input',
     component: Input,

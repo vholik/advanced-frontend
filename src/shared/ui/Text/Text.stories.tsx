@@ -2,7 +2,6 @@ import { Text, TextSize, TextTheme } from './Text'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 

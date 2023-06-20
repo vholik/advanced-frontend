@@ -6,7 +6,6 @@ import cls from './CommentList.module.scss'
 import { type Comment } from '../../model/types/comment'
 import { CommentCard } from '../CommentCard/CommentCard'
 
-
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { VStack } from '@/shared/ui/Stack'
 import { Text, TextSize } from '@/shared/ui/Text'
@@ -32,7 +31,9 @@ export const CommentList: FC<CommentListProps> = memo((props) => {
     }
 
     return (
-        <VStack max className={classNames(cls.CommentList, {}, [className])}>
+        <VStack
+            max
+            className={classNames(cls.CommentList, {}, [className])}>
             {comments?.length ? (
                 comments.map((comment) => (
                     <CommentCard

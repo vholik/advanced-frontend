@@ -6,7 +6,6 @@ import cls from './Drawer.module.scss'
 import { Overlay } from '../Overlay/Overlay'
 import { Portal } from '../Portal/Portal'
 
-
 import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
 import {
     AnimationProvider,
@@ -67,7 +66,7 @@ const DrawerContent: FC<DrawerProps> = memo((props) => {
             filterTaps: true,
             bounds: { top: 0 },
             rubberband: true,
-        }
+        },
     )
 
     useEffect(() => {
@@ -97,8 +96,7 @@ const DrawerContent: FC<DrawerProps> = memo((props) => {
                         display,
                         bottom: `calc(-100vh + ${height - 100}px)`,
                         y,
-                    }}
-                >
+                    }}>
                     {children}
                 </Spring.a.div>
             </div>

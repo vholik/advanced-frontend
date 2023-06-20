@@ -40,10 +40,10 @@ describe('features/editableProfileCard', () => {
         componentRender(<EditableProfileCard id="1" />, options)
 
         await userEvent.click(
-            screen.getByTestId('EditableProfileHeader.EditButton')
+            screen.getByTestId('EditableProfileHeader.EditButton'),
         )
         expect(
-            screen.getByTestId('EditableProfileHeader.CancelButton')
+            screen.getByTestId('EditableProfileHeader.CancelButton'),
         ).toBeInTheDocument()
     })
 
@@ -51,7 +51,7 @@ describe('features/editableProfileCard', () => {
         componentRender(<EditableProfileCard id="1" />, options)
 
         await userEvent.click(
-            screen.getByTestId('EditableProfileHeader.EditButton')
+            screen.getByTestId('EditableProfileHeader.EditButton'),
         )
 
         await userEvent.clear(screen.getByTestId('ProfileCard.firstname'))
@@ -59,7 +59,7 @@ describe('features/editableProfileCard', () => {
 
         await userEvent.type(
             screen.getByTestId('ProfileCard.firstname'),
-            'user'
+            'user',
         )
         await userEvent.type(screen.getByTestId('ProfileCard.lastname'), 'user')
 
@@ -67,7 +67,7 @@ describe('features/editableProfileCard', () => {
         expect(screen.getByTestId('ProfileCard.lastname')).toHaveValue('user')
 
         await userEvent.click(
-            screen.getByTestId('EditableProfileHeader.CancelButton')
+            screen.getByTestId('EditableProfileHeader.CancelButton'),
         )
 
         expect(screen.getByTestId('ProfileCard.firstname')).toHaveValue('admin')
@@ -80,15 +80,15 @@ describe('features/editableProfileCard', () => {
         componentRender(<EditableProfileCard id="1" />, options)
 
         await userEvent.click(
-            screen.getByTestId('EditableProfileHeader.EditButton')
+            screen.getByTestId('EditableProfileHeader.EditButton'),
         )
         await userEvent.type(
             screen.getByTestId('ProfileCard.firstname'),
-            'user'
+            'user',
         )
 
         await userEvent.click(
-            screen.getByTestId('EditableProfileHeader.SaveButton')
+            screen.getByTestId('EditableProfileHeader.SaveButton'),
         )
 
         expect(mockPutReq).toHaveBeenCalled()

@@ -22,7 +22,13 @@ export const Avatar: FC<AvatarProps> = ({ className, src, alt, size }) => {
         }
     }, [size])
 
-    const fallback = <Skeleton height={32} width={32} circle />
+    const fallback = (
+        <Skeleton
+            height={32}
+            width={32}
+            circle
+        />
+    )
 
     return (
         <AppImage

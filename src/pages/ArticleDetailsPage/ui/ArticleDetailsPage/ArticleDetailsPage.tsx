@@ -47,13 +47,16 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     }
 
     return (
-        <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
+        <DynamicModuleLoader
+            removeAfterUnmount
+            reducers={reducers}>
             <Page
-                className={classNames(cls.ArticleDetailsPage, {}, [className])}
-            >
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <div className={cls.inner}>
                     <ArticleDetailsPageHeader />
-                    <VStack align="center" gap="32">
+                    <VStack
+                        align="center"
+                        gap="32">
                         <ArticleDetails id={id} />
 
                         <ArticleRating articleId={id} />

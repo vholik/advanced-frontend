@@ -2,9 +2,6 @@ import { ArticlesInfiniteList } from './ArticlesInfiniteList'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-
-
-
 const meta = {
     title: 'pages/ArticlesInfiniteList',
     component: ArticlesInfiniteList,

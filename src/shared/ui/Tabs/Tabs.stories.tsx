@@ -2,9 +2,6 @@ import { Tabs } from './Tabs'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-
-
-
 const meta = {
     title: 'shared/Tabs',
     component: Tabs,

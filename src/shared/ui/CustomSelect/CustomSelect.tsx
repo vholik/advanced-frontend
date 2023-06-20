@@ -1,19 +1,10 @@
-import {
-    useMemo,
-    useCallback,
-    useState,
-    useRef,
-    useEffect,
-} from 'react'
-
+import { useMemo, useCallback, useState, useRef, useEffect } from 'react'
 
 import cls from './CustomSelect.module.scss'
 
 import Check from '@/shared/assets/icons/check.svg'
 import ChevronDown from '@/shared/assets/icons/chevron_down.svg'
 import { classNames } from '@/shared/lib/classNames/classNames'
-
-
 
 export interface SelectOption<T> {
     value: T
@@ -75,7 +66,7 @@ export const CustomSelect = <T extends string>({
                 closeHandler()
             }
         },
-        [closeHandler]
+        [closeHandler],
     )
 
     useEffect(() => {
@@ -104,14 +95,14 @@ export const CustomSelect = <T extends string>({
                 openHandler(event)
             }
         },
-        [closeHandler, isOpened, openHandler]
+        [closeHandler, isOpened, openHandler],
     )
 
     const onValueChange = useCallback(
         (value: string) => {
             onChange?.(value as T)
         },
-        [onChange]
+        [onChange],
     )
 
     const optionsList = useMemo(() => {
@@ -122,8 +113,7 @@ export const CustomSelect = <T extends string>({
                     onClick(event)
                     onValueChange(opt.value)
                 }}
-                key={opt.value}
-            >
+                key={opt.value}>
                 {opt.content}
                 {opt.value === value && <Check className={cls.check} />}
             </li>
@@ -138,8 +128,7 @@ export const CustomSelect = <T extends string>({
                     [cls[theme]]: true,
                 })}
                 type="button"
-                onClick={onClick}
-            >
+                onClick={onClick}>
                 {label}
                 <ChevronDown className={cls.chevron} />
             </button>
@@ -148,8 +137,7 @@ export const CustomSelect = <T extends string>({
                     [cls.opened]: isOpened,
                     [cls.closing]: isClosing,
                 })}
-                onClick={onContentClick}
-            >
+                onClick={onContentClick}>
                 {optionsList}
             </ul>
         </div>

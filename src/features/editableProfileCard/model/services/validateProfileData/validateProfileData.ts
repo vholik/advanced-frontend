@@ -2,7 +2,6 @@ import { ValidateProfileError } from '../../consts/consts'
 
 import { type Profile } from '@/entities/Profile'
 
-
 export const validateProfileData = (profile?: Profile) => {
     const errors: ValidateProfileError[] = []
 

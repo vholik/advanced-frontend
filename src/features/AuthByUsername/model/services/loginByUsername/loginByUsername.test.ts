@@ -5,7 +5,6 @@ import { loginByUsername } from './loginByUsername'
 import { userActions } from '@/entities/User'
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
 
-
 jest.mock('axios')
 
 const mockedAxios = jest.mocked(axios, true)
@@ -23,7 +22,7 @@ describe('loginByUsername.test', () => {
         })
 
         expect(thunk.dispatch).toHaveBeenCalledWith(
-            userActions.setAuthData(userValue)
+            userActions.setAuthData(userValue),
         )
         expect(thunk.dispatch).toHaveBeenCalledTimes(3)
         expect(mockedAxios.post).toHaveBeenCalled()

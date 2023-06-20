@@ -31,8 +31,13 @@ export const NotificationButton: FC<NotificationButtonProps> = memo((props) => {
     }, [])
 
     const trigger = (
-        <Button theme={ThemeButton.CLEAR} onClick={onOpenDrawer}>
-            <Icon Svg={NotificationIcon} color={IconColor.SECONDARY} />
+        <Button
+            theme={ThemeButton.CLEAR}
+            onClick={onOpenDrawer}>
+            <Icon
+                Svg={NotificationIcon}
+                color={IconColor.SECONDARY}
+            />
         </Button>
     )
 
@@ -44,14 +49,15 @@ export const NotificationButton: FC<NotificationButtonProps> = memo((props) => {
                     className={classNames(cls.NotificationButton, {}, [
                         className,
                     ])}
-                    trigger={trigger}
-                >
+                    trigger={trigger}>
                     <NotificationList className={cls.notifications} />
                 </Popover>
             </BrowserView>
             <MobileView>
                 {trigger}
-                <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                <Drawer
+                    isOpen={isOpen}
+                    onClose={onCloseDrawer}>
                     <NotificationList />
                 </Drawer>
             </MobileView>

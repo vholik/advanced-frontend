@@ -16,8 +16,7 @@ const ForbiddenPage: FC<ForbiddenPageProps> = memo((props) => {
     return (
         <Page
             data-testid="ForbiddenPage"
-            className={classNames('', {}, [className])}
-        >
+            className={classNames('', {}, [className])}>
             {t('Access is forbidden')}
         </Page>
     )

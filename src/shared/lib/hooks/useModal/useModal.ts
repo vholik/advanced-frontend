@@ -38,7 +38,7 @@ export function useModal({
                 close()
             }
         },
-        [close]
+        [close],
     )
 
     useEffect(() => {

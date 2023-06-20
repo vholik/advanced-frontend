@@ -5,10 +5,7 @@ import {
 } from './articleDetails'
 import { ArticleBlockType, ArticleType } from '../conts/articleConsts'
 
-
 import { type StateSchema } from '@/app/providers/StoreProvider'
-
-
 
 const data = {
     id: '1',

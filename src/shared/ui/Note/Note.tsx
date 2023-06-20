@@ -4,7 +4,6 @@ import cls from './Note.module.scss'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 
-
 interface NoteProps {
     className?: string
     children?: ReactNode

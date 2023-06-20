@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next'
 import cls from './ArticleTextBlockComponent.module.scss'
 import { type ArticleTextBlock } from '../../model/types/article'
 
-
 import { classNames } from '@/shared/lib/classNames/classNames'
 import {
     Text,
@@ -14,8 +13,6 @@ import {
     TextTheme,
     TextWeight,
 } from '@/shared/ui/Text'
-
-
 
 interface ArticleTextBlockComponentProps {
     className?: string
@@ -31,10 +28,12 @@ export const ArticleTextBlockComponent: FC<ArticleTextBlockComponentProps> =
             <div
                 className={classNames(cls.ArticleTextBlockComponent, {}, [
                     className,
-                ])}
-            >
+                ])}>
                 {block.title && (
-                    <Text title={block.title} weight={TextWeight.BOLD} />
+                    <Text
+                        title={block.title}
+                        weight={TextWeight.BOLD}
+                    />
                 )}
                 {block.paragraphs.map((paragraph) => (
                     <Text

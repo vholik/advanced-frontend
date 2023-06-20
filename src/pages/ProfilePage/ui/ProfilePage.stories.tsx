@@ -1,4 +1,3 @@
-
 import ProfilePage from './ProfilePage'
 
 import type { Meta, StoryObj } from '@storybook/react'

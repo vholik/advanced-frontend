@@ -2,7 +2,6 @@ import { getLoginUsername } from './getLoginUsername'
 
 import { type StateSchema } from '@/app/providers/StoreProvider'
 
-
 describe('getLoginUsername test', () => {
     test('should return error', () => {
         const state: DeepPartial<StateSchema> = {

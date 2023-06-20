@@ -41,7 +41,7 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props) => {
         (value: string) => {
             dispatch(addCommentFormActions.setText(value))
         },
-        [dispatch]
+        [dispatch],
     )
 
     const onSendHandler = useCallback(() => {
@@ -53,8 +53,7 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props) => {
         <DynamicModuleLoader reducers={reducers}>
             <div
                 className={classNames(cls.AddCommentForm, {}, [className])}
-                data-testid="AddCommentForm"
-            >
+                data-testid="AddCommentForm">
                 <Input
                     data-testid="AddCommentForm.Input"
                     placeholder={t('Enter message')}
@@ -66,8 +65,7 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props) => {
                 <Button
                     size={ButtonSize.SM}
                     onClick={onSendHandler}
-                    data-testid="AddCommentForm.Button"
-                >
+                    data-testid="AddCommentForm.Button">
                     {t('Send')}
                 </Button>
             </div>

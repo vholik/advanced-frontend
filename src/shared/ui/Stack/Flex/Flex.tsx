@@ -71,10 +71,9 @@ export const Flex: FC<FlexProps> = memo(
         return (
             <div
                 className={classNames(cls.Flex, mods, classes)}
-                data-testid={testId}
-            >
+                data-testid={testId}>
                 {children}
             </div>
         )
-    }
+    },
 )

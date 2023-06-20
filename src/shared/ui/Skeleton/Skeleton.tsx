@@ -10,9 +10,11 @@ export const Skeleton = (props: SkeletonProps) => {
     return (
         <SkeletonTheme
             baseColor="var(--skeleton-color)"
-            highlightColor="var(--skeleton-highlight)"
-        >
-            <ReactSkeleton borderRadius={props.borderRadius || 4} {...props} />
+            highlightColor="var(--skeleton-highlight)">
+            <ReactSkeleton
+                borderRadius={props.borderRadius || 4}
+                {...props}
+            />
         </SkeletonTheme>
     )
 }

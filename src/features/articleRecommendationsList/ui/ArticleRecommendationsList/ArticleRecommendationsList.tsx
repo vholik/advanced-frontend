@@ -28,8 +28,7 @@ export const ArticleRecommendationsList = memo(
         return (
             <VStack
                 data-testid="ArticleRecommendationsList"
-                className={classNames('', {}, [className])}
-            >
+                className={classNames('', {}, [className])}>
                 <Text
                     text={`${t('Also read')}:`}
                     weight={TextWeight.MEDIUM}
@@ -43,5 +42,5 @@ export const ArticleRecommendationsList = memo(
                 />
             </VStack>
         )
-    }
+    },
 )

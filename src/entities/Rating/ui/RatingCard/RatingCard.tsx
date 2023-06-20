@@ -46,7 +46,7 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
                 onAccept?.(selectedStarCount)
             }
         },
-        [hasFeeback, onAccept]
+        [hasFeeback, onAccept],
     )
 
     const acceptHandler = useCallback(() => {
@@ -60,7 +60,10 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
     }, [onAccept, starsCount])
 
     const modalContent = (
-        <VStack max gap="8" align="start">
+        <VStack
+            max
+            gap="8"
+            align="start">
             <VStack>
                 <Text title={feedbackTitle} />
                 <Text text={t('We would to love to hear your feedback')} />
@@ -71,20 +74,20 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
                 onChange={setFeedback}
                 data-testid="RatingCard.Input"
             />
-            <HStack max gap="4">
+            <HStack
+                max
+                gap="4">
                 <Button
                     size={ButtonSize.SM}
                     onClick={acceptHandler}
-                    data-testid="RatingCard.SendButton"
-                >
+                    data-testid="RatingCard.SendButton">
                     {t('Send')}
                 </Button>
                 <Button
                     theme={ThemeButton.OUTLINE}
                     size={ButtonSize.SM}
                     onClick={cancelHandler}
-                    data-testid="RatingCard.CloseButton"
-                >
+                    data-testid="RatingCard.CloseButton">
                     {t('Close')}
                 </Button>
             </HStack>
@@ -94,10 +97,14 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
     return (
         <div
             className={classNames('', {}, [className])}
-            data-testid="RatingCard"
-        >
-            <VStack align="center" gap="4">
-                <Text title={title} size={TextSize.S} />
+            data-testid="RatingCard">
+            <VStack
+                align="center"
+                gap="4">
+                <Text
+                    title={title}
+                    size={TextSize.S}
+                />
                 <StarRating
                     size={40}
                     onSelect={onSelectStars}
@@ -105,7 +112,9 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
                 />
             </VStack>
             <BrowserView>
-                <Modal isOpen={isModalOpen} lazy>
+                <Modal
+                    isOpen={isModalOpen}
+                    lazy>
                     {modalContent}
                 </Modal>
             </BrowserView>

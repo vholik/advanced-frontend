@@ -2,7 +2,6 @@ import { type ValidateProfileError } from '../consts/consts'
 
 import { type Profile } from '@/entities/Profile'
 
-
 export interface ProfileSchema {
     data?: Profile
     isLoading: boolean

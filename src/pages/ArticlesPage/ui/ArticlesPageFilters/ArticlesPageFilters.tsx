@@ -26,8 +26,6 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
 import { type SortOrder } from '@/shared/types'
 
-
-
 interface ArticlesPageFiltersProps {
     className?: string
 }
@@ -54,7 +52,7 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(
                 dispatch(articlePageActions.setPage(1))
                 debounceFetchData()
             },
-            [debounceFetchData, dispatch]
+            [debounceFetchData, dispatch],
         )
 
         const onChangeSort = useCallback(
@@ -63,7 +61,7 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(
                 dispatch(articlePageActions.setPage(1))
                 debounceFetchData()
             },
-            [dispatch, debounceFetchData]
+            [dispatch, debounceFetchData],
         )
 
         const onChangeOrder = useCallback(
@@ -72,7 +70,7 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(
                 dispatch(articlePageActions.setOrder(newOrder))
                 debounceFetchData()
             },
-            [dispatch, debounceFetchData]
+            [dispatch, debounceFetchData],
         )
 
         const onChangeType = useCallback(
@@ -81,14 +79,18 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(
                 dispatch(articlePageActions.setPage(1))
                 debounceFetchData()
             },
-            [dispatch, debounceFetchData]
+            [dispatch, debounceFetchData],
         )
 
         return (
             <div
-                className={classNames(cls.ArticlesPageFilters, {}, [className])}
-            >
-                <ArticleTypeTabs value={tab} onChangeType={onChangeType} />
+                className={classNames(cls.ArticlesPageFilters, {}, [
+                    className,
+                ])}>
+                <ArticleTypeTabs
+                    value={tab}
+                    onChangeType={onChangeType}
+                />
                 <div className={cls.row}>
                     <ArticleSortSelect
                         order={order}
@@ -104,5 +106,5 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(
                 </div>
             </div>
         )
-    }
+    },
 )

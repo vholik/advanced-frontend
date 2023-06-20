@@ -1,15 +1,14 @@
 import { profileReducer, profileActions } from './profileSlice'
 import { type ProfileSchema } from '../types/editableProfileCardSchema'
 
-
 describe('profileSlice.test', () => {
     test('test set readonly', () => {
         const state: DeepPartial<ProfileSchema> = { readonly: false }
         expect(
             profileReducer(
                 state as ProfileSchema,
-                profileActions.setReadonly(true)
-            )
+                profileActions.setReadonly(true),
+            ),
         ).toEqual({ readonly: true })
     })
     test('test set data', () => {
@@ -17,8 +16,8 @@ describe('profileSlice.test', () => {
         expect(
             profileReducer(
                 state as ProfileSchema,
-                profileActions.updateProfile({ first: '1234' })
-            )
+                profileActions.updateProfile({ first: '1234' }),
+            ),
         ).toEqual({ form: { first: '1234' } })
     })
 })

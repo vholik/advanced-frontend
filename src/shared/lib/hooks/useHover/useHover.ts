@@ -20,6 +20,6 @@ export const useHover = (): UseHoverReturnType => {
 
     return useMemo(
         () => [isHover, { onMouseEnter, onMouseLeave }],
-        [isHover, onMouseEnter, onMouseLeave]
+        [isHover, onMouseEnter, onMouseLeave],
     )
 }

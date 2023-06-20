@@ -34,7 +34,7 @@ export const Page: FC<PageProps> = (props) => {
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>
     const { pathname } = useLocation()
     const scrollPosition = useSelector((state: RootState) =>
-        getScrollByPath(state, pathname)
+        getScrollByPath(state, pathname),
     )
 
     useInfiniteScroll({
@@ -53,7 +53,7 @@ export const Page: FC<PageProps> = (props) => {
                 restoreScrollActions.setScrollPosition({
                     position: event.currentTarget.scrollTop,
                     path: pathname,
-                })
+                }),
             )
         }
     }, 500)
@@ -63,11 +63,12 @@ export const Page: FC<PageProps> = (props) => {
             className={classNames(cls.Page, {}, [className])}
             ref={wrapperRef}
             onScroll={onScroll}
-            data-testid={props['data-testid'] ?? 'Page'}
-        >
+            data-testid={props['data-testid'] ?? 'Page'}>
             {children}
             {onScrollEnd ? (
-                <div className={cls.trigger} ref={triggerRef}></div>
+                <div
+                    className={cls.trigger}
+                    ref={triggerRef}></div>
             ) : null}
         </main>
     )

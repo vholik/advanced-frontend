@@ -28,7 +28,11 @@ export const CommentCard: FC<CommentCardProps> = memo((props) => {
             <div className={classNames(cls.CommentCard, {}, [className])}>
                 <VStack gap="4">
                     <HStack align="center">
-                        <Skeleton height={32} width={32} circle />
+                        <Skeleton
+                            height={32}
+                            width={32}
+                            circle
+                        />
                         <Skeleton
                             height={21}
                             width={100}
@@ -51,14 +55,15 @@ export const CommentCard: FC<CommentCardProps> = memo((props) => {
     return (
         <div
             className={classNames(cls.CommentCard, {}, [className])}
-            data-testid="CommentCard.Content"
-        >
+            data-testid="CommentCard.Content">
             <AppLink
                 to={getRouteProfile(comment.user.id)}
-                className={cls.header}
-            >
+                className={cls.header}>
                 <HStack max>
-                    <Avatar size={32} src={comment.user.avatar} />
+                    <Avatar
+                        size={32}
+                        src={comment.user.avatar}
+                    />
                     <Text
                         text={comment.user.username}
                         className={cls.user}
@@ -67,7 +72,10 @@ export const CommentCard: FC<CommentCardProps> = memo((props) => {
                     />
                 </HStack>
             </AppLink>
-            <Text text={comment.text} className={cls.text} />
+            <Text
+                text={comment.text}
+                className={cls.text}
+            />
         </div>
     )
 })

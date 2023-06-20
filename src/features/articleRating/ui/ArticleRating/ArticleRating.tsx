@@ -39,25 +39,30 @@ const ArticleRating: FC<ArticleRatingProps> = memo((props) => {
                 console.log(error)
             }
         },
-        [articleId, rateArticleMutation, userData?.id]
+        [articleId, rateArticleMutation, userData?.id],
     )
 
     const onCancel = useCallback(
         (starsCount: number, feedback?: string) => {
             handleRateArticle(starsCount, feedback)
         },
-        [handleRateArticle]
+        [handleRateArticle],
     )
 
     const onAccept = useCallback(
         (starsCount: number) => {
             handleRateArticle(starsCount)
         },
-        [handleRateArticle]
+        [handleRateArticle],
     )
 
     if (isLoading) {
-        return <Skeleton width={500} height={120} />
+        return (
+            <Skeleton
+                width={500}
+                height={120}
+            />
+        )
     }
 
     const rating = data?.[0]

@@ -2,7 +2,6 @@ import { memo, type FC, useCallback } from 'react'
 
 import { Currency } from '../../model/types/currency'
 
-
 import { ListBox, type ListBoxItem } from '@/shared/ui/Popups'
 
 const currencyArray = [
@@ -23,7 +22,7 @@ export const CurrencySelect: FC<CurrencySelectProps> = memo(
             (value: string) => {
                 onChange?.(value as Currency)
             },
-            [onChange]
+            [onChange],
         )
 
         return (
@@ -35,5 +34,5 @@ export const CurrencySelect: FC<CurrencySelectProps> = memo(
                 direction="bottom left"
             />
         )
-    }
+    },
 )

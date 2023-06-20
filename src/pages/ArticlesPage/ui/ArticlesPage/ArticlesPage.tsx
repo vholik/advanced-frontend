@@ -37,13 +37,14 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
     }, [dispatch])
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
+        <DynamicModuleLoader
+            reducers={reducers}
+            removeAfterUnmount={false}>
             <Page
                 data-testid="ArticlesPage"
                 storeScroll
                 onScrollEnd={onLoadNextPart}
-                className={classNames(cls.ArticlesPage, {}, [className])}
-            >
+                className={classNames(cls.ArticlesPage, {}, [className])}>
                 <div className={cls.inner}>
                     <ArticlesPageFilters />
                     <ArticlesInfiniteList searchParams={searchParams} />

@@ -23,8 +23,6 @@ import { Label } from '@/shared/ui/Label'
 import { Note } from '@/shared/ui/Note'
 import { Text } from '@/shared/ui/Text'
 
-
-
 export interface LoginFormProps {
     className?: string
     onSuccess: () => void
@@ -46,14 +44,14 @@ const LoginForm: FC<LoginFormProps> = ({ className, onSuccess }) => {
         (value: string) => {
             dispatch(loginActions.setUsername(value))
         },
-        [dispatch]
+        [dispatch],
     )
 
     const onChangePassword = useCallback(
         (value: string) => {
             dispatch(loginActions.setPassword(value))
         },
-        [dispatch]
+        [dispatch],
     )
 
     const onLoginClick = useCallback(async () => {
@@ -64,7 +62,9 @@ const LoginForm: FC<LoginFormProps> = ({ className, onSuccess }) => {
     }, [dispatch, onSuccess, password, username])
 
     return (
-        <DynamicModuleLoader reducers={intialReducers} removeAfterUnmount>
+        <DynamicModuleLoader
+            reducers={intialReducers}
+            removeAfterUnmount>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t('Login to your account')} />
                 <Text
@@ -76,14 +76,18 @@ const LoginForm: FC<LoginFormProps> = ({ className, onSuccess }) => {
                         {t('You entered an incorrect username or password')}
                     </Note>
                 )}
-                <Label value="Your username" className={cls.label}>
+                <Label
+                    value="Your username"
+                    className={cls.label}>
                     <Input
                         type="text"
                         onChange={onChangeUsername}
                         value={username}
                     />
                 </Label>
-                <Label value="Password" className={cls.label}>
+                <Label
+                    value="Password"
+                    className={cls.label}>
                     <Input
                         type="text"
                         onChange={onChangePassword}
@@ -95,8 +99,7 @@ const LoginForm: FC<LoginFormProps> = ({ className, onSuccess }) => {
                     className={cls.loginBtn}
                     theme={ThemeButton.STRETCH}
                     onClick={onLoginClick}
-                    disabled={isLoading}
-                >
+                    disabled={isLoading}>
                     {t('Log in')}
                 </Button>
             </div>

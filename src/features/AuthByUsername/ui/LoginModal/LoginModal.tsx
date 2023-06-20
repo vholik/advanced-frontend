@@ -6,7 +6,6 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { Loader } from '@/shared/ui/Loader'
 import { Modal } from '@/shared/ui/Modal'
 
-
 interface LoginModalProps {
     className?: string
     isOpen: boolean
@@ -23,8 +22,7 @@ export const LoginModal: FC<LoginModalProps> = ({
             lazy
             onClose={onClose}
             isOpen={isOpen}
-            className={classNames('', {}, [className])}
-        >
+            className={classNames('', {}, [className])}>
             <Suspense fallback={<Loader />}>
                 <LoginFormAsync onSuccess={onClose} />
             </Suspense>

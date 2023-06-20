@@ -23,7 +23,7 @@ export const CountrySelect: FC<CountrySelectProps> = memo(
             (value: string) => {
                 onChange?.(value as Country)
             },
-            [onChange]
+            [onChange],
         )
         return (
             <ListBox
@@ -34,5 +34,5 @@ export const CountrySelect: FC<CountrySelectProps> = memo(
                 direction="bottom left"
             />
         )
-    }
+    },
 )

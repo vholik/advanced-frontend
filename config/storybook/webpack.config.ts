@@ -41,7 +41,7 @@ export default ({ config }: { config: Configuration }) => {
             __IS_DEV__: JSON.stringify(true),
             __API__: JSON.stringify('http://testapi.com/'),
             __PROJECT__: JSON.stringify('storybook'),
-        })
+        }),
     )
 
     return config

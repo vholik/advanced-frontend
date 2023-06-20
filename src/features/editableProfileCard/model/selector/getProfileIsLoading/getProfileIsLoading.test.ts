@@ -2,7 +2,6 @@ import { getProfileIsLoading } from './getProfileIsLoading'
 
 import { type StateSchema } from '@/app/providers/StoreProvider'
 
-
 describe('getProfileIsLoading test', () => {
     test('test selector', () => {
         const state: DeepPartial<StateSchema> = {

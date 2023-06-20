@@ -4,7 +4,6 @@ import cls from './Label.module.scss'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 
-
 interface LabelProps {
     className?: string
     value: string

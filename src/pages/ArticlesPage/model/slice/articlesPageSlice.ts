@@ -17,7 +17,6 @@ import {
 import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localStorage'
 import { type SortOrder } from '@/shared/types'
 
-
 interface Book {
     bookId: string
     title: string
@@ -28,7 +27,7 @@ const articlesAdapter = createEntityAdapter<Article>({
 })
 
 export const getArticles = articlesAdapter.getSelectors<StateSchema>(
-    (state) => state.articlesPage || articlesAdapter.getInitialState()
+    (state) => state.articlesPage || articlesAdapter.getInitialState(),
 )
 
 const articlePageSlice = createSlice({
@@ -55,7 +54,7 @@ const articlePageSlice = createSlice({
         },
         initView: (state) => {
             state.view = localStorage.getItem(
-                ARTICLE_VIEW_LOCALSTORAGE_KEY
+                ARTICLE_VIEW_LOCALSTORAGE_KEY,
             ) as ArticleView
 
             state.limit = state.view === ArticleView.LIST ? 4 : 9

@@ -62,60 +62,60 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
         (value: string) => {
             dispatch(profileActions.updateProfile({ first: value || '' }))
         },
-        [dispatch]
+        [dispatch],
     )
 
     const onChangeLastname = useCallback(
         (value: string) => {
             dispatch(profileActions.updateProfile({ lastname: value || '' }))
         },
-        [dispatch]
+        [dispatch],
     )
 
     const onChangeCity = useCallback(
         (value: string) => {
             dispatch(profileActions.updateProfile({ city: value || '' }))
         },
-        [dispatch]
+        [dispatch],
     )
 
     const onChangeAge = useCallback(
         (value: string) => {
             if (isNumeric(value)) {
                 dispatch(
-                    profileActions.updateProfile({ age: Number(value) || 0 })
+                    profileActions.updateProfile({ age: Number(value) || 0 }),
                 )
             }
         },
-        [dispatch]
+        [dispatch],
     )
 
     const onChangeUsername = useCallback(
         (value: string) => {
             dispatch(profileActions.updateProfile({ username: value || '' }))
         },
-        [dispatch]
+        [dispatch],
     )
 
     const onChangeAvatar = useCallback(
         (value: string) => {
             dispatch(profileActions.updateProfile({ avatar: value || '' }))
         },
-        [dispatch]
+        [dispatch],
     )
 
     const onChangeCurrency = useCallback(
         (value: Currency) => {
             dispatch(profileActions.updateProfile({ currency: value }))
         },
-        [dispatch]
+        [dispatch],
     )
 
     const onChangeCountry = useCallback(
         (value: Country) => {
             dispatch(profileActions.updateProfile({ country: value }))
         },
-        [dispatch]
+        [dispatch],
     )
 
     if (error) {
@@ -123,7 +123,7 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
             <>
                 <Note>
                     {t(
-                        'Error occured while loading profile. Try to refresh your page.'
+                        'Error occured while loading profile. Try to refresh your page.',
                     )}
                 </Note>
             </>
@@ -135,7 +135,9 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
             <div className={classNames('', {}, [className])}>
                 {Boolean(validateErrors?.length) &&
                     validateErrors?.map((err) => (
-                        <Note data-testid="EditableProfileCard.Error" key={err}>
+                        <Note
+                            data-testid="EditableProfileCard.Error"
+                            key={err}>
                             <Text
                                 text={validateErrorTranslates[err]}
                                 theme={TextTheme.ERROR}

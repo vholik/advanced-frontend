@@ -2,7 +2,6 @@ import { Card } from './Card'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-
 const meta = {
     title: 'shared/Card',
     component: Card,

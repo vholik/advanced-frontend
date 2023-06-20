@@ -32,12 +32,13 @@ export const Dropdown: FC<DropdownProps> = memo((props) => {
     const menuClasses = [mapDirectionClass[direction]]
 
     return (
-        <Menu as="div" className={classNames(popupCls.popup, {}, [])}>
+        <Menu
+            as="div"
+            className={classNames(popupCls.popup, {}, [])}>
             <Menu.Button className={popupCls.btn}>{trigger}</Menu.Button>
             <Menu.Items
                 className={classNames(cls.menu, {}, menuClasses)}
-                as="ul"
-            >
+                as="ul">
                 {items.map((item, index) => {
                     const content = ({ active }: { active: boolean }) => (
                         <button
@@ -45,10 +46,9 @@ export const Dropdown: FC<DropdownProps> = memo((props) => {
                             className={classNames(
                                 cls.item,
                                 { [popupCls.active]: active },
-                                []
+                                [],
                             )}
-                            onClick={item.onClick}
-                        >
+                            onClick={item.onClick}>
                             {item.content}
                         </button>
                     )
@@ -58,15 +58,16 @@ export const Dropdown: FC<DropdownProps> = memo((props) => {
                             <Menu.Item
                                 as={AppLink}
                                 key={item.href}
-                                to={item.href}
-                            >
+                                to={item.href}>
                                 {content}
                             </Menu.Item>
                         )
                     }
 
                     return (
-                        <Menu.Item as={Fragment} key={index}>
+                        <Menu.Item
+                            as={Fragment}
+                            key={index}>
                             {content}
                         </Menu.Item>
                     )

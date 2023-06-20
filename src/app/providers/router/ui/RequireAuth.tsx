@@ -41,7 +41,11 @@ const RequireAuth = ({
 
     if (!auth) {
         return (
-            <Navigate to={getRouteMain()} state={{ from: location }} replace />
+            <Navigate
+                to={getRouteMain()}
+                state={{ from: location }}
+                replace
+            />
         )
     }
 

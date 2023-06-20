@@ -29,10 +29,14 @@ export const Counter: FC<CounterProps> = ({ className }) => {
     return (
         <div className={classNames('', {}, [className])}>
             <h1 data-testid="value-title">{counterValue}</h1>
-            <Button onClick={increment} data-testid="increment-btn">
+            <Button
+                onClick={increment}
+                data-testid="increment-btn">
                 Increment
             </Button>
-            <Button onClick={decrement} data-testid="decrement-btn">
+            <Button
+                onClick={decrement}
+                data-testid="decrement-btn">
                 Decrement
             </Button>
         </div>

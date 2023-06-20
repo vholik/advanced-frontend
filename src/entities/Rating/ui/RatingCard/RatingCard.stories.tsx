@@ -2,8 +2,6 @@ import { RatingCard } from './RatingCard'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-
-
 const meta = {
     title: 'entities/Rating/RatingCard',
     component: RatingCard,

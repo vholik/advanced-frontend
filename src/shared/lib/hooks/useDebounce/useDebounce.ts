@@ -19,6 +19,6 @@ export function useDebounce(cb: (...args: any[]) => any, delay: number) {
                 cb(...args)
             }, delay)
         },
-        [cb, delay]
+        [cb, delay],
     )
 }

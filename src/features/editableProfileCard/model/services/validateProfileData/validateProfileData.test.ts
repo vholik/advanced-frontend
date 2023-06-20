@@ -3,11 +3,8 @@ import axios from 'axios'
 import { validateProfileData } from './validateProfileData'
 import { ValidateProfileError } from '../../consts/consts'
 
-
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
-
-
 
 jest.mock('axios')
 

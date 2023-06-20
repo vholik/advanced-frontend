@@ -1,12 +1,8 @@
-
 import axios from 'axios'
-
 
 import { initArticlesPage } from './initArticlesPage'
 
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
-
-
 
 jest.mock('axios')
 

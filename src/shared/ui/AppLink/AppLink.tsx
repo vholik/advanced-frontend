@@ -6,7 +6,6 @@ import cls from './AppLink.module.scss'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 
-
 export enum AppLinkTheme {
     PRIMARY = 'primary',
     PRIMARY_VARIANT = 'primary_variant',
@@ -30,8 +29,7 @@ export const AppLink: FC<AppLinkProps> = memo((props) => {
         <Link
             to={to}
             {...other}
-            className={classNames(cls.AppLink, {}, [className, cls[theme]])}
-        >
+            className={classNames(cls.AppLink, {}, [className, cls[theme]])}>
             {children}
         </Link>
     )

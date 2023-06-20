@@ -2,9 +2,7 @@ import { CommentCard } from './CommentCard'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-
 import { avatarLink } from '@/shared/const/tests'
-
 
 const meta = {
     title: 'shared/CommentCard',

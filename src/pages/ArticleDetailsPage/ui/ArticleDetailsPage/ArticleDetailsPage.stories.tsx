@@ -2,7 +2,6 @@ import ArticleDetailsPage from './ArticleDetailsPage'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-
 import { type Article } from '@/entities/Article'
 import { ArticleType, ArticleBlockType } from '@/entities/Article'
 import { avatarLink } from '@/shared/const/tests'

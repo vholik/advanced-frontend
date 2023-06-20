@@ -1,10 +1,6 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-import {
-    type RestoreScrollSchema,
-} from '../types/RestoreScrollSchema'
-
-
+import { type RestoreScrollSchema } from '../types/RestoreScrollSchema'
 
 const initialState: RestoreScrollSchema = {
     scroll: {},
@@ -16,7 +12,7 @@ export const restoreScrollSlice = createSlice({
     reducers: {
         setScrollPosition: (
             state,
-            { payload }: PayloadAction<{ path: string; position: number }>
+            { payload }: PayloadAction<{ path: string; position: number }>,
         ) => {
             state.scroll[payload.path] = payload.position
         },

@@ -56,9 +56,18 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
         <div className={classNames('', {}, [className])}>
             <div className={cls.bg}></div>
             <div className={cls.ProfilePageHeader}>
-                <HStack gap="16" align="center">
-                    {avatar && <Avatar src={avatar} className={cls.avatar} />}
-                    <VStack gap="4" className={cls.heading}>
+                <HStack
+                    gap="16"
+                    align="center">
+                    {avatar && (
+                        <Avatar
+                            src={avatar}
+                            className={cls.avatar}
+                        />
+                    )}
+                    <VStack
+                        gap="4"
+                        className={cls.heading}>
                         <Text title={t('Profile')} />
                         <Text
                             className={cls.subtitle}
@@ -72,8 +81,7 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
                             <Button
                                 onClick={onEdit}
                                 size={ButtonSize.SM}
-                                data-testid="EditableProfileHeader.EditButton"
-                            >
+                                data-testid="EditableProfileHeader.EditButton">
                                 {t('Edit')}
                             </Button>
                         ) : (
@@ -82,15 +90,13 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
                                     onClick={onCancelEdit}
                                     theme={ThemeButton.OUTLINE}
                                     size={ButtonSize.SM}
-                                    data-testid="EditableProfileHeader.CancelButton"
-                                >
+                                    data-testid="EditableProfileHeader.CancelButton">
                                     {t('Cancel')}
                                 </Button>
                                 <Button
                                     data-testid="EditableProfileHeader.SaveButton"
                                     onClick={onSave}
-                                    size={ButtonSize.SM}
-                                >
+                                    size={ButtonSize.SM}>
                                     {t('Save')}
                                 </Button>
                             </HStack>

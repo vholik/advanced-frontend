@@ -54,8 +54,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
             as="div"
             value={value}
             onChange={onChange}
-            className={popupCls.popup}
-        >
+            className={popupCls.popup}>
             {({ open }) => (
                 <>
                     <Listbox.Button
@@ -66,27 +65,23 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
                                 [cls[theme]]: true,
                                 [popupCls.readonly]: readonly,
                             },
-                            [popupCls.popup]
-                        )}
-                    >
+                            [popupCls.popup],
+                        )}>
                         {content}
                     </Listbox.Button>
                     <Listbox.Options
-                        className={classNames(cls.menu, {}, optionsMods)}
-                    >
+                        className={classNames(cls.menu, {}, optionsMods)}>
                         {items
                             ? items.map((item) => (
                                   <Listbox.Option
                                       key={item.value}
                                       value={item.value}
-                                      as={Fragment}
-                                  >
+                                      as={Fragment}>
                                       {({ active, selected }) => (
                                           <li
                                               className={classNames(cls.item, {
                                                   [popupCls.active]: active,
-                                              })}
-                                          >
+                                              })}>
                                               {item.content}{' '}
                                               {selected && (
                                                   <Icon

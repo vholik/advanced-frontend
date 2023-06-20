@@ -4,7 +4,6 @@ import cls from './Text.module.scss'
 
 import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
 
-
 export enum TextTheme {
     PRIMARY = 'primary',
     ERROR = 'error',
@@ -84,16 +83,14 @@ export const Text: FC<TextProps> = memo((props) => {
             {title && (
                 <HeaderTag
                     data-testid={`${dataTestId}.Header`}
-                    className={classNames(cls.title, {}, [cls[color]])}
-                >
+                    className={classNames(cls.title, {}, [cls[color]])}>
                     {title}
                 </HeaderTag>
             )}
             {text && (
                 <p
                     data-testid={`${dataTestId}.Paragraph`}
-                    className={classNames(cls.text, {}, [cls[color]])}
-                >
+                    className={classNames(cls.text, {}, [cls[color]])}>
                     {text}
                 </p>
             )}

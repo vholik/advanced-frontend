@@ -13,7 +13,6 @@ import { type ThunkConfig } from '@/app/providers/StoreProvider'
 import { ArticleType, type Article } from '@/entities/Article'
 import { addQueryParams } from '@/shared/lib/url/addQueryParams/addQueryParams'
 
-
 interface FetchArticlesListProps {
     replace?: boolean
 }

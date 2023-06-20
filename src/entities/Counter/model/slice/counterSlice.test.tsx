@@ -1,7 +1,6 @@
 import { counterActions, counterReducer } from './counterSlice'
 import { type CounterSchema } from '../types/counterSchema'
 
-
 describe('counterSlice', () => {
     test('should decrement state', () => {
         const state: CounterSchema = {
@@ -9,7 +8,7 @@ describe('counterSlice', () => {
         }
 
         expect(
-            counterReducer(state as CounterSchema, counterActions.decrement())
+            counterReducer(state as CounterSchema, counterActions.decrement()),
         ).toEqual({ value: 9 })
     })
 
@@ -19,7 +18,7 @@ describe('counterSlice', () => {
         }
 
         expect(
-            counterReducer(state as CounterSchema, counterActions.increment())
+            counterReducer(state as CounterSchema, counterActions.increment()),
         ).toEqual({ value: 11 })
     })
 

@@ -4,7 +4,6 @@ import { type User, type UserSchema } from '../type/user'
 
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage'
 
-
 const initialState: UserSchema = {
     _inited: false,
 }

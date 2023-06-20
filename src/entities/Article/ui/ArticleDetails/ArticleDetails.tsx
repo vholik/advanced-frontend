@@ -93,10 +93,22 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
     if (isLoading) {
         content = (
             <>
-                <Skeleton height={50} width={680} className={cls.skeleton} />
+                <Skeleton
+                    height={50}
+                    width={680}
+                    className={cls.skeleton}
+                />
                 <div className={cls.avatar}>
-                    <Skeleton height={50} width={50} circle />
-                    <Skeleton height={15} width={100} count={2} />
+                    <Skeleton
+                        height={50}
+                        width={50}
+                        circle
+                    />
+                    <Skeleton
+                        height={15}
+                        width={100}
+                        count={2}
+                    />
                 </div>
                 <div className={cls.box}>
                     <Skeleton
@@ -143,7 +155,10 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
                 />
                 <div className={cls.row}>
                     <div className={cls.stats}>
-                        <Icon Svg={EyeIcon} color={IconColor.TERTIARY} />
+                        <Icon
+                            Svg={EyeIcon}
+                            color={IconColor.TERTIARY}
+                        />
                         <Text
                             text={String(data?.views)}
                             size={TextSize.S}
@@ -151,7 +166,10 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
                         />
                     </div>
                     <div className={cls.stats}>
-                        <Icon Svg={DateIcon} color={IconColor.TERTIARY} />
+                        <Icon
+                            Svg={DateIcon}
+                            color={IconColor.TERTIARY}
+                        />
                         <Text
                             text={String(data?.createdAt)}
                             size={TextSize.S}
@@ -159,7 +177,11 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
                         />
                     </div>
                 </div>
-                <img src={data?.img} alt={data?.title} className={cls.photo} />
+                <img
+                    src={data?.img}
+                    alt={data?.title}
+                    className={cls.photo}
+                />
                 {data?.blocks.map(renderBlock)}
             </>
         )
@@ -170,11 +192,12 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
     })
 
     return (
-        <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
+        <DynamicModuleLoader
+            removeAfterUnmount
+            reducers={reducers}>
             <div
                 className={classNames(cls.ArticleDetails, {}, [className])}
-                data-testid={'ArticleDetails.Info'}
-            >
+                data-testid={'ArticleDetails.Info'}>
                 {content}
             </div>
         </DynamicModuleLoader>

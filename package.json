@@ -12,6 +12,7 @@
         "start:dev:vite": "concurrently \"npm run start:vite\" \"npm run start:dev:server\"",
         "start:dev:server": "node ./json-server/index.js",
         "lint:ts": "npx eslint \"**/*.{ts,tsx}\"",
+        "prettier": "npx prettier --write **/*.{ts,tsx}",
         "lint:ts:fix": "npx eslint \"**/*.{ts,tsx}\" --fix",
         "lint:scss": "npx stylelint \"**/*.scss\"",
         "lint:sccs:fix": "npx stylelint \"**/*.scss\" --fix",
@@ -30,7 +31,10 @@
         "postinstall": "rm -rf node_modules/.cache"
     },
     "lint-staged": {
-        "**/*.{ts,tsx}": "eslint"
+        "**/*.{ts,tsx}": [
+            "eslint",
+            "prettier"
+        ]
     },
     "keywords": [],
     "author": "",

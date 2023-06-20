@@ -4,7 +4,6 @@ import { Counter } from './Counter'
 
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender'
 
-
 describe('Counter', () => {
     test('should display counter value', () => {
         componentRender(<Counter />, {

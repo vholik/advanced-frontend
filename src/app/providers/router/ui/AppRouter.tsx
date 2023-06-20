@@ -5,7 +5,6 @@ import { Route, Routes } from 'react-router-dom'
 import RequireAuth from './RequireAuth'
 import { routeConfig } from '../config/routeConfig'
 
-
 import { AppRoutesProps } from '@/shared/types/router'
 import { PageLoader } from '@/shared/ui/PageLoader'
 

@@ -61,7 +61,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             debounceFetchData()
             navigate(getRouteArticles())
         },
-        [dispatch, debounceFetchData, navigate]
+        [dispatch, debounceFetchData, navigate],
     )
 
     if (authData) {
@@ -74,12 +74,19 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     placeholder={t('Search')}
                     theme={InputTheme.BASE}
                 />
-                <AppLink to={getRouteArticleCreate()} className={cls.writeBtn}>
-                    <Icon Svg={EditIcon} color={IconColor.SECONDARY} />
+                <AppLink
+                    to={getRouteArticleCreate()}
+                    className={cls.writeBtn}>
+                    <Icon
+                        Svg={EditIcon}
+                        color={IconColor.SECONDARY}
+                    />
                     <Text text={t('Write')} />
                 </AppLink>
                 <ThemeSwitcher />
-                <HStack gap="16" className={cls.actions}>
+                <HStack
+                    gap="16"
+                    className={cls.actions}>
                     <NotificationButton />
 
                     <AvatarDropdown />
@@ -94,7 +101,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
             <Button onClick={onOpenModal}>{t('Log in')}</Button>
             {isAuthModal && (
-                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+                <LoginModal
+                    isOpen={isAuthModal}
+                    onClose={onCloseModal}
+                />
             )}
         </header>
     )

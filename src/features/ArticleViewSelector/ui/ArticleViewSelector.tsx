@@ -33,14 +33,14 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo(
 
         return (
             <div
-                className={classNames(cls.ArticleViewSelector, {}, [className])}
-            >
+                className={classNames(cls.ArticleViewSelector, {}, [
+                    className,
+                ])}>
                 {viewTypes.map((viewType) => (
                     <Button
                         theme={ThemeButton.CLEAR}
                         onClick={onClick(viewType.view)}
-                        key={viewType.view}
-                    >
+                        key={viewType.view}>
                         <Icon
                             Svg={viewType.icon}
                             color={
@@ -53,5 +53,5 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo(
                 ))}
             </div>
         )
-    }
+    },
 )

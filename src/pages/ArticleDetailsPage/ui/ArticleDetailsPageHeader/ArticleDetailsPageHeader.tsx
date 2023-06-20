@@ -37,12 +37,11 @@ export const ArticleDetailsPageHeader: FC<ArticleDetailsPageHeaderProps> = memo(
             <div
                 className={classNames(cls.ArticleDetailsPageHeader, {}, [
                     className,
-                ])}
-            >
+                ])}>
                 {canEdit && (
                     <Button onClick={onEditArticle}>{t('Edit')}</Button>
                 )}
             </div>
         )
-    }
+    },
 )

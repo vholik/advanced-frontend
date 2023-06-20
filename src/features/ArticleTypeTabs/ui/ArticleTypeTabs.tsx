@@ -35,14 +35,14 @@ export const ArticleTypeTabs: FC<ArticleTypeTabsProps> = memo((props) => {
                 content: t('Science'),
             },
         ],
-        [t]
+        [t],
     )
 
     const onTabClick = useCallback(
         (type: ArticleType) => {
             onChangeType(type)
         },
-        [onChangeType]
+        [onChangeType],
     )
 
     return (

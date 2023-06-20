@@ -10,7 +10,6 @@ import { type ArticleDetailsPageRecommendationsSchema } from '../types/ArticleDe
 import { type StateSchema } from '@/app/providers/StoreProvider'
 import { type Article } from '@/entities/Article'
 
-
 interface Book {
     bookId: string
     title: string
@@ -24,7 +23,7 @@ export const getArticleReccomendations =
     recommendationsAdapter.getSelectors<StateSchema>(
         (state) =>
             state.articleDetailsPage?.recommendations ||
-            recommendationsAdapter.getInitialState()
+            recommendationsAdapter.getInitialState(),
     )
 
 const articleDetailsPageRecommendationsSlice = createSlice({
@@ -36,7 +35,7 @@ const articleDetailsPageRecommendationsSlice = createSlice({
                 error: undefined,
                 ids: [],
                 entities: {},
-            }
+            },
         ),
     reducers: {},
     extraReducers: (builder) => {
@@ -45,21 +44,21 @@ const articleDetailsPageRecommendationsSlice = createSlice({
             (state, action) => {
                 state.error = undefined
                 state.isLoading = true
-            }
+            },
         )
         builder.addCase(
             fetchArticleRecommendations.fulfilled,
             (state, action: PayloadAction<Article[]>) => {
                 state.isLoading = false
                 recommendationsAdapter.setAll(state, action.payload)
-            }
+            },
         )
         builder.addCase(
             fetchArticleRecommendations.rejected,
             (state, action) => {
                 state.isLoading = false
                 state.error = action.payload
-            }
+            },
         )
     },
 })

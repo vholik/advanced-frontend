@@ -4,7 +4,6 @@ import cls from './Tabs.module.scss'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 
-
 interface TabsProps<T> {
     className?: string
     items: TabItem<T>[]
@@ -25,7 +24,7 @@ export const Tabs = <T extends string>(props: TabsProps<T>) => {
             (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
                 onChange?.(newValue)
             },
-        [onChange]
+        [onChange],
     )
 
     const renderElement = useCallback(
@@ -36,15 +35,14 @@ export const Tabs = <T extends string>(props: TabsProps<T>) => {
                     className={classNames(
                         cls.tabItem,
                         { [cls.active]: value === it.value },
-                        []
+                        [],
                     )}
-                    onClick={onClickHandler(it.value)}
-                >
+                    onClick={onClickHandler(it.value)}>
                     {it.content}
                 </li>
             )
         },
-        [onClickHandler, value]
+        [onClickHandler, value],
     )
 
     return (

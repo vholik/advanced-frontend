@@ -16,10 +16,9 @@ describe('EditableProfileCard.cy.ts', () => {
                             },
                         },
                     },
-                }}
-            >
+                }}>
                 <EditableProfileCard id={USER_ID} />
-            </TestProvider>
+            </TestProvider>,
         )
     })
 })

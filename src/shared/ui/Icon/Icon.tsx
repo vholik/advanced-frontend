@@ -23,10 +23,9 @@ export const Icon: FC<IconProps> = memo(
             <div
                 className={classNames(cls.Icon, { [cls[color]]: true }, [
                     className,
-                ])}
-            >
+                ])}>
                 <Svg {...otherProps} />
             </div>
         )
-    }
+    },
 )
