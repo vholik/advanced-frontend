@@ -20,7 +20,8 @@ import { Note } from '@/shared/ui/Note'
 import { VStack } from '@/shared/ui/Stack'
 import { Text, TextAlign, TextTheme } from '@/shared/ui/Text'
 import { Page } from '@/widgets/Page'
-import { getFeatureFlag } from '@/shared/lib/features'
+import { getFeatureFlag, toggleFeatures } from '@/shared/lib/features'
+import { Card } from '@/shared/ui/Card'
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -48,6 +49,12 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
             </Note>
         )
     }
+
+    const articleRatingCard = toggleFeatures({
+        name: 'isArticleRatingEnabled',
+        on: () => <ArticleRating articleId={id} />,
+        off: () => <Text text={t('Article rating will be soon')} />,
+    })
 
     return (
         <DynamicModuleLoader

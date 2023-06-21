@@ -945,6 +945,11 @@
                 "isArticleRatingEnabled": true,
                 "isCounterEnabled": true
             },
+            "jsonSettings": {
+                "theme": "app_dark_theme",
+                "isFirstVisit": true,
+                "settingsPageHasBeen": false
+            },
             "avatar": "https://www.film.ru/sites/default/files/people/1455111-2302563.jpg"
         },
         {

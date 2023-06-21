@@ -1,4 +1,11 @@
 {
     "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
-    "i18n-ally.keystyle": "nested"
+    "i18n-ally.keystyle": "nested",
+    "workbench.colorCustomizations": {
+        "tab.activeBorder": "#38879C",
+        "titleBar.activeBackground": "#38879C",
+        "titleBar.activeForeground": "#ffffff",
+        "statusBar.background": "#38879C",
+        "statusBar.foreground": "#ffffff"
+    }
 }
