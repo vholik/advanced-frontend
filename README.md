@@ -40,6 +40,23 @@ Documentation link - [feature sliced design](https://feature-sliced.design/docs/
 
 ---
 
+## Working with feature flags
+
+Allowed to use feature flags on with helpers, helper has options:
+
+{
+name: feature name
+on: function that returs after enabling feature
+off: function that returs after disabling feature
+}
+
+For automated delition features there is a script remove-feature that has 2 props
+
+1. Feature name
+2. State (on/off)
+
+---
+
 ## Working with Translations
 
 The project uses the i18next library for handling translations.
