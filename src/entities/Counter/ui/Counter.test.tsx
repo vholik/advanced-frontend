@@ -2,7 +2,7 @@ import { fireEvent, screen } from '@testing-library/react'
 
 import { Counter } from './Counter'
 
-import { componentRender } from '@/shared/lib/tests/componentRender/componentRender'
+import { componentRender } from '@/shared/lib/store/tests/componentRender/componentRender'
 
 describe('Counter', () => {
     test('should display counter value', () => {

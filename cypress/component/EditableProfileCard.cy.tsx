@@ -1,5 +1,5 @@
 import { EditableProfileCard } from '@/features/editableProfileCard'
-import { TestProvider } from '@/shared/lib/tests/componentRender/componentRender'
+import { TestProvider } from '@/shared/lib/store/tests/componentRender/componentRender'
 
 const USER_ID = '1'
 

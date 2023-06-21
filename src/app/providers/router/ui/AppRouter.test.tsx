@@ -7,7 +7,7 @@ import {
     getRouteAdminPanel,
     getRouteProfile,
 } from '@/shared/const/router'
-import { componentRender } from '@/shared/lib/tests/componentRender/componentRender'
+import { componentRender } from '@/shared/lib/store/tests/componentRender/componentRender'
 
 describe('AppRouter.test', () => {
     test('Page should render', async () => {

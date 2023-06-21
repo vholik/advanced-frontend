@@ -15,7 +15,7 @@ import {
     ArticleType,
 } from '@/entities/Article'
 import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localStorage'
-import { type SortOrder } from '@/shared/types'
+import { type SortOrder } from '@/shared/types/sort'
 
 interface Book {
     bookId: string

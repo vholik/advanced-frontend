@@ -20,6 +20,7 @@ import { Note } from '@/shared/ui/Note'
 import { VStack } from '@/shared/ui/Stack'
 import { Text, TextAlign, TextTheme } from '@/shared/ui/Text'
 import { Page } from '@/widgets/Page'
+import { getFeatureFlag } from '@/shared/lib/features'
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -33,6 +34,8 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { className } = props
     const { t } = useTranslation()
     const { id } = useParams<{ id: string }>()
+    const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled')
+    const isCounterEnabled = getFeatureFlag('isCounterEnabled')
 
     if (!id) {
         return (
@@ -59,7 +62,9 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                         gap="32">
                         <ArticleDetails id={id} />
 
-                        <ArticleRating articleId={id} />
+                        {isArticleRatingEnabled && (
+                            <ArticleRating articleId={id} />
+                        )}
                         <VStack gap="32">
                             <ArticleDetailsComments id={id} />
                             <ArticleRecommendationsList />

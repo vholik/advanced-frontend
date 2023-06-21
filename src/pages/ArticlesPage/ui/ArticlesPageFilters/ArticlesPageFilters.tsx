@@ -24,7 +24,7 @@ import { ArticleViewSelector } from '@/features/ArticleViewSelector'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
-import { type SortOrder } from '@/shared/types'
+import { type SortOrder } from '@/shared/types/sort'
 
 interface ArticlesPageFiltersProps {
     className?: string
